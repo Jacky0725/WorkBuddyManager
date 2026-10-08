@@ -6,7 +6,7 @@
     "upstream_sha": "9eb3f2a21ff3c3c85fef2f89e693c48792050ba1",
     "sha256": "6493623e5eb155023d8732a48772614b5f7c93093e8ea6c2a7772805eb3f5557",
     "signed": false,
-    "path": "D:\\codex\\WorkBuddyManage\\test-fixtures\\baseline-binaries\\switch-original-v0.1.58\\wb-switch-rust.exe",
+    "path": "D:\\codex\\WorkBuddyManager\\test-fixtures\\baseline-binaries\\switch-original-v0.1.58\\wb-switch-rust.exe",
     "authenticode_status": "NotSigned"
   },
   {
@@ -16,7 +16,7 @@
     "upstream_sha": "9eb3f2a21ff3c3c85fef2f89e693c48792050ba1",
     "sha256": "3f9177bb887707f50a5cc063fd48b670d8eb228f1ca05550705497fa25e8f15f",
     "signed": false,
-    "path": "D:\\codex\\WorkBuddyManage\\test-fixtures\\baseline-binaries\\switch-original-v0.1.58\\workbuddy-switch_0.1.58_x64-setup.exe",
+    "path": "D:\\codex\\WorkBuddyManager\\test-fixtures\\baseline-binaries\\switch-original-v0.1.58\\workbuddy-switch_0.1.58_x64-setup.exe",
     "authenticode_status": "NotSigned"
   },
   {
@@ -26,7 +26,7 @@
     "upstream_sha": "9eb3f2a21ff3c3c85fef2f89e693c48792050ba1",
     "sha256": "e46efd1e0ee394a15f1d41ccef3fb54aa6254dff44880a581a0a418c1598bcd2",
     "signed": false,
-    "path": "D:\\codex\\WorkBuddyManage\\test-fixtures\\baseline-binaries\\switch-original-v0.1.58\\agent-studio-runtime-x86_64-pc-windows-msvc.exe",
+    "path": "D:\\codex\\WorkBuddyManager\\test-fixtures\\baseline-binaries\\switch-original-v0.1.58\\agent-studio-runtime-x86_64-pc-windows-msvc.exe",
     "authenticode_status": "NotSigned"
   }
 ]
