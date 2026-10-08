@@ -1,0 +1,18 @@
+[
+  {
+    "repository": "workbuddy-switch",
+    "url": "https://github.com/changexbc/workbuddy-switch.git",
+    "sha": "9eb3f2a21ff3c3c85fef2f89e693c48792050ba1",
+    "commit_date": "2026-10-04T12:34:22+08:00",
+    "tag": "v0.1.58",
+    "tracked_changes": ""
+  },
+  {
+    "repository": "workbuddy-helper",
+    "url": "https://github.com/autumnsentiment/workbuddy-helper.git",
+    "sha": "10caebd9a1a848871ed5ada57d9c66d56d2e7a48",
+    "commit_date": "2026-09-23T07:16:35+08:00",
+    "tag": "v1.0.6",
+    "tracked_changes": ""
+  }
+]
