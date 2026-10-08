@@ -2,7 +2,9 @@
 
 按 [项目总任务 V1.0](docs/PROJECT_TASK_V1.md) 开发 Windows 多账号桌面管理器。
 
-工作根目录：`D:\codexs\WorkBuddyManager`。前一轮 `D:\codex\WorkBuddyManager` 的准备文档保留。
+工作根目录：`D:\codex\WorkBuddyManage`。前一轮准备文档归档在 `docs/pre-migration-preparation/`。
+
+工程已从 `D:\codexs\WorkBuddyManager` 整体迁入，包含 Git 历史、三个子模块、工具、测试缓存和构建产物。历史任务书和构建日志中的原路径保留，用于追溯当时的执行环境；后续命令均在当前工作根目录执行。
 
 ## 当前进度
 
