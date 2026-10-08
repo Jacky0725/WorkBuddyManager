@@ -65,6 +65,30 @@ for lockpath in (ROOT / "upstream/workbuddy-switch/Cargo.lock", ROOT / "upstream
                      "source": item.get("source", "local"), "license": data.get("license"),
                      "license_file": data.get("license-file"), "manifest_available": bool(found)})
 write("rust-license-inventory.json", rust)
+windows_metadata = ROOT / "test-fixtures" / "windows-cargo-metadata.json"
+if windows_metadata.is_file():
+    raw = windows_metadata.read_text(encoding="utf-8-sig")
+    # Cargo download diagnostics can precede the single JSON result.
+    start = raw.find('{"packages":')
+    if start >= 0:
+        metadata = json.JSONDecoder().raw_decode(raw[start:])[0]
+        nodes = {node["id"]: node for node in metadata["resolve"]["nodes"]}
+        package_by_id = {package["id"]: package for package in metadata["packages"]}
+        pending = [p["id"] for p in metadata["packages"] if p["name"] == "wb-switch-rust"]
+        selected = set()
+        while pending:
+            ident = pending.pop()
+            if ident in selected:
+                continue
+            selected.add(ident)
+            pending.extend(nodes.get(ident, {}).get("dependencies", []))
+        windows = [{"name": package_by_id[ident]["name"], "version": package_by_id[ident]["version"],
+                    "license": package_by_id[ident]["license"], "license_file": package_by_id[ident]["license_file"],
+                    "source": package_by_id[ident]["source"], "repository": package_by_id[ident]["repository"]}
+                   for ident in sorted(selected)]
+        write("windows-desktop-license-inventory.json", windows)
+        print(json.dumps({"windows_desktop_dependencies": len(windows),
+                          "license_expressions": dict(Counter(str(x["license"]) for x in windows))}, ensure_ascii=False))
 print(json.dumps({"pins": pins, "symbols": len(symbols), "test_files": len(tests),
                   "npm_entries": len(npm), "npm_licenses": dict(Counter(str(x["license"]) for x in npm)),
                   "rust_entries": len(rust), "rust_missing_manifests": sum(not x["manifest_available"] for x in rust)}, ensure_ascii=False, indent=2))

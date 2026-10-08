@@ -1,0 +1,181 @@
+[
+  {
+    "name": "source-map-js",
+    "version": "1.2.1",
+    "location": "node_modules/source-map-js",
+    "isWorkspace": false,
+    "dependents": [
+      {
+        "type": "prod",
+        "name": "source-map-js",
+        "spec": "^1.2.1",
+        "from": {
+          "name": "postcss",
+          "version": "8.5.26",
+          "location": "node_modules/postcss",
+          "isWorkspace": false,
+          "dependents": [
+            {
+              "type": "prod",
+              "name": "postcss",
+              "spec": "^8.5.6",
+              "from": {
+                "name": "vite",
+                "version": "7.3.6",
+                "location": "node_modules/vite",
+                "isWorkspace": false,
+                "dependents": [
+                  {
+                    "type": "dev",
+                    "name": "vite",
+                    "spec": "^7.0.4",
+                    "from": {
+                      "location": "D:\\codexs\\WorkBuddyManager\\upstream\\workbuddy-switch"
+                    }
+                  },
+                  {
+                    "type": "peer",
+                    "name": "vite",
+                    "spec": "^6.4.0 || ^7.0.0 || ^8.0.0",
+                    "from": {
+                      "name": "vitest",
+                      "version": "5.0.2",
+                      "location": "node_modules/vitest",
+                      "isWorkspace": false,
+                      "dependents": [
+                        {
+                          "type": "dev",
+                          "name": "vitest",
+                          "spec": "^5.0.2",
+                          "from": {
+                            "location": "D:\\codexs\\WorkBuddyManager\\upstream\\workbuddy-switch"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "peer",
+                    "name": "vite",
+                    "spec": "^5.2.0 || ^6 || ^7 || ^8",
+                    "from": {
+                      "name": "@tailwindcss/vite",
+                      "version": "4.3.3",
+                      "location": "node_modules/@tailwindcss/vite",
+                      "isWorkspace": false,
+                      "dependents": [
+                        {
+                          "type": "dev",
+                          "name": "@tailwindcss/vite",
+                          "spec": "^4.3.3",
+                          "from": {
+                            "location": "D:\\codexs\\WorkBuddyManager\\upstream\\workbuddy-switch"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "peer",
+                    "name": "vite",
+                    "spec": "^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0",
+                    "from": {
+                      "name": "@vitejs/plugin-react",
+                      "version": "4.7.0",
+                      "location": "node_modules/@vitejs/plugin-react",
+                      "isWorkspace": false,
+                      "dependents": [
+                        {
+                          "type": "dev",
+                          "name": "@vitejs/plugin-react",
+                          "spec": "^4.6.0",
+                          "from": {
+                            "location": "D:\\codexs\\WorkBuddyManager\\upstream\\workbuddy-switch"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "peerOptional",
+                    "name": "vite",
+                    "spec": "^6.0.0 || ^7.0.0 || ^8.0.0",
+                    "from": {
+                      "name": "@vitest/mocker",
+                      "version": "5.0.2",
+                      "location": "node_modules/@vitest/mocker",
+                      "isWorkspace": false,
+                      "dependents": [
+                        {
+                          "type": "prod",
+                          "name": "@vitest/mocker",
+                          "spec": "5.0.2",
+                          "from": {
+                            "name": "vitest",
+                            "version": "5.0.2",
+                            "location": "node_modules/vitest",
+                            "isWorkspace": false,
+                            "dependents": [
+                              {
+                                "type": "dev",
+                                "name": "vitest",
+                                "spec": "^5.0.2",
+                                "from": {
+                                  "location": "D:\\codexs\\WorkBuddyManager\\upstream\\workbuddy-switch"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "prod",
+        "name": "source-map-js",
+        "spec": "^1.2.1",
+        "from": {
+          "name": "@tailwindcss/node",
+          "version": "4.3.3",
+          "location": "node_modules/@tailwindcss/node",
+          "isWorkspace": false,
+          "dependents": [
+            {
+              "type": "prod",
+              "name": "@tailwindcss/node",
+              "spec": "4.3.3",
+              "from": {
+                "name": "@tailwindcss/vite",
+                "version": "4.3.3",
+                "location": "node_modules/@tailwindcss/vite",
+                "isWorkspace": false,
+                "dependents": [
+                  {
+                    "type": "dev",
+                    "name": "@tailwindcss/vite",
+                    "spec": "^4.3.3",
+                    "from": {
+                      "location": "D:\\codexs\\WorkBuddyManager\\upstream\\workbuddy-switch"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "dev": true,
+    "optional": false,
+    "devOptional": false,
+    "peer": false,
+    "bundled": false,
+    "overridden": false
+  }
+]

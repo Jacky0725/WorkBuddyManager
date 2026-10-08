@@ -1,0 +1,212 @@
+   Compiling indexmap v1.9.3 (D:\codexs\WorkBuddyManager\app\vendor-patched\indexmap)
+   Compiling agent-studio-core v0.1.0 (D:\codexs\WorkBuddyManager\app\vendor\agent-companion\crates\agent-studio-core)
+   Compiling wb-switch-core v0.1.58 (D:\codexs\WorkBuddyManager\app\crates\wb-switch-core)
+   Compiling schemars v0.8.22
+   Compiling tauri-utils v2.9.3
+   Compiling agent-studio-runtime v0.1.0 (D:\codexs\WorkBuddyManager\app\vendor\agent-companion\crates\agent-studio-runtime)
+   Compiling tauri-plugin v2.6.3
+   Compiling tauri-build v2.6.3
+   Compiling tauri-codegen v2.6.3
+   Compiling tauri v2.11.5
+   Compiling tauri-macros v2.6.3
+   Compiling tauri-plugin-notification v2.3.3
+   Compiling tauri-plugin-fs v2.5.1
+   Compiling tauri-plugin-updater v2.10.1
+   Compiling tauri-plugin-autostart v2.5.1
+   Compiling tauri-plugin-agent-studio v0.1.0 (D:\codexs\WorkBuddyManager\app\vendor\agent-companion\crates\agent-studio-desktop)
+   Compiling tauri-plugin-dialog v2.7.2
+   Compiling tauri-plugin-opener v2.5.4
+   Compiling wb-switch-rust v0.1.58 (D:\codexs\WorkBuddyManager\app\src-tauri)
+   Compiling tauri-plugin-single-instance v2.4.4
+warning: unused variable: `app`
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\lib.rs:136:5
+    |
+136 |     app: tauri::AppHandle,
+    |     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\lib.rs:213:9
+    |
+213 |     let mut window = WebviewWindowBuilder::new(
+    |         ----^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `VSCODE_APP` is never used
+ --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:4:7
+  |
+4 | const VSCODE_APP: &str = "Visual Studio Code.app";
+  |       ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `0` is never read
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:10:9
+   |
+10 |     App(&'static str),
+   |     --- ^^^^^^^^^^^^
+   |     |
+   |     field in this variant
+   |
+   = note: `SessionTarget` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+help: consider changing the field to be of unit type to suppress this warning while preserving the field numbering, or remove the field
+   |
+10 -     App(&'static str),
+10 +     App(()),
+   |
+
+warning: fields `session` and `cwd` are never read
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:14:14
+   |
+14 |     VSCode { session: String, cwd: Option<PathBuf> },
+   |     ------   ^^^^^^^          ^^^
+   |     |
+   |     fields in this variant
+   |
+   = note: `SessionTarget` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: function `app_for_scheme` is never used
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:26:4
+   |
+26 | fn app_for_scheme(scheme: &str) -> Option<(&'static str, &'static str)> {
+   |    ^^^^^^^^^^^^^^
+
+warning: function `usable_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:126:4
+    |
+126 | fn usable_folder(path: &Path) -> bool {
+    |    ^^^^^^^^^^^^^
+
+warning: function `bucket_for_session` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:148:4
+    |
+148 | fn bucket_for_session(root: &Path, session: &str) -> Option<String> {
+    |    ^^^^^^^^^^^^^^^^^^
+
+warning: enum `BucketFolder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:166:6
+    |
+166 | enum BucketFolder {
+    |      ^^^^^^^^^^^^
+
+warning: function `sanitize_workspace_id` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:178:4
+    |
+178 | fn sanitize_workspace_id(path: &str) -> String {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `decode_bucket_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:189:4
+    |
+189 | fn decode_bucket_folder(bucket: &str) -> BucketFolder {
+    |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: function `bucket_matches_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:214:4
+    |
+214 | fn bucket_matches_folder(bucket: &str, folder: &str) -> bool {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `bucket_candidates` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:227:4
+    |
+227 | fn bucket_candidates(bucket: &str) -> Vec<Vec<u8>> {
+    |    ^^^^^^^^^^^^^^^^^
+
+warning: function `desanitize` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:262:4
+    |
+262 | fn desanitize(text: &str) -> String {
+    |    ^^^^^^^^^^
+
+warning: function `base64_decode` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:268:4
+    |
+268 | fn base64_decode(text: &str) -> Option<Vec<u8>> {
+    |    ^^^^^^^^^^^^^
+
+warning: function `base64_value` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:289:4
+    |
+289 | fn base64_value(byte: u8) -> Option<u8> {
+    |    ^^^^^^^^^^^^
+
+warning: function `base64_encode` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:301:4
+    |
+301 | fn base64_encode(bytes: &[u8]) -> String {
+    |    ^^^^^^^^^^^^^
+
+warning: function `resolve_vscode_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:319:4
+    |
+319 | fn resolve_vscode_folder(
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: `tauri-plugin-agent-studio` (lib) generated 18 warnings (run `cargo fix --lib -p tauri-plugin-agent-studio` to apply 2 suggestions)
+warning: unused import: `tray_icon`
+   --> src-tauri\src\tray.rs:906:58
+    |
+906 |         should_keep_tray_alive, should_wake_main_window, tray_icon, tray_icon_variant, MouseButton,
+    |                                                          ^^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `wb-switch-rust` (lib test) generated 1 warning (run `cargo fix --lib -p wb-switch-rust --tests` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 18s
+     Running unittests src\lib.rs (D:\codexs\WorkBuddyManager\test-fixtures\cargo-target\debug\deps\wb_switch_rust_lib-9b764716b6d4ccc3.exe)
+
+running 34 tests
+test commands::relaunch_tests::update_relaunch_drops_only_the_exact_silent_startup_arg ... ok
+test tray::tests::silent_startup_matches_exact_hidden_arg ... ok
+test tray::tests::app_bundle_path_none_outside_app_bundle ... ok
+test tray::tests::second_launch_activates_unless_exact_hidden_arg ... ok
+test tray::tests::checkin_succeeded_requires_all_ok ... ok
+test tray::tests::second_launch_with_exact_hidden_arg_does_not_activate ... ok
+test tray::tests::silent_startup_rejects_unrelated_and_substring_args ... ok
+test tray::tests::runtime_exit_with_no_code_keeps_tray ... ok
+test tray::tests::tooltip_ignores_unknown_results ... ok
+test tray::tests::taskbar_theme_is_readable_on_windows ... ok
+test tray::tests::mono_icons_are_transparent_single_ink ... ok
+test tray::tests::tooltip_separates_inactive_variant_results ... ok
+test tray::tests::tooltip_summarizes_success_already_error ... ok
+test tray::tests::tooltip_reports_overlapping_checkin_as_busy ... ok
+test tray::tests::tooltip_when_accounts_missing ... ok
+test tray::tests::app_bundle_path_from_packaged_exe ... ok
+test tray::tests::tooltip_when_no_accounts ... ok
+test tray::tests::tray_icon_variant_follows_taskbar_theme ... ok
+test tray::tests::tray_left_click_release_wakes_main_window_only_off_macos ... ok
+test tray::tests::update_menu_spec_maps_each_phase_to_its_entry ... ok
+test update_service::tests::busy_guard_rejects_second_entry_until_released ... ok
+test update_service::tests::check_does_not_downgrade_downloading_or_ready_to_restart ... ok
+test update_service::tests::check_without_update_lands_on_up_to_date ... ok
+test update_service::tests::download_tooltip_reports_percent_or_unknown ... ok
+test update_service::tests::failed_check_from_idle_still_errors ... ok
+test update_service::tests::failed_check_lands_on_error_with_message ... ok
+test update_service::tests::failed_download_keeps_target_version_for_retry ... ok
+test update_service::tests::failed_recheck_keeps_available_target ... ok
+test update_service::tests::menu_rebuilds_once_per_ten_percent_bucket ... ok
+test update_service::tests::percent_conversion_clamps_and_handles_unknown_total ... ok
+test update_service::tests::phases_flow_idle_available_downloading_ready_to_restart ... ok
+test update_service::tests::progress_snapshot_written_only_on_integer_change ... ok
+test update_service::tests::restart_without_package_returns_error_instead_of_panicking ... ok
+test update_service::tests::snapshot_serializes_camel_case_contract ... ok
+
+test result: ok. 34 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\main.rs (D:\codexs\WorkBuddyManager\test-fixtures\cargo-target\debug\deps\wb_switch_rust-927f897a6a210894.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_switch_rust_lib
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

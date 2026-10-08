@@ -4,3 +4,6 @@
 [submodule "upstream/workbuddy-helper"]
 	path = upstream/workbuddy-helper
 	url = https://github.com/autumnsentiment/workbuddy-helper.git
+[submodule "app"]
+	path = app
+	url = https://github.com/changexbc/workbuddy-switch.git

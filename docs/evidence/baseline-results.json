@@ -33,10 +33,31 @@
     "ignored": 0
   },
   "desktop_tests": {
-    "status": "running"
+    "status": "compile_failed",
+    "executed": 0,
+    "exit": 101,
+    "file": "src-tauri/src/tray.rs:1032",
+    "error": "E0425: taskbar_uses_light_theme missing in test module"
   },
   "server": {
     "passed": 9,
     "failed": 0
+  },
+  "development_desktop_tests": {
+    "status": "passed",
+    "passed": 34,
+    "scope": "app branch with test-only module qualification fix",
+    "failed": 0,
+    "exit": 0,
+    "ignored": 0
+  },
+  "windows_baseline_build": {
+    "status": "passed",
+    "profile": "debug",
+    "exit": 0,
+    "installed": false,
+    "installer": "NSIS x64",
+    "ui_verified": false,
+    "signed": false
   }
 }

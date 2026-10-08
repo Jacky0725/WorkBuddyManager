@@ -23,6 +23,8 @@ npm 锁文件共 613 个条目（跨两份 lock，存在重复）。许可表达
 
 发布前必须把 SPDX 元数据转换为按实际分发内容的 NOTICE 文本清单；保留字体 OFL、图标署名及 CC-BY、MPL notices；对本地 patched/vendor crate 单独标明修改。不存在“全部第三方依赖已确认可无条件分发”的结论。
 
+补充 Windows desktop 目标的锁定 metadata 闭包：384 个节点，`evidence/windows-desktop-license-inventory.json`。其中 2 个未声明 license 的节点是本地 wb-switch-core / wb-switch-rust，需沿用上游根 MIT；5 个 MPL-2.0 节点为 cssparser-macros、cssparser、dtoa-short、option-ext、selectors。另含 Unicode-3.0、CDLA-Permissive-2.0 等声明，必须保留各自 notice。该清单包含构建期依赖，不能直接当成最终安装包逐文件合规证明。
+
 ## 未确定的素材
 
 `src/assets/workbuddy-official-icon.png`、CodeBuddy 标识、截图、应用图标以及 companion 角色素材没有在本次审查中取得逐项独立授权证据。Fork 产品应替换自有标识或确认授权，MIT 仓库根文本不应被当作第三方商标许可证。涉及 AGENT companion 素材保留源 manifest `vendor/agent-companion.version.json` 与其来源 notice。

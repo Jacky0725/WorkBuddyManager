@@ -47,9 +47,17 @@
 
 Helper 4 个 skip：TestConfigFileRejectsNonRegularTargets、TestStateLoadRejectsSymlinkTarget、TestKeyFileCreatedOnSave、TestPortableKeyRejectsNonRegularTarget。后两项为 Windows 默认 DPAPI 与 portable backend 分支差异，前两项平台/链接条件不满足；不把 skip 算作通过。无代码覆盖率测量。
 
-## 待完成桌面基线
+## 桌面原版失败
 
-桌面 `cargo test --locked -p wb-switch-rust` 已启动，最终结果需更新此文档。Windows 统一产品 NSIS、安装/卸载、真实桌面 UI 启动尚未验收，不宣称产出正式安装包。
+桌面 `cargo test --locked -p wb-switch-rust` exit 101，未执行桌面用例：`src-tauri/src/tray.rs:1032` 测试模块未限定调用 `taskbar_uses_light_theme`，报 E0425。完整证据 `switch-desktop-test.log`。另有 1 条 host unused-import 和 18 条 vendored plugin 告警，不隐藏。
+
+阶段 01 只在 `app` 开发分支用 `super::taskbar_uses_light_theme()` 修复测试符号解析，提交 `ccd7552`。修复后 `cargo test --locked -p wb-switch-rust` exit 0，34 passed、0 failed、0 ignored；Windows cfg 用例数与上游 macOS 的用例数不相同。复测独立保存为 `app-desktop-test.log`，不覆盖原失败证据。
+
+Tauri 构建会重新生成 vendored plugin permissions，产生本平台换行/生成文件状态变化；已保存 diff 证据，源码手工修改仅为 app 测试函数限定。构建结束后恢复原版 generated permissions，确认上游 tracked tree 清洁。未使用 git clean 或对用户文件执行删除。
+
+原版 Windows x64 NSIS 基线构建 exit 0，命令：`npm run tauri -- build --debug --bundles nsis --config <scripts/baseline-tauri-config.json> --no-sign -- --locked`。证据 `switch-windows-baseline-build.log`。上游 exe、NSIS、真实 companion runtime 已复制到 `test-fixtures/baseline-binaries/switch-original-v0.1.58/`，SHA256 与大小见 `windows-baseline-artifacts.json`。
+
+该产物是原版 0.1.58 debug 本地基线，未签名、不属于 WorkBuddy Manager 统一产品发布；未安装、未做真实 UI 或 Windows 10/11 双系统验收。没有验证 SmartScreen 信任。阶段 01 的编译/测试/打包部分完成，启动/安装部分仍未验证。
 
 ## 已知限制
 

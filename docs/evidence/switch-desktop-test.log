@@ -1,0 +1,617 @@
+ Downloading crates ...
+  Downloaded alloc-no-stdlib v2.0.4
+  Downloaded auto-launch v0.5.0
+  Downloaded cssparser-macros v0.6.1
+  Downloaded cargo-platform v0.1.9
+  Downloaded ctor v0.8.0
+  Downloaded ctor-proc-macro v0.0.7
+  Downloaded dyn-clone v1.0.20
+  Downloaded dtor-proc-macro v0.0.6
+  Downloaded equivalent v1.0.2
+  Downloaded dirs-sys v0.5.0
+  Downloaded darling_macro v0.23.0
+  Downloaded dirs v6.0.0
+  Downloaded heck v0.5.0
+  Downloaded defmt-parser v1.0.0
+  Downloaded dunce v1.0.5
+  Downloaded fnv v1.0.7
+  Downloaded dtoa-short v0.3.5
+  Downloaded ident_case v1.0.1
+  Downloaded futures-sink v0.3.34
+  Downloaded num-conv v0.2.2
+  Downloaded dtor v0.3.0
+  Downloaded futures-io v0.3.34
+  Downloaded ref-cast v1.0.26
+  Downloaded new_debug_unreachable v1.0.6
+  Downloaded markup5ever v0.38.0
+  Downloaded precomputed-hash v0.1.1
+  Downloaded phf_shared v0.13.1
+  Downloaded bitflags v1.3.2
+  Downloaded rustc_version v0.4.1
+  Downloaded alloc-stdlib v0.2.4
+  Downloaded glob v0.3.4
+  Downloaded hex v0.4.3
+  Downloaded fdeflate v0.3.7
+  Downloaded ref-cast-impl v1.0.26
+  Downloaded raw-window-handle v0.6.2
+  Downloaded phf_macros v0.13.1
+  Downloaded bs58 v0.5.1
+  Downloaded crossbeam-utils v0.8.22
+  Downloaded open v5.4.1
+  Downloaded json-patch v3.0.1
+  Downloaded parking_lot_core v0.9.12
+  Downloaded cssparser v0.36.0
+  Downloaded jiff-tzdb v0.1.8
+  Downloaded plist v1.10.0
+  Downloaded rfd v0.16.0
+  Downloaded siphasher v1.0.3
+  Downloaded notify-rust v4.18.0
+  Downloaded miniz_oxide v0.8.9
+  Downloaded ico v0.5.0
+  Downloaded darling_core v0.23.0
+  Downloaded cfb v0.7.3
+  Downloaded parking_lot v0.12.5
+  Downloaded lock_api v0.4.14
+  Downloaded serialize-to-javascript v0.1.2
+  Downloaded schemars v0.8.22
+  Downloaded serde_repr v0.1.21
+  Downloaded png v0.17.16
+  Downloaded string_cache_codegen v0.6.1
+  Downloaded hashbrown v0.17.1
+  Downloaded strsim v0.11.1
+  Downloaded regex v1.13.1
+  Downloaded quick-xml v0.41.0
+  Downloaded brotli-decompressor v5.0.3
+  Downloaded aho-corasick v1.1.5
+  Downloaded jiff-core v0.1.0
+  Downloaded indexmap v2.14.0
+  Downloaded scopeguard v1.2.0
+  Downloaded schemars_derive v0.8.22
+  Downloaded regex-syntax v0.8.11
+  Downloaded vswhom v0.1.0
+  Downloaded unic-char-range v0.9.0
+  Downloaded time-core v0.1.9
+  Downloaded html5ever v0.38.0
+  Downloaded hashbrown v0.12.3
+  Downloaded flate2 v1.1.9
+  Downloaded unic-ucd-version v0.9.0
+  Downloaded windows-interface v0.59.3
+  Downloaded typeid v1.0.3
+  Downloaded unic-common v0.9.0
+  Downloaded unic-char-property v0.9.0
+  Downloaded windows-targets v0.53.5
+  Downloaded regex-automata v0.4.18
+  Downloaded windows-version v0.1.7
+  Downloaded windows-numerics v0.2.0
+  Downloaded windows-threading v0.1.0
+  Downloaded webview2-com-macros v0.8.1
+  Downloaded jiff v0.2.35
+  Downloaded tauri-plugin v2.6.3
+  Downloaded windows-future v0.2.1
+  Downloaded tauri-winres v0.3.6
+  Downloaded brotli v8.0.4
+  Downloaded webview2-com v0.38.2
+  Downloaded vswhom-sys v0.1.3
+  Downloaded winreg v0.55.0
+  Downloaded urlpattern v0.3.0
+  Downloaded winreg v0.10.1
+  Downloaded unic-ucd-ident v0.9.0
+  Downloaded toml_writer v1.1.2+spec-1.1.0
+  Downloaded tendril v0.5.1
+  Downloaded tauri-plugin-single-instance v2.4.4
+  Downloaded toml_datetime v1.1.1+spec-1.1.0
+  Downloaded toml_datetime v0.7.5+spec-1.1.0
+  Downloaded thiserror v1.0.69
+  Downloaded serde-untagged v0.1.9
+  Downloaded string_cache v0.9.0
+  Downloaded simd-adler32 v0.3.10
+  Downloaded servo_arc v0.4.3
+  Downloaded serialize-to-javascript-impl v0.1.2
+  Downloaded serde_with_macros v3.22.0
+  Downloaded serde_derive_internals v0.29.1
+  Downloaded windows-implement v0.60.2
+  Downloaded windows-strings v0.4.2
+  Downloaded windows-result v0.3.4
+  Downloaded windows-link v0.1.3
+  Downloaded windows-collections v0.2.0
+  Downloaded derive_more-impl v2.1.1
+  Downloaded tauri-winrt-notification v0.7.3
+  Downloaded windows-core v0.61.2
+  Downloaded toml_parser v1.1.3+spec-1.1.0
+  Downloaded thiserror-impl v1.0.69
+  Downloaded tauri-codegen v2.6.3
+  Downloaded web_atoms v0.2.6
+  Downloaded tauri-runtime v2.11.3
+  Downloaded toml v1.1.4+spec-1.1.0
+  Downloaded tauri-runtime-wry v2.11.4
+  Downloaded tray-icon v0.24.2
+  Downloaded tempfile v3.27.0
+  Downloaded selectors v0.36.1
+  Downloaded schemars v0.9.0
+  Downloaded toml v0.9.12+spec-1.1.0
+  Downloaded tauri-plugin-autostart v2.5.1
+  Downloaded time-macros v0.2.32
+  Downloaded tauri-plugin-opener v2.5.4
+  Downloaded tauri-macros v2.6.3
+  Downloaded softbuffer v0.4.8
+  Downloaded semver v1.0.28
+  Downloaded tauri-build v2.6.3
+  Downloaded rustls-platform-verifier v0.7.0
+  Downloaded muda v0.19.3
+  Downloaded serde_spanned v1.1.1
+  Downloaded dom_query v0.27.0
+  Downloaded unicode-segmentation v1.13.3
+  Downloaded derive_more v2.1.1
+  Downloaded zip v4.6.1
+  Downloaded tauri-plugin-dialog v2.7.2
+  Downloaded tokio-util v0.7.19
+  Downloaded tauri-plugin-fs v2.5.1
+  Downloaded tauri-utils v2.9.3
+  Downloaded winnow v1.0.4
+  Downloaded winnow v0.7.15
+  Downloaded serde_with v3.22.0
+  Downloaded reqwest v0.13.4
+  Downloaded tauri-plugin-updater v2.10.1
+  Downloaded tauri-plugin-notification v2.3.3
+  Downloaded wry v0.55.1
+  Downloaded schemars v1.2.2
+  Downloaded time v0.3.55
+  Downloaded tauri v2.11.5
+  Downloaded crossbeam-channel v0.5.16
+  Downloaded tao v0.35.3
+  Downloaded keyboard-types v0.7.0
+  Downloaded jsonptr v0.6.3
+  Downloaded fastrand v2.5.0
+  Downloaded embed-resource v3.0.11
+  Downloaded dpi v0.1.2
+  Downloaded defmt v1.1.1
+  Downloaded darling v0.23.0
+  Downloaded cargo_toml v0.22.3
+  Downloaded anyhow v1.0.104
+  Downloaded crc32fast v1.5.0
+  Downloaded cookie v0.18.2
+  Downloaded camino v1.2.5
+  Downloaded byteorder v1.5.0
+  Downloaded bit-vec v0.8.0
+  Downloaded phf v0.13.1
+  Downloaded minisign-verify v0.2.5
+  Downloaded infer v0.19.0
+  Downloaded dtoa v1.0.11
+  Downloaded deranged v0.5.8
+  Downloaded foldhash v0.2.0
+  Downloaded erased-serde v0.4.10
+  Downloaded defmt-macros v1.1.1
+  Downloaded cargo_metadata v0.19.2
+  Downloaded adler2 v2.0.1
+  Downloaded bit-set v0.8.0
+  Downloaded phf_generator v0.13.1
+  Downloaded powerfmt v0.2.0
+  Downloaded phf_codegen v0.13.1
+  Downloaded windows_x86_64_msvc v0.53.1
+  Downloaded jiff-tzdb-platform v0.1.3
+  Downloaded futures-macro v0.3.34
+  Downloaded window-vibrancy v0.6.0
+  Downloaded windows-sys v0.59.0
+  Downloaded windows-sys v0.60.2
+  Downloaded windows-sys v0.52.0
+  Downloaded webview2-com-sys v0.38.2
+  Downloaded windows v0.61.3
+   Compiling proc-macro2 v1.0.107
+   Compiling serde_core v1.0.229
+   Compiling siphasher v1.0.3
+   Compiling fastrand v2.5.0
+   Compiling stable_deref_trait v1.2.1
+   Compiling thiserror v2.0.20
+   Compiling smallvec v1.15.2
+   Compiling serde v1.0.229
+   Compiling parking_lot_core v0.9.12
+   Compiling time-core v0.1.9
+   Compiling winnow v1.0.4
+   Compiling num-conv v0.2.2
+   Compiling scopeguard v1.2.0
+   Compiling strsim v0.11.1
+   Compiling powerfmt v0.2.0
+   Compiling phf_shared v0.13.1
+   Compiling lock_api v0.4.14
+   Compiling ident_case v1.0.1
+   Compiling toml_writer v1.1.2+spec-1.1.0
+   Compiling typeid v1.0.3
+   Compiling erased-serde v0.4.10
+   Compiling byteorder v1.5.0
+   Compiling thiserror v1.0.69
+   Compiling aho-corasick v1.1.5
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling unic-common v0.9.0
+   Compiling new_debug_unreachable v1.0.6
+   Compiling fnv v1.0.7
+   Compiling phf_generator v0.13.1
+   Compiling equivalent v1.0.2
+   Compiling unic-char-range v0.9.0
+   Compiling regex-syntax v0.8.11
+   Compiling hashbrown v0.17.1
+   Compiling unic-ucd-version v0.9.0
+   Compiling precomputed-hash v0.1.1
+   Compiling phf_codegen v0.13.1
+   Compiling serde_json v1.0.151
+   Compiling alloc-no-stdlib v2.0.4
+   Compiling unic-char-property v0.9.0
+   Compiling dunce v1.0.5
+   Compiling windows-sys v0.61.2
+   Compiling quick-xml v0.41.0
+   Compiling anyhow v1.0.104
+   Compiling unic-ucd-ident v0.9.0
+   Compiling alloc-stdlib v0.2.4
+   Compiling percent-encoding v2.3.2
+   Compiling brotli-decompressor v5.0.3
+   Compiling parking_lot v0.12.5
+   Compiling ctor-proc-macro v0.0.7
+   Compiling dtoa v1.0.11
+   Compiling form_urlencoded v1.2.2
+   Compiling selectors v0.36.1
+   Compiling dtoa-short v0.3.5
+   Compiling quote v1.0.47
+   Compiling indexmap v2.14.0
+   Compiling string_cache v0.9.0
+   Compiling ctor v0.8.0
+   Compiling tendril v0.5.1
+   Compiling syn v2.0.119
+   Compiling syn v3.0.3
+   Compiling string_cache_codegen v0.6.1
+   Compiling indexmap v1.9.3 (D:\codexs\WorkBuddyManager\upstream\workbuddy-switch\vendor-patched\indexmap)
+   Compiling camino v1.2.5
+   Compiling glob v0.3.4
+   Compiling brotli v8.0.4
+   Compiling web_atoms v0.2.6
+   Compiling servo_arc v0.4.3
+   Compiling hashbrown v0.12.3
+   Compiling bitflags v2.13.1
+   Compiling deranged v0.5.8
+   Compiling bit-vec v0.8.0
+   Compiling rustc-hash v2.1.3
+   Compiling schemars v0.8.22
+   Compiling regex-automata v0.4.18
+   Compiling winapi-util v0.1.11
+   Compiling bit-set v0.8.0
+   Compiling foldhash v0.2.0
+   Compiling same-file v1.0.6
+   Compiling serde_spanned v1.1.1
+   Compiling semver v1.0.28
+   Compiling uuid v1.24.1
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling dyn-clone v1.0.20
+   Compiling walkdir v2.5.0
+   Compiling vswhom-sys v0.1.3
+   Compiling toml v1.1.4+spec-1.1.0
+   Compiling time v0.3.55
+   Compiling cfb v0.7.3
+   Compiling windows-link v0.1.3
+   Compiling windows-sys v0.59.0
+   Compiling rustc_version v0.4.1
+   Compiling toml_datetime v0.7.5+spec-1.1.0
+   Compiling serde-untagged v0.1.9
+   Compiling winnow v0.7.15
+   Compiling windows-strings v0.4.2
+   Compiling windows-result v0.3.4
+   Compiling infer v0.19.0
+   Compiling vswhom v0.1.0
+   Compiling dirs-sys v0.5.0
+   Compiling heck v0.5.0
+   Compiling dirs v6.0.0
+   Compiling windows-threading v0.1.0
+   Compiling getrandom v0.3.4
+   Compiling crc32fast v1.5.0
+   Compiling time-macros v0.2.32
+   Compiling simd-adler32 v0.3.10
+   Compiling regex v1.13.1
+   Compiling crossbeam-utils v0.8.22
+   Compiling raw-window-handle v0.6.2
+   Compiling synstructure v0.13.2
+   Compiling darling_core v0.23.0
+   Compiling serde_derive_internals v0.29.1
+   Compiling toml v0.9.12+spec-1.1.0
+   Compiling windows-version v0.1.7
+   Compiling adler2 v2.0.1
+   Compiling cookie v0.18.2
+   Compiling unicode-segmentation v1.13.3
+   Compiling miniz_oxide v0.8.9
+   Compiling fdeflate v0.3.7
+   Compiling crossbeam-channel v0.5.16
+   Compiling flate2 v1.1.9
+   Compiling crypto-common v0.1.7
+   Compiling bitflags v1.3.2
+   Compiling digest v0.10.7
+   Compiling zerovec-derive v0.11.4
+   Compiling serde_derive v1.0.229
+   Compiling displaydoc v0.2.7
+   Compiling thiserror-impl v2.0.20
+   Compiling winreg v0.55.0
+   Compiling tokio-macros v2.7.2
+   Compiling png v0.17.16
+   Compiling embed-resource v3.0.11
+   Compiling tauri-runtime v2.11.3
+   Compiling wry v0.55.1
+   Compiling zerofrom-derive v0.1.7
+   Compiling yoke-derive v0.8.2
+   Compiling phf_macros v0.13.1
+   Compiling thiserror-impl v1.0.69
+   Compiling derive_more-impl v2.1.1
+   Compiling cssparser-macros v0.6.1
+   Compiling schemars_derive v0.8.22
+   Compiling windows-implement v0.60.2
+   Compiling windows-interface v0.59.3
+   Compiling tauri-winres v0.3.6
+   Compiling tracing-attributes v0.1.31
+   Compiling darling_macro v0.23.0
+   Compiling phf v0.13.1
+   Compiling webview2-com-macros v0.8.1
+   Compiling webview2-com-sys v0.38.2
+   Compiling cssparser v0.36.0
+   Compiling derive_more v2.1.1
+   Compiling darling v0.23.0
+   Compiling ico v0.5.0
+   Compiling windows-core v0.61.2
+   Compiling zerofrom v0.1.8
+   Compiling serde_with_macros v3.22.0
+   Compiling sha2 v0.10.9
+   Compiling tauri-runtime-wry v2.11.4
+   Compiling serialize-to-javascript-impl v0.1.2
+   Compiling yoke v0.8.3
+   Compiling markup5ever v0.38.0
+   Compiling zerovec v0.11.7
+   Compiling zerotrie v0.2.5
+   Compiling html5ever v0.38.0
+   Compiling windows-collections v0.2.0
+   Compiling windows-future v0.2.1
+   Compiling windows-numerics v0.2.0
+   Compiling serde_repr v0.1.21
+   Compiling tracing v0.1.44
+   Compiling futures-macro v0.3.34
+   Compiling winapi v0.3.9
+   Compiling futures-task v0.3.34
+   Compiling windows v0.61.3
+   Compiling tinystr v0.8.4
+   Compiling potential_utf v0.1.6
+   Compiling window-vibrancy v0.6.0
+   Compiling slab v0.4.12
+   Compiling windows_x86_64_msvc v0.53.1
+   Compiling serde_with v3.22.0
+   Compiling icu_collections v2.3.0
+   Compiling icu_locale_core v2.3.0
+   Compiling ppv-lite86 v0.2.21
+   Compiling rand_core v0.9.5
+   Compiling dom_query v0.27.0
+   Compiling futures-util v0.3.34
+   Compiling cargo-platform v0.1.9
+   Compiling jsonptr v0.6.3
+   Compiling plist v1.10.0
+   Compiling cargo_metadata v0.19.2
+   Compiling cargo_toml v0.22.3
+   Compiling dpi v0.1.2
+   Compiling icu_provider v2.3.0
+   Compiling json-patch v3.0.1
+   Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
+   Compiling keyboard-types v0.7.0
+   Compiling mio v1.2.2
+   Compiling socket2 v0.6.5
+   Compiling softbuffer v0.4.8
+   Compiling serialize-to-javascript v0.1.2
+   Compiling rand_chacha v0.9.0
+   Compiling windows-targets v0.53.5
+   Compiling tokio v1.53.1
+   Compiling rusqlite v0.32.1
+   Compiling windows-sys v0.60.2
+   Compiling idna_adapter v1.2.2
+   Compiling rand v0.9.5
+   Compiling idna v1.1.0
+   Compiling muda v0.19.3
+   Compiling utf-8 v0.7.6
+   Compiling data-encoding v2.11.1
+   Compiling url v2.5.8
+   Compiling winreg v0.10.1
+   Compiling fs2 v0.4.3
+   Compiling windows-interface v0.58.0
+   Compiling tungstenite v0.28.0
+   Compiling windows-implement v0.58.0
+   Compiling chunked_transfer v1.5.0
+   Compiling rfd v0.16.0
+   Compiling urlpattern v0.3.0
+   Compiling tray-icon v0.24.2
+   Compiling ureq v2.12.1
+   Compiling ascii v1.1.0
+   Compiling futures-sink v0.3.34
+   Compiling serde_urlencoded v0.7.1
+   Compiling windows-core v0.58.0
+   Compiling rustls-platform-verifier v0.7.0
+   Compiling tiny_http v0.12.0
+   Compiling tauri-utils v2.9.3
+   Compiling agent-studio-core v0.1.0 (D:\codexs\WorkBuddyManager\upstream\workbuddy-switch\vendor\agent-companion\crates\agent-studio-core)
+   Compiling windows v0.58.0
+   Compiling auto-launch v0.5.0
+   Compiling tempfile v3.27.0
+   Compiling zip v4.6.1
+   Compiling open v5.4.1
+   Compiling minisign-verify v0.2.5
+   Compiling windows-sys v0.52.0
+   Compiling agent-studio-runtime v0.1.0 (D:\codexs\WorkBuddyManager\upstream\workbuddy-switch\vendor\agent-companion\crates\agent-studio-runtime)
+   Compiling hyper v1.11.0
+   Compiling tower v0.5.3
+   Compiling tokio-rustls v0.26.4
+   Compiling tokio-util v0.7.19
+   Compiling tower-http v0.6.11
+   Compiling hyper-util v0.1.20
+   Compiling hyper-rustls v0.27.9
+   Compiling reqwest v0.12.28
+   Compiling reqwest v0.13.4
+   Compiling wb-switch-core v0.1.58 (D:\codexs\WorkBuddyManager\upstream\workbuddy-switch\crates\wb-switch-core)
+   Compiling tauri-plugin v2.6.3
+   Compiling tauri-build v2.6.3
+   Compiling tauri-codegen v2.6.3
+   Compiling tauri v2.11.5
+   Compiling tauri-macros v2.6.3
+   Compiling tauri-plugin-fs v2.5.1
+   Compiling tauri-plugin-notification v2.3.3
+   Compiling tauri-plugin-autostart v2.5.1
+   Compiling tauri-plugin-agent-studio v0.1.0 (D:\codexs\WorkBuddyManager\upstream\workbuddy-switch\vendor\agent-companion\crates\agent-studio-desktop)
+   Compiling tauri-plugin-dialog v2.7.2
+   Compiling tauri-plugin-updater v2.10.1
+   Compiling tauri-plugin-opener v2.5.4
+   Compiling wb-switch-rust v0.1.58 (D:\codexs\WorkBuddyManager\upstream\workbuddy-switch\src-tauri)
+   Compiling tao v0.35.3
+   Compiling tauri-winrt-notification v0.7.3
+   Compiling notify-rust v4.18.0
+   Compiling webview2-com v0.38.2
+   Compiling tauri-plugin-single-instance v2.4.4
+warning: unused variable: `app`
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\lib.rs:136:5
+    |
+136 |     app: tauri::AppHandle,
+    |     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\lib.rs:213:9
+    |
+213 |     let mut window = WebviewWindowBuilder::new(
+    |         ----^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `VSCODE_APP` is never used
+ --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:4:7
+  |
+4 | const VSCODE_APP: &str = "Visual Studio Code.app";
+  |       ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `0` is never read
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:10:9
+   |
+10 |     App(&'static str),
+   |     --- ^^^^^^^^^^^^
+   |     |
+   |     field in this variant
+   |
+   = note: `SessionTarget` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+help: consider changing the field to be of unit type to suppress this warning while preserving the field numbering, or remove the field
+   |
+10 -     App(&'static str),
+10 +     App(()),
+   |
+
+warning: fields `session` and `cwd` are never read
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:14:14
+   |
+14 |     VSCode { session: String, cwd: Option<PathBuf> },
+   |     ------   ^^^^^^^          ^^^
+   |     |
+   |     fields in this variant
+   |
+   = note: `SessionTarget` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: function `app_for_scheme` is never used
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:26:4
+   |
+26 | fn app_for_scheme(scheme: &str) -> Option<(&'static str, &'static str)> {
+   |    ^^^^^^^^^^^^^^
+
+warning: function `usable_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:126:4
+    |
+126 | fn usable_folder(path: &Path) -> bool {
+    |    ^^^^^^^^^^^^^
+
+warning: function `bucket_for_session` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:148:4
+    |
+148 | fn bucket_for_session(root: &Path, session: &str) -> Option<String> {
+    |    ^^^^^^^^^^^^^^^^^^
+
+warning: enum `BucketFolder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:166:6
+    |
+166 | enum BucketFolder {
+    |      ^^^^^^^^^^^^
+
+warning: function `sanitize_workspace_id` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:178:4
+    |
+178 | fn sanitize_workspace_id(path: &str) -> String {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `decode_bucket_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:189:4
+    |
+189 | fn decode_bucket_folder(bucket: &str) -> BucketFolder {
+    |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: function `bucket_matches_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:214:4
+    |
+214 | fn bucket_matches_folder(bucket: &str, folder: &str) -> bool {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `bucket_candidates` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:227:4
+    |
+227 | fn bucket_candidates(bucket: &str) -> Vec<Vec<u8>> {
+    |    ^^^^^^^^^^^^^^^^^
+
+warning: function `desanitize` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:262:4
+    |
+262 | fn desanitize(text: &str) -> String {
+    |    ^^^^^^^^^^
+
+warning: function `base64_decode` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:268:4
+    |
+268 | fn base64_decode(text: &str) -> Option<Vec<u8>> {
+    |    ^^^^^^^^^^^^^
+
+warning: function `base64_value` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:289:4
+    |
+289 | fn base64_value(byte: u8) -> Option<u8> {
+    |    ^^^^^^^^^^^^
+
+warning: function `base64_encode` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:301:4
+    |
+301 | fn base64_encode(bytes: &[u8]) -> String {
+    |    ^^^^^^^^^^^^^
+
+warning: function `resolve_vscode_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:319:4
+    |
+319 | fn resolve_vscode_folder(
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: `tauri-plugin-agent-studio` (lib) generated 18 warnings (run `cargo fix --lib -p tauri-plugin-agent-studio` to apply 2 suggestions)
+error[E0425]: cannot find function `taskbar_uses_light_theme` in this scope
+    --> src-tauri\src\tray.rs:1032:13
+     |
+1032 |             taskbar_uses_light_theme().is_some(),
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^ not found in this scope
+     |
+help: consider importing this function
+     |
+ 904 +     use crate::tray::taskbar_uses_light_theme;
+     |
+
+warning: unused import: `tray_icon`
+   --> src-tauri\src\tray.rs:906:58
+    |
+906 |         should_keep_tray_alive, should_wake_main_window, tray_icon, tray_icon_variant, MouseButton,
+    |                                                          ^^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+For more information about this error, try `rustc --explain E0425`.
+warning: `wb-switch-rust` (lib test) generated 1 warning
+error: could not compile `wb-switch-rust` (lib test) due to 1 previous error; 1 warning emitted
+warning: build failed, waiting for other jobs to finish...
