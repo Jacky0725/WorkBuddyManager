@@ -1,0 +1,197 @@
+
+> wb-switch-rust@0.1.58 build:desktop
+> node scripts/prepare-agent-companion.mjs build && npm run build && node scripts/prepare-agent-companion.mjs copy
+
+Agent Companion source: 14430ef9f3ec592f2c898fb088800cc7b7a70097, host interface: 1
+
+added 230 packages, and audited 231 packages in 14s
+
+45 packages are looking for funding
+  run `npm fund` for details
+
+1 high severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+npm warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn allow-scripts   esbuild@0.28.2 (postinstall: node install.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+> agent-companion@0.2.2 build:embed
+> vite build --base ./ --outDir dist-embed
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 162 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-embed/desktop.html                    0.70 kB │ gzip:  0.41 kB
+dist-embed/desktop-settings.html           1.65 kB │ gzip:  0.75 kB
+dist-embed/assets/client-dKS-iG41.css      8.75 kB │ gzip:  1.82 kB
+dist-embed/assets/desktop-DpXua0-V.css    16.72 kB │ gzip:  3.87 kB
+dist-embed/assets/settings-C8HeLLxK.css   31.93 kB │ gzip:  7.36 kB
+dist-embed/assets/core-BEOw45JP.js         0.20 kB │ gzip:  0.15 kB
+dist-embed/assets/event-Gip4rtXm.js        1.12 kB │ gzip:  0.60 kB
+dist-embed/assets/desktop-B8gZhaEY.js     44.22 kB │ gzip: 16.95 kB
+dist-embed/assets/settings-BSOtiCZk.js   155.19 kB │ gzip: 52.65 kB
+dist-embed/assets/client-BYatEnVG.js     237.57 kB │ gzip: 75.71 kB
+✓ built in 3.60s
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded chunked_transfer v1.5.0
+  Downloaded fs2 v0.4.3
+  Downloaded utf-8 v0.7.6
+  Downloaded ascii v1.1.0
+  Downloaded zerovec-derive v0.11.6
+  Downloaded rand_core v0.9.5
+  Downloaded data-encoding v2.11.1
+  Downloaded find-msvc-tools v0.1.12
+  Downloaded smallvec v1.16.1
+  Downloaded rand_chacha v0.9.0
+  Downloaded ppv-lite86 v0.2.21
+  Downloaded getrandom v0.3.4
+  Downloaded icu_provider v2.3.1
+  Downloaded tiny_http v0.12.0
+  Downloaded uuid v1.26.1
+  Downloaded tungstenite v0.28.0
+  Downloaded zerovec v0.11.8
+  Downloaded ureq v2.12.1
+  Downloaded rand v0.9.5
+  Downloaded cc v1.4.5
+  Downloaded log v0.4.34
+  Downloaded bitflags v2.13.2
+  Downloaded zerocopy v0.8.57
+  Downloaded syn v3.0.5
+  Downloaded winapi v0.3.9
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.24
+   Compiling version_check v0.9.5
+   Compiling stable_deref_trait v1.2.1
+   Compiling cfg-if v1.0.4
+   Compiling zerocopy v0.8.57
+   Compiling litemap v0.8.3
+   Compiling writeable v0.6.4
+   Compiling icu_normalizer_data v2.3.0
+   Compiling utf8_iter v1.0.4
+   Compiling icu_properties_data v2.3.0
+   Compiling getrandom v0.3.4
+   Compiling typenum v1.20.1
+   Compiling smallvec v1.16.1
+   Compiling serde_core v1.0.229
+   Compiling find-msvc-tools v0.1.12
+   Compiling shlex v2.0.1
+   Compiling once_cell v1.21.4
+   Compiling pkg-config v0.3.34
+   Compiling itoa v1.0.18
+   Compiling zmij v1.0.23
+   Compiling vcpkg v0.2.15
+   Compiling generic-array v0.14.7
+   Compiling ahash v0.8.12
+   Compiling autocfg v1.5.1
+   Compiling winapi v0.3.9
+   Compiling serde_json v1.0.151
+   Compiling percent-encoding v2.3.2
+   Compiling cc v1.4.5
+   Compiling httparse v1.10.1
+   Compiling rand_core v0.9.5
+   Compiling thiserror v2.0.20
+   Compiling serde v1.0.229
+   Compiling log v0.4.34
+   Compiling num-traits v0.2.19
+   Compiling form_urlencoded v1.2.2
+   Compiling memchr v2.8.3
+   Compiling bytes v1.12.1
+   Compiling getrandom v0.4.3
+   Compiling cpufeatures v0.2.17
+   Compiling fallible-streaming-iterator v0.1.9
+   Compiling fallible-iterator v0.3.0
+   Compiling data-encoding v2.11.1
+   Compiling bitflags v2.13.2
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling windows-link v0.2.1
+   Compiling syn v2.0.119
+   Compiling syn v3.0.5
+   Compiling digest v0.10.7
+   Compiling utf-8 v0.7.6
+   Compiling base64 v0.22.1
+   Compiling sha1 v0.10.7
+   Compiling http v1.5.0
+   Compiling ascii v1.1.0
+   Compiling chunked_transfer v1.5.0
+   Compiling httpdate v1.0.3
+   Compiling libsqlite3-sys v0.30.1
+   Compiling fs2 v0.4.3
+   Compiling uuid v1.26.1
+   Compiling chrono v0.4.45
+   Compiling tiny_http v0.12.0
+   Compiling synstructure v0.13.2
+   Compiling zerovec-derive v0.11.6
+   Compiling displaydoc v0.2.7
+   Compiling thiserror-impl v2.0.20
+   Compiling zerofrom-derive v0.1.7
+   Compiling yoke-derive v0.8.2
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
+   Compiling zerotrie v0.2.5
+   Compiling ppv-lite86 v0.2.21
+   Compiling hashbrown v0.14.5
+   Compiling rand_chacha v0.9.0
+   Compiling tinystr v0.8.4
+   Compiling potential_utf v0.1.6
+   Compiling rand v0.9.5
+   Compiling icu_collections v2.3.0
+   Compiling icu_locale_core v2.3.0
+   Compiling hashlink v0.9.1
+   Compiling tungstenite v0.28.0
+   Compiling icu_provider v2.3.1
+   Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
+   Compiling idna_adapter v1.2.2
+   Compiling idna v1.1.0
+   Compiling url v2.5.8
+   Compiling ureq v2.12.1
+   Compiling rusqlite v0.32.1
+   Compiling agent-studio-core v0.1.0 (D:\codexs\WorkBuddyManager\upstream\workbuddy-switch\vendor\agent-companion\crates\agent-studio-core)
+   Compiling agent-studio-runtime v0.1.0 (D:\codexs\WorkBuddyManager\upstream\workbuddy-switch\vendor\agent-companion\crates\agent-studio-runtime)
+    Finished `release` profile [optimized] target(s) in 1m 10s
+(node:49360) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+> wb-switch-rust@0.1.58 build
+> node scripts/prepare-companion-demo.mjs clean && tsc && vite build
+
+Removed public/companion-demo/ and dist/companion-demo/
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 2617 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                            5.25 kB │ gzip:   2.34 kB
+dist/assets/bricolage-grotesque-vietnamese-wght-normal-BUzh504Q.woff2      8.61 kB
+dist/assets/bricolage-grotesque-latin-ext-wght-normal-CcLUaPy7.woff2      18.67 kB
+dist/assets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2          41.34 kB
+dist/assets/codebuddy-cn-ide-icon-DhsbltOy.png                           107.80 kB
+dist/assets/workbuddy-official-icon-C0tPQ4rL.png                         135.82 kB
+dist/assets/index-CGBNv0a9.css                                           104.40 kB │ gzip:  18.06 kB
+dist/assets/index-BuIxdTum.js                                              0.25 kB │ gzip:   0.20 kB
+dist/assets/index-qjRNkcIb.js                                              1.25 kB │ gzip:   0.48 kB
+dist/assets/index-2Qsctr3f.js                                          1,246.13 kB │ gzip: 364.29 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.31s
+Agent Companion source: 14430ef9f3ec592f2c898fb088800cc7b7a70097, host interface: 1
+Agent Companion assets copied to dist\companion/
+npm notice
+npm notice New major version of npm available! 11.16.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

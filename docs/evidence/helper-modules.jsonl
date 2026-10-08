@@ -1,0 +1,41 @@
+{
+	"Path": "workbuddy-helper",
+	"Main": true,
+	"Dir": "D:\\codexs\\WorkBuddyManager\\upstream\\workbuddy-helper",
+	"GoMod": "D:\\codexs\\WorkBuddyManager\\upstream\\workbuddy-helper\\go.mod",
+	"GoVersion": "1.26.0"
+}
+{
+	"Path": "golang.org/x/crypto",
+	"Version": "v0.57.0",
+	"Time": "2026-09-08T18:05:01Z",
+	"Indirect": true
+}
+{
+	"Path": "golang.org/x/net",
+	"Version": "v0.59.0",
+	"Time": "2026-09-08T19:18:02Z",
+	"Dir": "D:\\codexs\\WorkBuddyManager\\tools\\gopath\\pkg\\mod\\golang.org\\x\\net@v0.59.0",
+	"GoMod": "D:\\codexs\\WorkBuddyManager\\tools\\gopath\\pkg\\mod\\cache\\download\\golang.org\\x\\net\\@v\\v0.59.0.mod",
+	"GoVersion": "1.26.0",
+	"Sum": "h1:5zfYln+w5XCxwrnMMJPufRgNoXEaGxl0wo5GqPXyues=",
+	"GoModSum": "h1:2DA/G1UfVbCpQPeWTmMPGY7Cs2PkBkwu743bVX5PIVg="
+}
+{
+	"Path": "golang.org/x/sys",
+	"Version": "v0.48.0",
+	"Time": "2026-08-31T19:43:43Z",
+	"Indirect": true
+}
+{
+	"Path": "golang.org/x/term",
+	"Version": "v0.46.0",
+	"Time": "2026-09-08T16:27:41Z",
+	"Indirect": true
+}
+{
+	"Path": "golang.org/x/text",
+	"Version": "v0.42.0",
+	"Time": "2026-09-08T16:29:55Z",
+	"Indirect": true
+}

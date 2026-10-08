@@ -1,0 +1,7 @@
+{
+  "source": "api.github.com",
+  "http_status": 403,
+  "checked_at": "2026-10-08",
+  "reason": "GitHub unauthenticated API rate limit exceeded",
+  "status": "unavailable"
+}

@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-08",
+  "npm_audit": {
+    "high": 1,
+    "advisory": "GHSA-68fv-2mgg-jv7q"
+  },
+  "formatting": {
+    "exit": 0
+  },
+  "helper": {
+    "build_exit": 0,
+    "passed": 135,
+    "failed": 0,
+    "skipped": 4,
+    "vet_exit": 0,
+    "test_exit": 0
+  },
+  "production_tests": {
+    "status": "not_executed",
+    "reason": "No real-account test authorization or accounts provided"
+  },
+  "frontend": {
+    "passed": 24,
+    "failed": 0
+  },
+  "desktop_assets": {
+    "exit": 0
+  },
+  "core": {
+    "failed": 0,
+    "integration_passed": 5,
+    "unit_passed": 719,
+    "ignored": 0
+  },
+  "desktop_tests": {
+    "status": "running"
+  },
+  "server": {
+    "passed": 9,
+    "failed": 0
+  }
+}

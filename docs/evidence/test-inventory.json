@@ -1,0 +1,222 @@
+[
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/account.rs",
+    "test_markers": 33
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/auth_file.rs",
+    "test_markers": 10
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/checkin.rs",
+    "test_markers": 38
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/codebuddy_cli.rs",
+    "test_markers": 30
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/codebuddy_cn_ide.rs",
+    "test_markers": 14
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/codebuddy_ide.rs",
+    "test_markers": 13
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/codebuddy_ide_session.rs",
+    "test_markers": 16
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/codebuddy_ide_session_sync.rs",
+    "test_markers": 5
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/config.rs",
+    "test_markers": 34
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/credit_usage.rs",
+    "test_markers": 12
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/credits.rs",
+    "test_markers": 27
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/error_log.rs",
+    "test_markers": 4
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/export_import.rs",
+    "test_markers": 25
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/jetbrains.rs",
+    "test_markers": 11
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/limits.rs",
+    "test_markers": 46
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/linux_keyring.rs",
+    "test_markers": 1
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/notifications.rs",
+    "test_markers": 7
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/oauth.rs",
+    "test_markers": 5
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/official_usage.rs",
+    "test_markers": 10
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/process.rs",
+    "test_markers": 24
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/rate_limit_events.rs",
+    "test_markers": 26
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/rate_limit_hook.rs",
+    "test_markers": 23
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/refresh.rs",
+    "test_markers": 2
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/rotate.rs",
+    "test_markers": 15
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/session.rs",
+    "test_markers": 93
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/session_backup.rs",
+    "test_markers": 21
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/session_groups.rs",
+    "test_markers": 26
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/session_link.rs",
+    "test_markers": 48
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/switch.rs",
+    "test_markers": 5
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/token_stats.rs",
+    "test_markers": 24
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/travel.rs",
+    "test_markers": 18
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/update.rs",
+    "test_markers": 3
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/variant.rs",
+    "test_markers": 12
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/vscode_cn_inject.rs",
+    "test_markers": 12
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/vscode_ext.rs",
+    "test_markers": 19
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/vscode_session.rs",
+    "test_markers": 15
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/vscode_session_link.rs",
+    "test_markers": 9
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/src/modules/vscode_session_sync.rs",
+    "test_markers": 16
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-core/tests/cli_auth_sync_e2e.rs",
+    "test_markers": 5
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-server/src/api.rs",
+    "test_markers": 7
+  },
+  {
+    "file": "upstream/workbuddy-switch/crates/wb-switch-server/src/main.rs",
+    "test_markers": 2
+  },
+  {
+    "file": "upstream/workbuddy-switch/src-tauri/src/commands.rs",
+    "test_markers": 1
+  },
+  {
+    "file": "upstream/workbuddy-switch/src-tauri/src/instance_lock.rs",
+    "test_markers": 6
+  },
+  {
+    "file": "upstream/workbuddy-switch/src-tauri/src/tray.rs",
+    "test_markers": 21
+  },
+  {
+    "file": "upstream/workbuddy-switch/src-tauri/src/update_service.rs",
+    "test_markers": 14
+  },
+  {
+    "file": "upstream/workbuddy-helper/cmd/workbuddy-helper/main_test.go",
+    "test_markers": 1
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/client/client_test.go",
+    "test_markers": 27
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/instance/lock_test.go",
+    "test_markers": 2
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/server/server_test.go",
+    "test_markers": 30
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/service/poll_login_test.go",
+    "test_markers": 6
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/service/service_test.go",
+    "test_markers": 16
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/store/config_io_test.go",
+    "test_markers": 2
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/store/dnsconf_test.go",
+    "test_markers": 1
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/store/proxyconf_test.go",
+    "test_markers": 2
+  },
+  {
+    "file": "upstream/workbuddy-helper/internal/store/store_test.go",
+    "test_markers": 15
+  }
+]

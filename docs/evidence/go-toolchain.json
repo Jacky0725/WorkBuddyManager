@@ -1,0 +1,9 @@
+{
+  "filename": "go1.26.0.windows-amd64.zip",
+  "os": "windows",
+  "arch": "amd64",
+  "version": "go1.26.0",
+  "sha256": "9bbe0fc64236b2b51f6255c05c4232532b8ecc0e6d2e00950bd3021d8a4d07d4",
+  "size": 74815266,
+  "kind": "archive"
+}
