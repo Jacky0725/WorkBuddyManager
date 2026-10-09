@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('Accounts', 'Checkin', 'Core', 'Hosts', 'All')]
+    [ValidateSet('Accounts', 'Checkin', 'Scheduler', 'Core', 'Hosts', 'All')]
     [string]$Target = 'Accounts'
 )
 $ErrorActionPreference = 'Stop'
@@ -24,6 +24,7 @@ try {
         switch ($Target) {
             'Accounts' { & cargo test --locked -p wb-switch-core --test account_security *> $taskRustLog }
             'Checkin' { & cargo test --locked -p wb-switch-core --test checkin_mock_http *> $taskRustLog }
+            'Scheduler' { & cargo test --locked -p wb-switch-core --test scheduler_clock *> $taskRustLog }
             'Core' { & cargo test --locked -p wb-switch-core *> $taskRustLog }
             'Hosts' { & cargo test --locked -p wb-switch-server -p wb-switch-rust *> $taskRustLog }
             'All' { & cargo test --locked -p wb-switch-core -p wb-switch-server -p wb-switch-rust *> $taskRustLog }
@@ -41,5 +42,11 @@ try {
         }
     } finally { Pop-Location }
 } finally {
-    foreach ($taskName in $taskNames) { [Environment]::SetEnvironmentVariable($taskName, $taskPrevious[$taskName], 'Process') }
+    foreach ($taskName in $taskNames) {
+        if ($null -eq $taskPrevious[$taskName]) {
+            Remove-Item -LiteralPath "Env:\$taskName" -ErrorAction SilentlyContinue
+        } else {
+            [Environment]::SetEnvironmentVariable($taskName, $taskPrevious[$taskName], 'Process')
+        }
+    }
 }

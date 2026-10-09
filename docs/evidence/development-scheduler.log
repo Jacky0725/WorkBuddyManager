@@ -1,0 +1,25 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.30s
+     Running tests\scheduler_clock.rs (D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\deps\scheduler_clock-1ca495f6bf5ca06d.exe)
+
+running 18 tests
+test beijing_schedule_does_not_depend_on_host_local_timezone ... ok
+test disabled_or_cancelled_scheduler_has_no_tasks_and_no_side_effects ... ok
+test configuration_defaults_validation_and_roundtrip ... ok
+test corrupted_or_future_journal_is_preserved_without_requests ... ok
+test pending_is_flushed_before_execution_and_cancellation_stops_the_batch ... ok
+test crossing_midnight_during_execution_does_not_report_wrong_date_success ... ok
+test interrupted_post_is_only_verified_even_when_execution_budget_is_exhausted ... ok
+test custom_time_and_per_account_switches_are_respected ... ok
+test forward_and_backward_date_changes_do_not_run_prior_days ... ok
+test publish_failure_after_execution_leaves_pending_for_verify_only_recovery ... ok
+test daily_retry_budget_survives_restart ... ok
+test network_failure_recovers_after_delay_and_does_not_loop_indefinitely ... ok
+test before_due_at_due_after_due_and_backward_time_only_execute_once ... ok
+test unconfirmed_post_remains_unknown_and_is_not_resubmitted ... ok
+test restart_preserves_daily_completion_and_new_day_is_independent ... ok
+test three_accounts_have_independent_terminal_statuses ... ok
+test catchup_enabled_runs_once_and_disabled_marks_missed ... ok
+test two_instances_cannot_execute_concurrently ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+

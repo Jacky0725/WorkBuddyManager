@@ -1,0 +1,6 @@
+{
+  "before": null,
+  "after": "",
+  "equal": false,
+  "reason": "The initial outer check compared the Env provider empty string to Environment API null. This check uses the same API before and after."
+}

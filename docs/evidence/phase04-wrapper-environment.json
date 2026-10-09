@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-09",
+  "checks": [
+    {
+      "name": "WB_SWITCH_HOME",
+      "previously_absent": true,
+      "restored": true
+    },
+    {
+      "name": "APPDATA",
+      "previously_absent": false,
+      "restored": true
+    },
+    {
+      "name": "LOCALAPPDATA",
+      "previously_absent": false,
+      "restored": true
+    },
+    {
+      "name": "CARGO_TARGET_DIR",
+      "previously_absent": true,
+      "restored": true
+    },
+    {
+      "name": "WB_SWITCH_SCREENSHOT_DEMO",
+      "previously_absent": true,
+      "restored": true
+    }
+  ],
+  "fixed": "Remove an originally absent Env entry instead of creating an empty entry."
+}
