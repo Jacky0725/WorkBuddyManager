@@ -22,7 +22,7 @@
 
 ## 尚未执行
 
-签到完整 Mock HTTP 状态矩阵、固定北京时间调度与持久幂等、额外数据库版本/schema 门禁以及新增 UI 测试尚未开发/执行。现有上游相近用例不能代替这些新增验收。账号与凭证的新增测试见下方阶段 02；真实数据迁移仍未执行。
+固定北京时间调度与持久幂等、额外数据库版本/schema 门禁以及新增 UI 测试尚未开发/执行。现有上游相近用例不能代替这些新增验收。账号与凭证测试见阶段 02，签到 Mock 测试见阶段 03；真实数据迁移仍未执行。
 
 三账号真实登录、A→B→C→A、真实签到/积分、生产会话迁移、真实应用 UI、安装/卸载/重装、Windows 10 与 11 双系统验收全部未执行。未提供或读取真实测试账号；不得宣称这些操作成功。
 
@@ -37,3 +37,7 @@ core/server/app test 使用独立 WB_SWITCH_HOME、APPDATA、LOCALAPPDATA。Help
 使用 `cargo test --locked -p wb-switch-core -p wb-switch-server -p wb-switch-rust`；WB_SWITCH_HOME/APPDATA/LOCALAPPDATA 指向 phase02 fixture，CARGO_TARGET_DIR 指向项目测试缓存。安全测试均用随机临时目录和虚构凭证。可用 `scripts/Test-Development.ps1 -Target All` 复查；该脚本不会启动 GUI 或安装应用。
 
 保存了两次中间回归失败日志：旧测试仍要求普通导出保留 token 和导入替换本地 id，已改为新安全契约；信封短路的原有错误语义已恢复。迁移遗留的 Tauri permissions/native 输出引用旧路径，首次桌面编译失败；仅清理本工程缓存内受影响包后，完整编译与桌面测试通过。无依赖版本升级，Cargo.lock 只给 core 增加已锁定 fs2 依赖。
+
+## 2026-10-09：阶段 03 核心回归
+
+`phase03-core-test.log` 记录 719 单元 + 19 账号安全 + 12 Mock HTTP + 5 既有集成，755 passed，0 failed/ignored。Mock 用例使用本地 HTTP server 覆盖状态矩阵、批量、重复、取消、限速间隔和超时恢复；未调用生产服务。前端/host 未改动，不将之前阶段的检查重复计入本轮新增验收。

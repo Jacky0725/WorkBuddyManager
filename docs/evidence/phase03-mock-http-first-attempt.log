@@ -1,0 +1,55 @@
+   Compiling tokio-rustls v0.26.4
+   Compiling rusqlite v0.32.1
+   Compiling hyper-rustls v0.27.9
+   Compiling reqwest v0.12.28
+   Compiling wb-switch-core v0.1.58 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 12.74s
+     Running tests\checkin_mock_http.rs (D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\deps\checkin_mock_http-990e39bbe104a4ac.exe)
+
+running 12 tests
+test mock_adapter_rejects_non_loopback_urls_and_url_credentials ... ok
+test disabled_accounts_regions_and_production_adapter_never_submit ... ok
+test concurrent_duplicate_is_in_progress_and_uses_one_submission ... FAILED
+test redirects_cannot_escape_to_another_server ... ok
+test success_is_logged_once_and_repeated_trigger_does_not_submit_again ... ok
+test submit_response_requires_explicit_business_code_and_data_object ... FAILED
+test three_accounts_partial_failure_and_rate_limit_do_not_abort_the_batch ... ok
+test closed_loopback_port_is_network_error_and_never_a_success ... ok
+test strict_status_and_error_matrix_never_submits_on_missing_or_changed_fields ... FAILED
+test cancellation_during_submit_stops_remaining_accounts_and_keeps_uncertainty ... ok
+test timeout_after_submit_is_resolved_by_status_without_a_second_submit ... ok
+test unresolved_timeout_preserves_uncertainty_and_subsequent_trigger_only_queries ... ok
+
+failures:
+
+---- concurrent_duplicate_is_in_progress_and_uses_one_submission stdout ----
+
+thread 'concurrent_duplicate_is_in_progress_and_uses_one_submission' (34204) panicked at crates\wb-switch-core\tests\checkin_mock_http.rs:335:5:
+assertion `left == right` failed
+  left: NetworkError
+ right: Success
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- submit_response_requires_explicit_business_code_and_data_object stdout ----
+
+thread 'submit_response_requires_explicit_business_code_and_data_object' (30916) panicked at crates\wb-switch-core\tests\checkin_mock_http.rs:272:9:
+assertion `left == right` failed
+  left: (NetworkError, false)
+ right: (Unknown, true)
+
+---- strict_status_and_error_matrix_never_submits_on_missing_or_changed_fields stdout ----
+
+thread 'strict_status_and_error_matrix_never_submits_on_missing_or_changed_fields' (18604) panicked at crates\wb-switch-core\tests\checkin_mock_http.rs:241:9:
+assertion `left == right` failed
+  left: NetworkError
+ right: AuthExpired
+
+
+failures:
+    concurrent_duplicate_is_in_progress_and_uses_one_submission
+    strict_status_and_error_matrix_never_submits_on_missing_or_changed_fields
+    submit_response_requires_explicit_business_code_and_data_object
+
+test result: FAILED. 9 passed; 3 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.39s
+
+error: test failed, to rerun pass `-p wb-switch-core --test checkin_mock_http`

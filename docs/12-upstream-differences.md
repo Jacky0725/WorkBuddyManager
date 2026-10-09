@@ -6,6 +6,7 @@
 | --- | --- | --- | --- |
 | 01 / app `ccd7552` | src-tauri/src/tray.rs:1032 | 测试调用改为 super::taskbar_uses_light_theme，修复 Windows E0425 | cargo test --locked -p wb-switch-rust：34 passed |
 | 02 / app `7c4c0cc` | core 账号/凭证服务、两种 host、前端导出 | DPAPI、独立能力、区域隔离与普通导出白名单 | Rust 786 + 前端 24 passed |
+| 03 / app `b85f9c3` | checkin_service 与 Mock HTTP 集成测试 | 严格业务状态、取消、批量、超时核实与仅回环适配器 | core 755 passed，含 12 Mock 测试 |
 
 阶段 02 新增 account_repository/credential_store 和 account_security 集成测试；修改账号身份匹配、存储、公开导出、失效提示、桌面切换前凭证门禁与异步刷新 CAS。Tauri 删除命令使用统一带锁服务，列表读坏库返回错误。签到/积分生产入口增加授权边界关闭门禁；前端导出说明与类型同步更新。
 

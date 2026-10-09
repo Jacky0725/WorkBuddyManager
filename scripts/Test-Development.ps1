@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('Accounts', 'Core', 'Hosts', 'All')]
+    [ValidateSet('Accounts', 'Checkin', 'Core', 'Hosts', 'All')]
     [string]$Target = 'Accounts'
 )
 $ErrorActionPreference = 'Stop'
@@ -23,6 +23,7 @@ try {
         $taskRustLog = Join-Path $taskEvidence "development-$($Target.ToLowerInvariant()).log"
         switch ($Target) {
             'Accounts' { & cargo test --locked -p wb-switch-core --test account_security *> $taskRustLog }
+            'Checkin' { & cargo test --locked -p wb-switch-core --test checkin_mock_http *> $taskRustLog }
             'Core' { & cargo test --locked -p wb-switch-core *> $taskRustLog }
             'Hosts' { & cargo test --locked -p wb-switch-server -p wb-switch-rust *> $taskRustLog }
             'All' { & cargo test --locked -p wb-switch-core -p wb-switch-server -p wb-switch-rust *> $taskRustLog }
