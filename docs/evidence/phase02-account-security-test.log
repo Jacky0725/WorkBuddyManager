@@ -1,0 +1,23 @@
+   Compiling winapi v0.3.9
+   Compiling fs2 v0.4.3
+   Compiling wb-switch-core v0.1.58 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 18.47s
+     Running tests\account_security.rs (D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\deps\account_security-23c09785dfa0e47a.exe)
+
+running 13 tests
+test expired_credentials_require_authorization_and_api_capabilities_remain_unverified ... ok
+test cross_region_import_regenerates_colliding_local_id_and_preserves_stable_same_scope_id ... ok
+test region_and_provider_never_merge_identical_uid_or_email ... ok
+test public_export_redacts_unknown_fields_nested_tokens_and_remote_error_echo ... ok
+test dpapi_roundtrip_and_reference_binding ... ok
+test failed_credential_write_preserves_original_account_index ... ok
+test corrupted_index_and_unknown_version_are_never_overwritten ... ok
+test persisted_index_and_all_files_contain_no_plaintext_credentials ... ok
+test legacy_migration_creates_recoverable_encrypted_backup_first ... ok
+test account_update_lock_prevents_concurrent_writes_and_releases_on_failure ... ok
+test capability_credentials_are_independent_and_not_implicitly_reused ... ok
+test bad_ciphertext_shows_reauthorization_and_preserves_unreadable_reference ... ok
+test crud_on_same_name_accounts_preserves_other_accounts_and_credentials ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

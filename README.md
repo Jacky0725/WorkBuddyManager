@@ -11,7 +11,8 @@
 - 已获取两个上游完整 Git 仓库，并以 Git submodule 固定版本。
 - 阶段 00：五份审查报告与基线证据已建立，真实授权/分发边界未验证的事项已标明。
 - 阶段 01：Windows 桌面测试入口最小修复，34 个用例通过；原版 x64 NSIS 基线构建成功，未签名、未安装、未做真实 UI 验收。
-- 功能开发、真实账号测试与产品发布尚未完成；原版构建不等于统一产品交付。
+- 阶段 02：账号按提供方/区域隔离；后台凭证使用当前用户 DPAPI；公开导出仅含资料。19 个新增安全测试及全工程回归通过。
+- 真实签到/积分授权边界未验证，相关生产请求已关闭。真实账号测试与产品发布尚未完成；原版构建不等于统一产品交付。
 
 ## 上游基线
 
@@ -30,6 +31,7 @@
 - [兼容性矩阵](docs/00-compatibility-matrix.md)
 - [集成决策](docs/00-integration-decision.md)
 - [工程结构与阶段 01 状态](docs/01-architecture.md)
+- [账号与凭证架构](docs/02-account-and-credentials.md)
 - [测试记录](docs/06-testing.md)
 - [已知限制与阶段门禁](docs/11-known-limitations.md)
 - [相对上游的改动](docs/12-upstream-differences.md)
@@ -41,7 +43,7 @@ git submodule update --init -- upstream/workbuddy-switch upstream/workbuddy-help
 python scripts/collect-audit-evidence.py
 ```
 
-`app` 的本地开发提交尚未推送到上游远端，不能依靠原作者仓库获取 `ccd7552`。本地已保存完整 checkout；另提供 `docs/evidence/app-development.bundle`，可在克隆固定基线后恢复开发提交：
+`app` 的本地开发提交尚未推送到上游远端，不能依靠原作者仓库获取 `7c4c0cc`。本地已保存完整 checkout；另提供 `docs/evidence/app-development.bundle`，可在克隆固定基线后恢复开发提交：
 
 ```powershell
 git clone https://github.com/changexbc/workbuddy-switch.git app

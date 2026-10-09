@@ -11,7 +11,7 @@
 ## 对后续阶段的影响
 
 1. 阶段 01 使用上游锁文件与原构建脚本，记录 frontend/core/server/desktop 测试与 Windows 构建；截图模式可用于虚构数据启动，正常模式在完整隔离前禁止。
-2. 阶段 02 在账号 repository 边界内分离 metadata/capabilities/credential reference；以 provider+region+external_uid 去重，DPAPI 用户范围存储；取消普通令牌导出与 import_local 完整返回；真实信封不进行未经验证的迁移。
+2. 阶段 02 在账号 repository 边界内分离 metadata/capabilities/credential reference；以 provider+region+external_uid 去重，DPAPI 用户范围存储；取消普通令牌导出；import_local 已调用 account_meta（阶段 02 复核纠正），保持该契约；真实信封不进行未经验证的迁移。
 3. 阶段 03 保留 Rust 国内签到链路，集中 URL/鉴权，注入 HTTP transport；明确错误枚举、严格响应字段校验、timeout 状态复查与取消。实际适配器默认 disabled；边界不明时仍能测试 Mock 服务，不发生产请求。
 4. 阶段 04 替换签到调度时钟及任务状态模型，固定 UTC+8 09:15，catch-up 可关闭；按账号+业务日期持久化幂等状态；复用单实例并增加数据目录任务锁。
 5. 阶段 05 最小改动加固会话写入：共享 DB 一致性备份、未知版本/schema 拒绝、客户端运行保守门禁、输入/路径检查、外键验证、永久用户备份与恢复回归。保留已成熟的 baseline/preview/恢复算法，不重写关联模型。
@@ -22,7 +22,7 @@
 
 | 编号 | 发现 | 阻止的操作 | 可继续的工作 |
 | --- | --- | --- | --- |
-| R01 | Switch 账号明文、导出/import_local 返回 Token | 真实账号接入、正式产品发布 | 隔离 fixture 的 repository/DPAPI 改造与测试 |
+| R01 | Switch 账号明文、导出返回 Token；import_local 已脱敏（阶段 02 纠正） | 真实账号接入、正式产品发布 | 隔离 fixture 的 repository/DPAPI 改造与测试 |
 | R02 | 授权 platform 不同、scope/audience 未证实；签到接口未见公开许可 | 自动复用真实凭证、真实签到请求 | 独立 capability 设计、Mock HTTP 测试、默认关闭适配器 |
 | R03 | Helper 国际活跃仿客户端身份/growthEvent | 此功能的移植与执行 | 国内真实签到语义研究、其余许可允许的代码参考 |
 | R04 | 原调度按本地时区，缺补执行开关 | 宣称满足北京时间定时规格 | 注入时钟及持久任务状态实现 |

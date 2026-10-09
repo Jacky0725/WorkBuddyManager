@@ -1,0 +1,18 @@
+   Compiling wb-switch-core v0.1.58 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+   Compiling wb-switch-server v0.1.58 (D:\codex\WorkBuddyManager\app\crates\wb-switch-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.80s
+     Running unittests src\main.rs (D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\deps\wb_switch-3cf8e156186bf81b.exe)
+
+running 9 tests
+test api::tests::variant_body_defaults_to_cn ... ok
+test api::tests::web_checkin_status_preserves_exclusion_without_inventing_today_status ... ok
+test api::tests::web_checkin_status_preserves_failure_state ... ok
+test tests::cli_variant_defaults_to_cn ... ok
+test tests::cli_variant_reads_space_and_equals_forms ... ok
+test api::tests::web_checkin_status_keeps_account_identity ... ok
+test api::tests::web_checkin_status_row_carries_variant ... ok
+test api::tests::variant_query_defaults_to_cn ... ok
+test api::tests::spa_fallback_serves_html_content_type ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

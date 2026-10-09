@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-09",
+  "app_commit": "7c4c0cc95f270da8658d7d00a10ec572ab12a76d",
+  "rust": {"unit_passed": 719, "account_security_passed": 19, "cli_integration_passed": 5, "desktop_passed": 34, "server_passed": 9, "failed": 0, "ignored": 0, "log": "phase02-workspace-final-test.log"},
+  "frontend": {"passed": 24, "failed": 0, "build_exit": 0, "test_log": "phase02-frontend-final-test.log", "build_log": "phase02-frontend-final-build.log"},
+  "total_passed": 810,
+  "format_check_exit": 0,
+  "dependency_versions_changed": false,
+  "added_existing_locked_dependency": "fs2 0.4.3",
+  "production_credentials_read_or_migrated": false,
+  "production_checkin_and_points_enabled": false,
+  "gui_or_installer_verified": false,
+  "scope": "Isolated phase 02 implementation and automatic regression; not release acceptance"
+}
