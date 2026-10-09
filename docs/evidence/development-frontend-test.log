@@ -8,11 +8,6 @@
 
  Test Files  2 passed (2)
       Tests  24 passed (24)
-   Start at  09:03:55
-   Duration  199ms (transform 62%, import 21%, worker 9%, tests 7%, environment 1%)
+   Start at  09:14:33
+   Duration  170ms (transform 65%, import 20%, worker 8%, tests 7%)
 
-npm notice
-npm notice New major version of npm available! 11.16.0 -> 12.2.0
-npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
-npm notice To update run: npm install -g npm@12.2.0
-npm notice

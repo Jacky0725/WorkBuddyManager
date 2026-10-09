@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('Accounts', 'Checkin', 'Scheduler', 'Core', 'Hosts', 'All')]
+    [ValidateSet('Accounts', 'Checkin', 'Scheduler', 'Sessions', 'Core', 'Hosts', 'All')]
     [string]$Target = 'Accounts'
 )
 $ErrorActionPreference = 'Stop'
@@ -25,6 +25,7 @@ try {
             'Accounts' { & cargo test --locked -p wb-switch-core --test account_security *> $taskRustLog }
             'Checkin' { & cargo test --locked -p wb-switch-core --test checkin_mock_http *> $taskRustLog }
             'Scheduler' { & cargo test --locked -p wb-switch-core --test scheduler_clock *> $taskRustLog }
+            'Sessions' { & cargo test --locked -p wb-switch-core --test session_safety *> $taskRustLog }
             'Core' { & cargo test --locked -p wb-switch-core *> $taskRustLog }
             'Hosts' { & cargo test --locked -p wb-switch-server -p wb-switch-rust *> $taskRustLog }
             'All' { & cargo test --locked -p wb-switch-core -p wb-switch-server -p wb-switch-rust *> $taskRustLog }

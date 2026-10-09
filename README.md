@@ -14,6 +14,7 @@
 - 阶段 02：账号按提供方/区域隔离；后台凭证使用当前用户 DPAPI；公开导出仅含资料。19 个新增安全测试及全工程回归通过。
 - 阶段 03：可替换签到引擎与本地 Mock HTTP 测试完成，支持业务状态、批量、取消及超时核实；12 个 Mock 用例和核心回归通过。
 - 阶段 04：北京时间每日调度核心、持久幂等、补执行开关和跨进程锁完成；18 个调度用例通过。全工程 Rust 817 + 前端 24 passed，尚未接入 host/UI 或注册自启动。
+- 阶段 05：会话安全加固与 fixture 回归完成，一致快照、运行门禁、数据库/正文检查、事务与外键检查已实现。最终 Rust 829 + 前端 24 passed；官方版本/schema 未验证，生产会话写入禁用。
 - 真实签到/积分授权边界未验证，相关生产请求已关闭。真实账号测试与产品发布尚未完成；原版构建不等于统一产品交付。
 
 ## 上游基线
@@ -36,6 +37,7 @@
 - [账号与凭证架构](docs/02-account-and-credentials.md)
 - [签到引擎与 Mock 验证](docs/03-checkin-integration.md)
 - [持久每日调度核心](docs/04-daily-scheduler.md)
+- [会话安全加固](docs/05-session-safety.md)
 - [测试记录](docs/06-testing.md)
 - [已知限制与阶段门禁](docs/11-known-limitations.md)
 - [相对上游的改动](docs/12-upstream-differences.md)
@@ -47,7 +49,7 @@ git submodule update --init -- upstream/workbuddy-switch upstream/workbuddy-help
 python scripts/collect-audit-evidence.py
 ```
 
-`app` 的本地开发提交尚未推送到上游远端，不能依靠原作者仓库获取 `7e23cbd`。本地已保存完整 checkout；另提供 `docs/evidence/app-development.bundle`，可在克隆固定基线后恢复开发提交：
+`app` 的本地开发提交尚未推送到上游远端，不能依靠原作者仓库获取 `914ae80`。本地已保存完整 checkout；另提供 `docs/evidence/app-development.bundle`，可在克隆固定基线后恢复开发提交：
 
 ```powershell
 git clone https://github.com/changexbc/workbuddy-switch.git app

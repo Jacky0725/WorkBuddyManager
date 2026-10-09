@@ -22,7 +22,7 @@
 
 另新增一个本地 Mock HTTP 组合用例，验证调度器经过 CheckinService 实际请求 fixture server，并在重建服务和调度器后不重复请求。Mock HTTP 共 13 个测试。
 
-最终全工程回归：Rust 817 passed，前端 24 passed，0 failed/ignored，TypeScript/Vite 构建成功。证据见 `evidence/development-all.log`、`development-frontend-test.log`、`development-frontend-build.log` 和 `phase04-results.json`。重复的单项调度回归不累计到总数。测试 wrapper 原先将未设置的进程环境恢复为空字符串，现改为删除原先不存在的变量；五个隔离变量的恢复验证见 `phase04-wrapper-environment.json`，失败记录保留。
+最终全工程回归：Rust 817 passed，前端 24 passed，0 failed/ignored，TypeScript/Vite 构建成功。证据见 `evidence/phase04-workspace-test.log`、`phase04-frontend-test.log`、`phase04-frontend-build.log` 和 `phase04-results.json`。重复的单项调度回归不累计到总数。测试 wrapper 原先将未设置的进程环境恢复为空字符串，现改为删除原先不存在的变量；五个隔离变量的恢复验证见 `phase04-wrapper-environment.json`，失败记录保留。
 
 ## 尚未接入
 

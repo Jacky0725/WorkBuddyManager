@@ -1,0 +1,16 @@
+   Compiling wb-switch-core v0.1.58 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.51s
+     Running tests\session_safety.rs (D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\deps\session_safety-3d83e031fa070126.exe)
+
+running 8 tests
+test all_production_copy_sync_and_group_writes_are_denied_before_resolving_paths ... ok
+test preexisting_foreign_key_violation_is_detected_without_repairing_data ... ok
+test deferred_foreign_key_violation_rolls_back_whole_transaction ... ok
+test schema_changes_and_missing_identity_constraints_are_rejected ... ok
+test switch_preflight_with_no_pending_operation_creates_no_files ... ok
+test unreadable_operation_is_preserved_and_prevents_switch_recovery ... ok
+test body_path_rejects_outside_directory_and_parent_traversal ... ok
+test target_preflight_rejects_missing_readonly_and_occupied_database_without_writes ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
