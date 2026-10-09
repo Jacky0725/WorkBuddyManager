@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-09",
+  "environment": "VITE_DEMO_MODE=1, frontend only, 127.0.0.1:1420",
+  "method": "Codex browser accessibility tree",
+  "verified": [
+    "auto-checkin navigation and configuration fields",
+    "demo read-only controls and production checkin buttons disabled",
+    "uncertain result prohibits repeated submission",
+    "international accounts unsupported",
+    "next actual execution remains paused",
+    "settings link opens auto-checkin",
+    "account cards use matching task statuses without legacy checkin badges"
+  ],
+  "screenshots": {
+    "attempts": 2,
+    "captured": 0,
+    "error": "Page.captureScreenshot timed out"
+  },
+  "not_verified": [
+    "pixel layout",
+    "narrow viewport",
+    "desktop WebView",
+    "normal-mode UI save end-to-end",
+    "production host execution",
+    "Windows login startup"
+  ],
+  "real_accounts_accessed": false
+}

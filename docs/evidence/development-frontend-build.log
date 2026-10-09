@@ -5,7 +5,7 @@
 Removed public/companion-demo/ and dist/companion-demo/
 vite v7.3.6 building client environment for production...
 transforming...
-✓ 2617 modules transformed.
+✓ 2619 modules transformed.
 rendering chunks...
 computing gzip size...
 dist/index.html                                                            5.25 kB │ gzip:   2.34 kB
@@ -14,13 +14,13 @@ dist/assets/bricolage-grotesque-latin-ext-wght-normal-CcLUaPy7.woff2      18.67 
 dist/assets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2          41.34 kB
 dist/assets/codebuddy-cn-ide-icon-DhsbltOy.png                           107.80 kB
 dist/assets/workbuddy-official-icon-C0tPQ4rL.png                         135.82 kB
-dist/assets/index-CGBNv0a9.css                                           104.40 kB │ gzip:  18.06 kB
-dist/assets/index-B47JQXo9.js                                              0.25 kB │ gzip:   0.20 kB
-dist/assets/index-CBdDyce_.js                                              1.25 kB │ gzip:   0.48 kB
-dist/assets/index-B7iAc7LO.js                                          1,246.19 kB │ gzip: 364.31 kB
+dist/assets/index-DTm-4V3O.css                                           104.99 kB │ gzip:  18.09 kB
+dist/assets/index-DqXAicPL.js                                              0.25 kB │ gzip:   0.20 kB
+dist/assets/index-DVL6lYbs.js                                              1.25 kB │ gzip:   0.48 kB
+dist/assets/index-C3d9NffV.js                                          1,248.90 kB │ gzip: 366.02 kB
 
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
-✓ built in 4.48s
+✓ built in 4.24s
