@@ -1,0 +1,6 @@
+{
+  "mode": "normal UI with fiction metadata only, production adapters disabled",
+  "pid": 8608,
+  "fixture": "D:\\codex\\WorkBuddyManager\\test-fixtures\\manager-desktop-acceptance",
+  "binary": "D:\\codex\\WorkBuddyManager\\test-fixtures\\cargo-target\\debug\\workbuddy-manager.exe"
+}

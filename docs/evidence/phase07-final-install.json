@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-10",
+  "app_commit": "5c493712b9e6d381b67677dd565c45b9f257d4e0",
+  "installer": "D:\\codex\\WorkBuddyManager\\test-fixtures\\cargo-target\\release\\bundle\\nsis\\WorkBuddy Manager_0.2.0-alpha.1_x64-setup.exe",
+  "installer_sha256": "30A93E5E0BE8E2F431967D8025EC7D83F4C4E0888F184E30F4A69A751EFEB700",
+  "destination": "D:\\codex\\WorkBuddyManager\\test-fixtures\\install-manager-release",
+  "exit_code": 0,
+  "no_shortcuts_requested": true,
+  "installed_exe_sha256": "0674557F6F90B66680C7F009ADBFFB3924E5356E34C666CB0590F9878CE051A4"
+}

@@ -1,0 +1,16 @@
+{
+  "ids": [
+    "fixture-a",
+    "fixture-b",
+    "fixture-c"
+  ],
+  "scheduler_unchanged": true,
+  "account_count": 3,
+  "safe_index_format": [
+    1,
+    1,
+    1
+  ],
+  "fixture_only": true,
+  "backup_count": 2
+}

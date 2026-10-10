@@ -1,0 +1,11 @@
+[develop/workbuddy-manager 0cd8baa] feat: harden manager and add encrypted account backup workflow
+ 56 files changed, 1351 insertions(+), 543 deletions(-)
+ create mode 100644 crates/wb-switch-core/src/modules/manager_backup.rs
+ create mode 100644 crates/wb-switch-core/src/modules/manager_security.rs
+ create mode 100644 crates/wb-switch-core/tests/manager_backup.rs
+ create mode 100644 crates/wb-switch-server/src/security.rs
+ create mode 100644 public/boot-fallback.js
+ create mode 100644 src/lib/redact.test.ts
+ create mode 100644 src/lib/redact.ts
+ create mode 100644 src/pages/BackupsPage.tsx
+ create mode 100644 src/pages/OperationLogsPage.tsx

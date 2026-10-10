@@ -1,0 +1,213 @@
+
+> wb-switch-rust@0.2.0-alpha.1 tauri
+> tauri build --bundles nsis --debug
+
+        Info Looking up installed tauri packages to check mismatched versions...
+        Warn The bundle identifier "com.workbuddymanager.app" set in `"tauri.conf.json" identifier` ends with `.app`. This is not recommended because it conflicts with the application bundle extension on macOS.
+     Running beforeBuildCommand `npm run build`
+
+> wb-switch-rust@0.2.0-alpha.1 build
+> node scripts/prepare-companion-demo.mjs clean && tsc && vite build
+
+Removed public/companion-demo/ and dist/companion-demo/
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 2619 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                            3.29 kB │ gzip:   1.69 kB
+dist/assets/bricolage-grotesque-vietnamese-wght-normal-BUzh504Q.woff2      8.61 kB
+dist/assets/bricolage-grotesque-latin-ext-wght-normal-CcLUaPy7.woff2      18.67 kB
+dist/assets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2          41.34 kB
+dist/assets/index-qBaUZnkV.css                                           104.31 kB │ gzip:  17.93 kB
+dist/assets/index-BNKfECCR.js                                              0.25 kB │ gzip:   0.20 kB
+dist/assets/index-B_BHhrJU.js                                          1,245.12 kB │ gzip: 363.48 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 6.53s
+   Compiling webview2-com-sys v0.38.2
+   Compiling tauri-plugin v2.6.3
+   Compiling tauri-build v2.6.3
+   Compiling tokio-rustls v0.26.4
+   Compiling agent-studio-core v0.1.0 (D:\codex\WorkBuddyManager\app\vendor\agent-companion\crates\agent-studio-core)
+   Compiling hyper-rustls v0.27.9
+   Compiling tauri-plugin-fs v2.5.1
+   Compiling tauri-plugin-notification v2.3.3
+   Compiling tauri-plugin-opener v2.5.4
+   Compiling tauri-plugin-dialog v2.7.2
+   Compiling tauri-plugin-autostart v2.5.1
+   Compiling tauri-plugin-updater v2.10.1
+   Compiling tauri-plugin-agent-studio v0.1.0 (D:\codex\WorkBuddyManager\app\vendor\agent-companion\crates\agent-studio-desktop)
+   Compiling agent-studio-runtime v0.1.0 (D:\codex\WorkBuddyManager\app\vendor\agent-companion\crates\agent-studio-runtime)
+   Compiling reqwest v0.12.28
+   Compiling reqwest v0.13.4
+   Compiling tauri v2.11.5
+   Compiling wb-switch-rust v0.2.0-alpha.1 (D:\codex\WorkBuddyManager\app\src-tauri)
+   Compiling wb-switch-core v0.2.0-alpha.1 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+   Compiling webview2-com v0.38.2
+   Compiling wry v0.55.1
+   Compiling tauri-runtime v2.11.3
+   Compiling tauri-runtime-wry v2.11.4
+   Compiling tauri-plugin-single-instance v2.4.4
+warning: unused variable: `app`
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\lib.rs:136:5
+    |
+136 |     app: tauri::AppHandle,
+    |     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\lib.rs:213:9
+    |
+213 |     let mut window = WebviewWindowBuilder::new(
+    |         ----^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `VSCODE_APP` is never used
+ --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:4:7
+  |
+4 | const VSCODE_APP: &str = "Visual Studio Code.app";
+  |       ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `0` is never read
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:10:9
+   |
+10 |     App(&'static str),
+   |     --- ^^^^^^^^^^^^
+   |     |
+   |     field in this variant
+   |
+   = note: `SessionTarget` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+help: consider changing the field to be of unit type to suppress this warning while preserving the field numbering, or remove the field
+   |
+10 -     App(&'static str),
+10 +     App(()),
+   |
+
+warning: fields `session` and `cwd` are never read
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:14:14
+   |
+14 |     VSCode { session: String, cwd: Option<PathBuf> },
+   |     ------   ^^^^^^^          ^^^
+   |     |
+   |     fields in this variant
+   |
+   = note: `SessionTarget` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: function `app_for_scheme` is never used
+  --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:26:4
+   |
+26 | fn app_for_scheme(scheme: &str) -> Option<(&'static str, &'static str)> {
+   |    ^^^^^^^^^^^^^^
+
+warning: function `usable_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:126:4
+    |
+126 | fn usable_folder(path: &Path) -> bool {
+    |    ^^^^^^^^^^^^^
+
+warning: function `bucket_for_session` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:148:4
+    |
+148 | fn bucket_for_session(root: &Path, session: &str) -> Option<String> {
+    |    ^^^^^^^^^^^^^^^^^^
+
+warning: enum `BucketFolder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:166:6
+    |
+166 | enum BucketFolder {
+    |      ^^^^^^^^^^^^
+
+warning: function `sanitize_workspace_id` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:178:4
+    |
+178 | fn sanitize_workspace_id(path: &str) -> String {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `decode_bucket_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:189:4
+    |
+189 | fn decode_bucket_folder(bucket: &str) -> BucketFolder {
+    |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: function `bucket_matches_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:214:4
+    |
+214 | fn bucket_matches_folder(bucket: &str, folder: &str) -> bool {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `bucket_candidates` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:227:4
+    |
+227 | fn bucket_candidates(bucket: &str) -> Vec<Vec<u8>> {
+    |    ^^^^^^^^^^^^^^^^^
+
+warning: function `desanitize` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:262:4
+    |
+262 | fn desanitize(text: &str) -> String {
+    |    ^^^^^^^^^^
+
+warning: function `base64_decode` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:268:4
+    |
+268 | fn base64_decode(text: &str) -> Option<Vec<u8>> {
+    |    ^^^^^^^^^^^^^
+
+warning: function `base64_value` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:289:4
+    |
+289 | fn base64_value(byte: u8) -> Option<u8> {
+    |    ^^^^^^^^^^^^
+
+warning: function `base64_encode` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:301:4
+    |
+301 | fn base64_encode(bytes: &[u8]) -> String {
+    |    ^^^^^^^^^^^^^
+
+warning: function `resolve_vscode_folder` is never used
+   --> vendor\agent-companion\crates\agent-studio-desktop\src\session.rs:319:4
+    |
+319 | fn resolve_vscode_folder(
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: `tauri-plugin-agent-studio` (lib) generated 18 warnings (run `cargo fix --lib -p tauri-plugin-agent-studio` to apply 2 suggestions)
+warning: constant `FIRST_CHECK_DELAY` is never used
+  --> src-tauri\src\update_service.rs:28:11
+   |
+28 | pub const FIRST_CHECK_DELAY: Duration = Duration::from_secs(15);
+   |           ^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `CHECK_INTERVAL` is never used
+  --> src-tauri\src\update_service.rs:30:11
+   |
+30 | pub const CHECK_INTERVAL: Duration = Duration::from_secs(30 * 60);
+   |           ^^^^^^^^^^^^^^
+
+warning: function `spawn_periodic_check` is never used
+   --> src-tauri\src\update_service.rs:428:8
+    |
+428 | pub fn spawn_periodic_check(app: AppHandle) {
+    |        ^^^^^^^^^^^^^^^^^^^^
+
+warning: `wb-switch-rust` (lib) generated 3 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1m 39s
+       Built application at: D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\workbuddy-manager.exe
+        Info Patching D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\workbuddy-manager.exe with bundle type information: nsis
+        Info Target: x64
+     Running makensis to produce D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\bundle\nsis\WorkBuddy Manager_0.2.0-alpha.1_x64-setup.exe
+    Finished 1 bundle at:
+        D:\codex\WorkBuddyManager\test-fixtures\cargo-target\debug\bundle\nsis\WorkBuddy Manager_0.2.0-alpha.1_x64-setup.exe
+

@@ -24,11 +24,11 @@
 
 官方完整数据库版本/schema 白名单、调度实际生产执行与完整桌面 UI 尚未验收；阶段 06 已接入配置服务与只读演示页面检查。现有上游相近用例不能代替这些新增验收。账号与凭证测试见阶段 02，签到 Mock 测试见阶段 03，调度核心与持久幂等见阶段 04，会话安全加固见阶段 05；真实数据迁移仍未执行。
 
-三账号真实登录、A→B→C→A、真实签到/积分、生产会话迁移、真实应用 UI、安装/卸载/重装、Windows 10 与 11 双系统验收全部未执行。未提供或读取真实测试账号；不得宣称这些操作成功。
+三账号真实登录、A→B→C→A、真实签到/积分、生产会话迁移、Windows 10 与 11 双系统验收未执行。阶段 07 已验证正常 Manager UI 与虚构资料，见下面的新增记录；安装验收按最终记录单独判断。
 
 ## 环境与隔离
 
-core/server/app test 使用独立 WB_SWITCH_HOME、APPDATA、LOCALAPPDATA。Helper 用例创建临时目录和 httptest server，不调用生产服务。自动构建的可执行文件没有运行或安装到用户生产环境。可视验收另行安排，不用进程存在替代 UI 正常的结论。
+core/server/app test 使用独立 WB_SWITCH_HOME、APPDATA、LOCALAPPDATA。Helper 用例创建临时目录和 httptest server，不调用生产服务。阶段 07 仅安装/启动自有 Manager 的隔离候选，官方生产账号与会话未操作；可视验收证据见后续记录，不用进程存在替代 UI 正常的结论。
 
 ## 2026-10-09：阶段 02 最终回归
 
@@ -62,3 +62,33 @@ core/server/app test 使用独立 WB_SWITCH_HOME、APPDATA、LOCALAPPDATA。Help
 新增配置服务覆盖只读首次加载、保存与旧版本冲突、非法参数、坏记录保留、跨进程锁及生产门禁先于账号访问。HTTP 路由测试验证真实请求/响应结构、来源限制与旧入口拒绝；前端规则测试覆盖未知结果、日期与区域隔离、北京时间、暂停计划和重试预算。完整日志见 phase06；Vite 大 chunk 提示及上游 Rust warnings 保留。
 
 仅启动 VITE_DEMO_MODE=1 前端服务，浏览器可访问性树确认签到页、设置跳转与账号卡片状态。两次截图超时，未完成像素布局和窄屏验收，未启动正常后端/GUI。正常模式保存的完整浏览器交互、自启动、真实账号与生产执行尚未验收。详情见 `06-manager-ui.md`。
+
+## 阶段 07：安全与产品候选
+
+最终回归：core 726 单元 + 19 账号安全 + 13 Mock HTTP + 5 CLI + 4 加密备份 + 6 配置服务 + 18 调度 + 8 会话安全 + 34 桌面 + 15 HTTP host，共 **848 Rust passed**，0 failed/ignored。前端 **35 passed**、TypeScript/Vite 构建成功，本轮总计 883。证据为 `phase07-all-tests.log`、`phase07-frontend-final-tests.log`、`phase07-manager-release-build.log`（最终 TypeScript/Vite 和优化构建）。没有将早期重复运行加入数量。
+
+新增用例验证加密备份与恢复、损坏/无确认/过期预览/并发锁/提交失败保留原索引、认证文件写入锁、Bearer/引号空格脱敏、本机会话与跨站/旧 cookie 拒绝。首轮日期边界失败和旧 CLI fixture 目录失败分别通过注入固定时钟与更新隔离目录修复；失败日志原样保留。
+
+2026-10-10 正常模式启动自有 workbuddy-manager.exe，WB_SWITCH_HOME/APPDATA/LOCALAPPDATA 使用独立桌面 fixture；三条资料无真实 token。不是 VITE_DEMO_MODE，没有启动真实官方登录流程。CSP 下 WebView2 与 Tauri IPC 正常，账号列表显示三条；启用计划并保存后磁盘配置一致，实际签到仍暂停，没有执行任务记录。
+
+桌面创建加密备份并预览确认恢复；恢复后三账号 id 不变，索引升级为 storage_version=1，回滚备份出现，每日计划 SHA256 不变。加密文件不包含虚构昵称或 UID 明文，凭证保密另外由 Rust 虚构凭证测试验证。操作日志显示成功结果；截图和文本在 evidence/manager-ui/，结构记录在 phase07-desktop-*.json。
+
+关闭主窗口后原进程仍在；第二次启动打开原窗口，只存在一个主进程。停止测试进程后带精确 --hidden 参数启动，没有可见主窗口，后台进程存在。没有注册 HKCU 自启动，也未执行真实 Windows 登录测试。证据为 phase07-single-instance.json 与 phase07-hidden-start.json。
+
+debug x64 NSIS 候选生成成功，完整 log 为 phase07-manager-debug-build.log。优化构建成功，最终日志为 phase07-manager-release-build.log；首次完整优化构建日志单独保留，没有用 debug 构建替代优化版本。
+
+### 2026-10-10：优化产物与安装循环
+
+实际系统是 Windows 11 家庭中文版 **25H2 / 10.0.26200 / x64**，来自本机 OS 元数据，见 phase07-test-os.json。用户此前报告的 22H2 是目标信息，未在该版本上验收；Windows 10 亦未验收。WorkBuddy 国内版 v5.7.7 只来自用户报告，未读取本机官方安装或账号数据确认。
+
+NSIS 当前用户隔离循环：debug 安装 → 正常 UI → 卸载 → 优化版安装 → 正常 UI → 卸载。安装器与卸载器退出码均为 0；优化版运行截图为 manager-ui/optimized-installed-accounts.png。最后停止的只是路径核对后的自有测试进程，未停止官方客户端。卸载后应用和本轮新增卸载注册项不存在，全部 11 个 fixture 文件 SHA256 不变，三条虚构账号、两份加密备份与计划保留；见 phase07-manager-release-install.json、phase07-manager-release-uninstall.json。没有注册真实登录自启动，也没有验证 Windows 用户登录/系统重启。
+
+功能 app 提交：`0cd8baa4383efe20f0a342dc1c4534443968697a`；初始许可材料提交：`77360f2558769f954225025e7299fbcf1853dda1`。首轮优化安装器大小 6,168,329 字节，SHA256 `CC6ABE1D29B4EE0A000D6487854FA345AED836EC9966041BA21E6C381012B0AE`，签名状态 NotSigned；其安装后主程序 23,792,640 字节，SHA256 `6203D4321C899B014558115A6814F01A4C2D35636A392EE282E2EC8E81696D07`。首轮材料保留在 release/0.2.0-alpha.1/before-source-byte-fix，不作最终交付。Tauri 为 NSIS 修改 bundle type 标记，构建缓存的原始 exe 与安装后的 exe 不保证哈希相同；交付的单文件 exe 取自实际安装版本，见 phase07-installed-package-check.json。
+
+完整工程保留于当前工作根目录。候选目录提供源码 ZIP、开发历史 bundle、LICENSE、THIRD_PARTY_NOTICES、502 项依赖许可清单和 MPL 对应源；逐文件校验包含许可与对应源。校验只能确认材料与构建留存一致，不能替代许可分发审查或官方业务兼容性结论。
+
+候选初次逐文件清单核对通过；进一步对照源码 ZIP 时，发现 14 份许可文件的 Git 入库换行转换及一份被嵌套 .gitignore 忽略的 MPL Cargo.lock。完整失败清单保留在 phase07-candidate-first-failed-verification.json；后续提交 `5c493712b9e6d381b67677dd565c45b9f257d4e0` 仅修正这 15 份许可/对应源入库字节，业务源码不变，重新构建并收集最终候选。最终字节核验结果以 evidence/manager-candidate-verification.json 为准；这不是生产兼容、代码覆盖率或许可合法性的认证。
+
+最终提交重新优化构建成功（phase07-manager-release-build.log）；安装器 6,162,963 字节，SHA256 `30A93E5E0BE8E2F431967D8025EC7D83F4C4E0888F184E30F4A69A751EFEB700`，安装后 exe 23,792,640 字节，SHA256 `0674557F6F90B66680C7F009ADBFFB3924E5356E34C666CB0590F9878CE051A4`。再次隔离安装退出码 0，正常窗口显示三条虚构资料及生产接口禁用提示；截图为 manager-ui/final-installed-accounts.png，安装记录为 phase07-final-install.json，代码与测试提交关系见 phase07-final-build-source.json。
+
+最终隔离卸载退出码 0，主程序与本轮卸载注册项已移除，11 份 fixture 文件哈希全部不变，三条虚构资料和两份备份保留（phase07-final-uninstall.json）。最终候选字节核验通过：全部载荷与 SHA256SUMS 一致，827 份许可文本对照依赖清单，五份 MPL crate 对应源存在；安装依赖许可/对应源与源码 ZIP 一致，ZIP 重新导出与最终 Git 提交一致，开发 bundle 有效。详见 manager-candidate-verification.json。

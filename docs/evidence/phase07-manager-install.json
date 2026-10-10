@@ -1,0 +1,7 @@
+{
+  "mode": "debug local candidate",
+  "no_shortcuts_requested": true,
+  "exit_code": 0,
+  "destination": "D:\\codex\\WorkBuddyManager\\test-fixtures\\install-manager-debug",
+  "installer": "D:\\codex\\WorkBuddyManager\\test-fixtures\\cargo-target\\debug\\bundle\\nsis\\WorkBuddy Manager_0.2.0-alpha.1_x64-setup.exe"
+}

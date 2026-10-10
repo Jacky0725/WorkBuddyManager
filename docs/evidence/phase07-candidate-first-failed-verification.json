@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-10",
+  "verification_passed": false,
+  "reason": "Some license files normalized and corresponding-source files ignored during initial Git staging",
+  "mismatches": [
+    {
+      "path": "licenses/npm/decimal.js-light-2.5.1/LICENCE.md",
+      "reason": "byte mismatch",
+      "shipped_sha256": "fc0397fbd5c128bec7edef4e8d3f45e15db5fd043cdd0a2edfc4f14d47fbc3e4",
+      "committed_sha256": "3a07d95c7d936c6e5b90f537e925be09a36f53f1da9c9036315c468dcde92cc7",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/npm/tslib-2.8.1/CopyrightNotice.txt",
+      "reason": "byte mismatch",
+      "shipped_sha256": "da16ddb65f8ca390998fb99223d0112498b56b45784d00afd77ff8ce1ac4de8b",
+      "committed_sha256": "72ba857a2d06a6d440c28e690835119f6d70fe16f58b7538e3e3c1c133d944d7",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/npm/tslib-2.8.1/LICENSE.txt",
+      "reason": "byte mismatch",
+      "shipped_sha256": "210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751",
+      "committed_sha256": "0e8d2550baea17eb3072c4f919b36fbf9852bb49dba948549872e713863c0834",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/agent-studio-core-0.1.0/LICENSE",
+      "reason": "byte mismatch",
+      "shipped_sha256": "56821bac86bc8027c358328aede0473adaf18cc76f17b48ce43371ce101b944b",
+      "committed_sha256": "98123f564753103db10d6ead8e4459bbe8ab234b0eb990071147227af6a3bb3e",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/agent-studio-runtime-0.1.0/LICENSE",
+      "reason": "byte mismatch",
+      "shipped_sha256": "56821bac86bc8027c358328aede0473adaf18cc76f17b48ce43371ce101b944b",
+      "committed_sha256": "98123f564753103db10d6ead8e4459bbe8ab234b0eb990071147227af6a3bb3e",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/generic-array-0.14.7/LICENSE",
+      "reason": "byte mismatch",
+      "shipped_sha256": "c09aae9d3c77b531f56351a9947bc7446511d6b025b3255312d3e3442a9a7583",
+      "committed_sha256": "ad4fcfaf8d5b12b97409c137a03d4a4e4b21024c65c54f976cc3b609c1bd5b0f",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/indexmap-1.9.3/LICENSE-APACHE",
+      "reason": "byte mismatch",
+      "shipped_sha256": "7cfd738c53d61c79f07e348f622bf7707c9084237054d37fbe07788a75f5881c",
+      "committed_sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/indexmap-1.9.3/LICENSE-MIT",
+      "reason": "byte mismatch",
+      "shipped_sha256": "f7ab4cf986b56676dc613a20d3f5954c8dbbfb37a5edc8b55d299a7d9176a0f5",
+      "committed_sha256": "ecc269ef87fd38a1d98e30bfac9ba964a9dbd9315c3770fed98d4d7cb5882055",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/quick-xml-0.41.0/LICENSE-MIT.md",
+      "reason": "byte mismatch",
+      "shipped_sha256": "5b2c207dcf571267ebe0bbdd5bf321f561ddc22ff597e7b363e96f4539507a29",
+      "committed_sha256": "f0cf9b1c62bbe3bd3a69f5f79c7158f513f612b4940a0a812d1db39d605318bc",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/tauri-plugin-agent-studio-0.1.0/LICENSE",
+      "reason": "byte mismatch",
+      "shipped_sha256": "56821bac86bc8027c358328aede0473adaf18cc76f17b48ce43371ce101b944b",
+      "committed_sha256": "98123f564753103db10d6ead8e4459bbe8ab234b0eb990071147227af6a3bb3e",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/vcpkg-0.2.15/LICENSE-APACHE",
+      "reason": "byte mismatch",
+      "shipped_sha256": "60c93a31f490375aadf64098b75f10715010379541021e00261045d7800611d3",
+      "committed_sha256": "3708458dee7f359ac6c9c5558023ed481be87e5372c43ebd7f2ca7ad23c12026",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/vcpkg-0.2.15/LICENSE-MIT",
+      "reason": "byte mismatch",
+      "shipped_sha256": "016d20f335060a70e79d9fcf8dfaa6201114d65d592211f4bdfb8ae9ca2bc1dc",
+      "committed_sha256": "ff7d99434986ba68f6575d689fd9cc11d93a486876b19004e1bacc0f6ca554d4",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/wb-switch-core-0.2.0-alpha.1/LICENSE",
+      "reason": "byte mismatch",
+      "shipped_sha256": "56821bac86bc8027c358328aede0473adaf18cc76f17b48ce43371ce101b944b",
+      "committed_sha256": "98123f564753103db10d6ead8e4459bbe8ab234b0eb990071147227af6a3bb3e",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/wb-switch-rust-0.2.0-alpha.1/LICENSE",
+      "reason": "byte mismatch",
+      "shipped_sha256": "56821bac86bc8027c358328aede0473adaf18cc76f17b48ce43371ce101b944b",
+      "committed_sha256": "98123f564753103db10d6ead8e4459bbe8ab234b0eb990071147227af6a3bb3e",
+      "only_crlf_normalization": true
+    },
+    {
+      "path": "licenses/rust/cssparser-0.36.0/corresponding-source/Cargo.lock",
+      "reason": "source file excluded by nested .gitignore",
+      "shipped_sha256": "e2f8b97f2e23945fdda945aed3d038046fe1e994106bce07b429c42a60fe8b1b"
+    }
+  ],
+  "previous_app_commit": "0cd8baa4383efe20f0a342dc1c4534443968697a"
+}

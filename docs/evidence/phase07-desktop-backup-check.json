@@ -1,0 +1,8 @@
+{
+  "contains_fiction_nickname": false,
+  "scheduler_config_sha256": "DA2D5B9E56C2C2AD27CD077BCFC92BB85BBDF669EB6F657B0FDC6EC7F8BB5994",
+  "fixture_only": true,
+  "encrypted_backup_length": 662,
+  "contains_fiction_uid": false,
+  "production_scheduler_journal_exists": false
+}

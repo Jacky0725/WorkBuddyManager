@@ -1,0 +1,9 @@
+{
+  "uninstall_exit_code": 0,
+  "installed_exe_absent": true,
+  "uninstall_key_absent": true,
+  "fixture_accounts_retained": 3,
+  "fixture_backups_retained": 2,
+  "scheduler_sha256_unchanged": true,
+  "real_accounts_tested": false
+}

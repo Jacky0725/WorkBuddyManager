@@ -1,0 +1,23 @@
+{
+  "installed_binary_sha256": "DC65C3F3E9D50136215684A9D939DC07AAB7EB9EFB1B5F74EEC341E7BB10AD41",
+  "notice_exists": true,
+  "license_file_count": 887,
+  "companion_runtime_present": false,
+  "arp": {
+    "DisplayName": "WorkBuddy Manager",
+    "DisplayVersion": "0.2.0-alpha.1",
+    "InstallLocation": "\"D:\\codex\\WorkBuddyManager\\test-fixtures\\install-manager-debug\"",
+    "UninstallString": "\"D:\\codex\\WorkBuddyManager\\test-fixtures\\install-manager-debug\\uninstall.exe\""
+  },
+  "built_binary_sha256": "59AA679A48A4402F6E4F4D7A1DBAF7EE830AF920FC17912FEB18BF37BEEC8E97",
+  "binary_difference": {
+    "changed_bytes": 3,
+    "offsets": [
+      28523952,
+      28523953,
+      28523954
+    ],
+    "only_tauri_bundle_marker": true,
+    "meaning": "Tauri NSIS bundle marker is patched while bundling; standalone file reverts to UNK"
+  }
+}

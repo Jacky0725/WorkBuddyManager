@@ -1,0 +1,8 @@
+{
+  "uninstall_key_exists": false,
+  "vendor_key_exists": false,
+  "desktop_shortcut_exists": false,
+  "start_menu_shortcut_exists": false,
+  "test_install_dir_exists": false,
+  "webview_runtime_loaded_in_fixture": 24
+}

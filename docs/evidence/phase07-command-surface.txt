@@ -1,0 +1,107 @@
+3://! 阶段 1 覆盖：get_status / get_accounts / delete_account / oauth_start /
+32:pub async fn get_status(variant: Option<String>) -> Result<AppStatus, String> {
+70:pub fn get_accounts() -> Result<Value, String> {
+84:pub async fn get_codebuddy_cli_status() -> Result<Value, String> {
+92:pub async fn install_codebuddy_cli_helper(app: tauri::AppHandle) -> Result<Value, String> {
+112:pub async fn switch_codebuddy_cli_account(
+135:pub async fn get_codebuddy_cn_ide_status() -> Result<Value, String> {
+150:pub async fn switch_codebuddy_cn_ide_account(
+184:pub async fn list_codebuddy_ide_sessions() -> Result<Value, String> {
+195:pub async fn codebuddy_ide_session_links_preview(
+213:pub async fn detect_codebuddy_cn_ide_account() -> Result<Value, String> {
+224:pub async fn get_vscode_ext_status() -> Result<Value, String> {
+235:pub async fn list_vscode_sessions() -> Result<Value, String> {
+254:pub async fn switch_vscode_ext_account(
+290:pub async fn vscode_session_links_preview(target_account_id: String) -> Result<Value, String> {
+303:pub async fn get_codebuddy_ide_status() -> Result<Value, String> {
+314:pub async fn get_jetbrains_status() -> Result<Value, String> {
+329:pub async fn switch_jetbrains_account(
+349:pub async fn detect_jetbrains_account() -> Result<Value, String> {
+364:pub async fn switch_codebuddy_ide_account(
+398:pub async fn list_codebuddy_intl_ide_sessions() -> Result<Value, String> {
+409:pub async fn codebuddy_intl_ide_session_links_preview(
+427:pub async fn detect_vscode_ext_account() -> Result<Value, String> {
+434:pub async fn detect_codebuddy_ide_account() -> Result<Value, String> {
+442:pub fn delete_account(account_id: String) -> Result<Value, String> {
+443:    account::delete_account(&account_id)?;
+449:pub fn update_account_display(account_id: String, patch: Value) -> Result<Value, String> {
+455:pub async fn oauth_start(variant: Option<String>) -> Result<Value, String> {
+461:pub async fn oauth_status(login_id: String) -> Value {
+467:pub fn import_local(variant: Option<String>) -> Result<Value, String> {
+478:pub fn export_accounts(account_ids: Vec<String>) -> Result<Value, String> {
+485:pub fn export_accounts_to_path(account_ids: Vec<String>, path: String) -> Result<Value, String> {
+492:pub fn preview_import_accounts(file_text: String) -> Result<Value, String> {
+498:pub fn import_accounts(file_text: String, indexes: Vec<usize>) -> Result<Value, String> {
+513:pub fn open_permission_settings(target: Option<String>) -> Result<(), String> {
+523:    let _ = std::process::Command::new("open").arg(url).spawn();
+531:pub fn check_auth_permission(variant: Option<String>) -> Value {
+536:    match std::fs::write(&probe, "probe") {
+553:pub fn reveal_app_in_finder() -> Result<(), String> {
+555:    let _ = std::process::Command::new("open")
+569:pub async fn switch_account(
+605:pub fn list_sessions(variant: Option<String>) -> Value {
+620:pub fn list_account_sessions(account_id: String, client: Option<String>) -> Result<Value, String> {
+644:pub async fn copy_sessions(
+668:pub async fn copy_sessions_cross(
+698:pub async fn session_links_preview(
+721:pub async fn session_links_preview_cross(
+745:pub async fn session_sync_cross(
+768:pub async fn list_session_groups(
+780:pub async fn get_session_group(
+793:pub async fn preview_session_group_pair(
+817:pub async fn sync_session_group_pair(
+847:pub async fn sync_session_group_unify(
+873:pub async fn sync_session_group_safe_batch(
+890:pub async fn add_session_group_member(
+919:pub async fn copy_linked_sessions(
+945:pub fn vscode_restart_precheck(target_account_ids: Vec<String>) -> Value {
+951:pub async fn unlink_session_group_member(
+968:pub async fn delete_session_group(
+988:pub async fn get_checkin_status(account_id: String) -> Result<Value, String> {
+998:pub async fn get_credit_expiry(account_id: String) -> Result<Value, String> {
+1006:pub async fn get_credit_statistics(refresh: Option<bool>) -> Value {
+1011:pub async fn get_token_statistics(days: Option<i64>) -> Result<Value, String> {
+1022:pub async fn get_rate_limits() -> Result<Value, String> {
+1032:pub async fn get_rate_limit_hook_status() -> Result<Value, String> {
+1040:pub async fn install_rate_limit_hook() -> Result<Value, String> {
+1056:pub async fn uninstall_rate_limit_hook() -> Result<Value, String> {
+1075:pub fn get_rate_limit_config() -> Value {
+1084:pub fn save_rate_limit_config(config: Value) -> Result<Value, String> {
+1091:pub async fn checkin(account_id: String) -> Result<Value, String> {
+1103:pub async fn checkin_all(variant: Option<String>, respect_window: Option<bool>) -> Value {
+1110:pub fn get_auto_checkin_config() -> Value {
+1116:pub fn save_auto_checkin_config(config: Value) -> Result<Value, String> {
+1122:pub fn get_manager_scheduler(
+1128:pub fn save_manager_scheduler(
+1135:pub fn run_manager_checkin(account_id: Option<String>) -> Result<(), String> {
+1142:pub fn get_checkin_logs() -> Value {
+1156:pub async fn get_travel_status(account_id: String) -> Result<Value, String> {
+1164:pub fn get_auto_travel_config() -> Value {
+1170:pub fn save_auto_travel_config(config: Value) -> Result<Value, String> {
+1188:pub fn get_auto_rotate_config() -> Value {
+1194:pub fn save_auto_rotate_config(config: Value) -> Result<Value, String> {
+1201:pub fn rotate_status() -> Value {
+1210:pub async fn run_rotate(app: tauri::AppHandle) -> Value {
+1218:pub fn get_rotate_logs() -> Value {
+1224:pub async fn refresh_account_token(account_id: String) -> Result<Value, String> {
+1236:pub fn get_github_config() -> Value {
+1242:pub fn save_github_config(config: Value) -> Result<Value, String> {
+1253:pub async fn check_update(
+1263:pub fn update_state() -> crate::update_service::UpdateSnapshot {
+1271:pub fn update_download(app: tauri::AppHandle) -> Result<(), String> {
+1280:pub async fn update_restart(app: tauri::AppHandle) -> Result<(), String> {
+1286:pub fn relaunch_app(_app: tauri::AppHandle) -> Result<(), String> {
+1313:    match std::process::Command::new(executable).args(args).spawn() {
+1335:pub fn get_launch_at_login_enabled(_app: tauri::AppHandle) -> Result<bool, String> {
+1372:pub fn set_launch_at_login_enabled(_app: tauri::AppHandle, enabled: bool) -> Result<bool, String> {
+1417:pub async fn log_error(kind: String, message: String, detail: Option<String>) {
+1423:pub fn get_error_log_path() -> String {
+1432:pub fn reveal_error_log(app: tauri::AppHandle) -> Result<(), String> {
+1464:pub async fn record_notification(
+1474:pub async fn list_notifications() -> Result<Value, String> {
+1480:pub async fn clear_notifications() -> Result<(), String> {
+1485:pub fn list_manager_backups(
+1490:pub fn create_manager_backup() -> Result<wb_switch_core::modules::manager_backup::BackupInfo, String>
+1495:pub fn preview_manager_restore(
+1504:pub fn restore_manager_backup(
+1513:pub fn get_manager_logs() -> Result<Value, String> {

@@ -36,3 +36,9 @@ npm 锁文件共 613 个条目（跨两份 lock，存在重复）。许可表达
 本次未获得明确许可第三方自动签到、插件 state/token 复用或硬编码客户端标识的服务条款证据。因此国内签到/积分标记为兼容性与授权边界待确认；测试只使用 Mock/虚构账户。Helper `ActiveChat` + `growthEvent` + IntlClientUA/Ver 路径明确排除，不能包装为国际版签到。
 
 发布门禁：正式授权边界、素材和最终依赖 notice 未完成前，不发布宣称合规的安装包；不因工具测试通过就声称服务方允许自动签到。
+
+阶段 07 补充：安装器使用自有 WM 几何标识，编译界面的第三方产品图标改为文字。Companion 素材/runtime 不作为安装器资源。Windows desktop 闭包与安装的非 dev npm 包共 502 项，许可文本、字体 OFL、Lucide ISC 和五个 MPL crate 的对应源已收集于 app/licenses；清单及来源见 phase07-release-license-inventory.json、phase07-license-text-provenance.json 和 app/THIRD_PARTY_NOTICES.md。该清单包含构建依赖，不是二进制符号链接审计。
+
+react-remove-scroll-bar 2.3.8 的 npm 包未携带完整文本，registry 网络失败且 GitHub API 限流。已保留作者仓库固定 commit 8ca9ba5 的 MIT 文本，但该提交标为 2.3.7，发行版来源对应仍未确认，不将“文本已收集”写成“全部分发义务验证完成”。selectors 通用 MPL-2.0 全文从本机 cssparser 同许可证文件保留，原始源文件许可头一起保留。Tauri、WebView2、unic、defmt 等文本从固定 crate 上游 SHA 获取；victory-vendor 另保留固定 v36.9.2 根 MIT 及 vendored D3 ISC 文本。
+
+最终字节交叉验证发现首次 Git 入库时 14 份许可文本发生换行转换，一份 MPL Cargo.lock 被嵌套忽略。已在 app `5c493712b9e6d381b67677dd565c45b9f257d4e0` 仅修正这些材料的入库字节；保留失败证据。新增材料应先确保 `licenses/** -text` 生效，并对已核对的许可目录使用显式 `git add -f licenses`，避免对应源被嵌套忽略。后续由候选校验脚本逐文件对照安装资源、源码 ZIP 和依赖清单。

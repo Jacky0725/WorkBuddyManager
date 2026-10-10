@@ -1,0 +1,24 @@
+
+> wb-switch-rust@0.1.58 build
+> node scripts/prepare-companion-demo.mjs clean && tsc && vite build
+
+Removed public/companion-demo/ and dist/companion-demo/
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 2620 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                            3.29 kB │ gzip:   1.69 kB
+dist/assets/bricolage-grotesque-vietnamese-wght-normal-BUzh504Q.woff2      8.61 kB
+dist/assets/bricolage-grotesque-latin-ext-wght-normal-CcLUaPy7.woff2      18.67 kB
+dist/assets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2          41.34 kB
+dist/assets/index-FmN16hTt.css                                           104.28 kB │ gzip:  17.92 kB
+dist/assets/index-DA6u2sOD.js                                              0.25 kB │ gzip:   0.21 kB
+dist/assets/index-511DW4TX.js                                              1.25 kB │ gzip:   0.48 kB
+dist/assets/index-3OBMhcXZ.js                                          1,245.17 kB │ gzip: 363.50 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 8.64s

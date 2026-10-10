@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-10",
+  "app_commit": "5c493712b9e6d381b67677dd565c45b9f257d4e0",
+  "business_code_test_commit": "0cd8baa4383efe20f0a342dc1c4534443968697a",
+  "changes_since_business_tests_only_license_files": true,
+  "optimized_build_log": "phase07-manager-release-build.log",
+  "production_tests_executed": false
+}

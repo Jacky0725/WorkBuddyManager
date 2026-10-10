@@ -1,0 +1,180 @@
+[
+  {
+    "name": "unic-common",
+    "texts": [
+      {
+        "package": "unic-common",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-MIT",
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "path": "licenses/rust/unic-common-0.9.0/LICENSE-upstream-LICENSE-MIT"
+      },
+      {
+        "package": "unic-common",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-APACHE",
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "path": "licenses/rust/unic-common-0.9.0/LICENSE-upstream-LICENSE-APACHE"
+      }
+    ]
+  },
+  {
+    "name": "unic-char-property",
+    "texts": [
+      {
+        "package": "unic-char-property",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-MIT",
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "path": "licenses/rust/unic-char-property-0.9.0/LICENSE-upstream-LICENSE-MIT"
+      },
+      {
+        "package": "unic-char-property",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-APACHE",
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "path": "licenses/rust/unic-char-property-0.9.0/LICENSE-upstream-LICENSE-APACHE"
+      }
+    ]
+  },
+  {
+    "name": "unic-ucd-ident",
+    "texts": [
+      {
+        "package": "unic-ucd-ident",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/8a6ce83063d90b91ae2ce59eddb803edd393fca9/LICENSE-MIT",
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "path": "licenses/rust/unic-ucd-ident-0.9.0/LICENSE-upstream-LICENSE-MIT"
+      },
+      {
+        "package": "unic-ucd-ident",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/8a6ce83063d90b91ae2ce59eddb803edd393fca9/LICENSE-APACHE",
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "path": "licenses/rust/unic-ucd-ident-0.9.0/LICENSE-upstream-LICENSE-APACHE"
+      }
+    ]
+  },
+  {
+    "name": "unic-ucd-version",
+    "texts": [
+      {
+        "package": "unic-ucd-version",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-MIT",
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "path": "licenses/rust/unic-ucd-version-0.9.0/LICENSE-upstream-LICENSE-MIT"
+      },
+      {
+        "package": "unic-ucd-version",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-APACHE",
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "path": "licenses/rust/unic-ucd-version-0.9.0/LICENSE-upstream-LICENSE-APACHE"
+      }
+    ]
+  },
+  {
+    "name": "unic-char-range",
+    "texts": [
+      {
+        "package": "unic-char-range",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-MIT",
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "path": "licenses/rust/unic-char-range-0.9.0/LICENSE-upstream-LICENSE-MIT"
+      },
+      {
+        "package": "unic-char-range",
+        "version": "0.9.0",
+        "url": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-APACHE",
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "path": "licenses/rust/unic-char-range-0.9.0/LICENSE-upstream-LICENSE-APACHE"
+      }
+    ]
+  },
+  {
+    "name": "alloc-stdlib",
+    "texts": [
+      {
+        "package": "alloc-stdlib",
+        "version": "0.2.4",
+        "url": "https://raw.githubusercontent.com/dropbox/rust-alloc-no-stdlib/ae42d22078b98549e987d2f03d12df7b984fde47/LICENSE",
+        "sha256": "c0c56f26d9c051cac4d200c34c84e7ae9aaa853e01a982a1df08b09931e518ae",
+        "path": "licenses/rust/alloc-stdlib-0.2.4/LICENSE-upstream-LICENSE"
+      }
+    ]
+  },
+  {
+    "name": "selectors",
+    "texts": []
+  },
+  {
+    "name": "defmt-parser",
+    "texts": [
+      {
+        "package": "defmt-parser",
+        "version": "1.0.0",
+        "url": "https://raw.githubusercontent.com/knurling-rs/defmt/4a8cdb44891ed57b8ff5a023b6bec7137c48708f/LICENSE-MIT",
+        "sha256": "2710a622a896bba67356913d4d0492cab5465f61b2ecce6d880aeb483834fb50",
+        "path": "licenses/rust/defmt-parser-1.0.0/LICENSE-upstream-LICENSE-MIT"
+      },
+      {
+        "package": "defmt-parser",
+        "version": "1.0.0",
+        "url": "https://raw.githubusercontent.com/knurling-rs/defmt/4a8cdb44891ed57b8ff5a023b6bec7137c48708f/LICENSE-APACHE",
+        "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+        "path": "licenses/rust/defmt-parser-1.0.0/LICENSE-upstream-LICENSE-APACHE"
+      }
+    ]
+  },
+  {
+    "name": "tauri-plugin",
+    "texts": []
+  },
+  {
+    "name": "react-remove-scroll-bar",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "name": "victory-vendor",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "name": "webview2-com-macros",
+    "texts": [
+      {
+        "package": "webview2-com-macros",
+        "version": "0.8.1",
+        "url": "https://raw.githubusercontent.com/wravery/webview2-rs/dffa41a8a46d3f5565eefbff2de57d38d399f158/LICENSE",
+        "sha256": "0dcf41516e608bbcb6cdc5229feb7b86fe4a643b85e7df251133c93408fdac73",
+        "path": "licenses/rust/webview2-com-macros-0.8.1/LICENSE-upstream-LICENSE"
+      }
+    ]
+  },
+  {
+    "name": "webview2-com-sys",
+    "texts": [
+      {
+        "package": "webview2-com-sys",
+        "version": "0.38.2",
+        "url": "https://raw.githubusercontent.com/wravery/webview2-rs/b74dc5e2b394044bea5191052868ce7a106c202c/LICENSE",
+        "sha256": "0dcf41516e608bbcb6cdc5229feb7b86fe4a643b85e7df251133c93408fdac73",
+        "path": "licenses/rust/webview2-com-sys-0.38.2/LICENSE-upstream-LICENSE"
+      }
+    ]
+  },
+  {
+    "name": "webview2-com",
+    "texts": [
+      {
+        "package": "webview2-com",
+        "version": "0.38.2",
+        "url": "https://raw.githubusercontent.com/wravery/webview2-rs/b74dc5e2b394044bea5191052868ce7a106c202c/LICENSE",
+        "sha256": "0dcf41516e608bbcb6cdc5229feb7b86fe4a643b85e7df251133c93408fdac73",
+        "path": "licenses/rust/webview2-com-0.38.2/LICENSE-upstream-LICENSE"
+      }
+    ]
+  }
+]

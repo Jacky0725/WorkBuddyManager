@@ -1,0 +1,7 @@
+{
+  "no_shortcuts_requested": true,
+  "mode": "optimized release local candidate",
+  "destination": "D:\\codex\\WorkBuddyManager\\test-fixtures\\install-manager-release",
+  "exit_code": 0,
+  "installer": "D:\\codex\\WorkBuddyManager\\test-fixtures\\cargo-target\\release\\bundle\\nsis\\WorkBuddy Manager_0.2.0-alpha.1_x64-setup.exe"
+}
