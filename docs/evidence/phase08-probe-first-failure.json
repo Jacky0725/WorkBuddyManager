@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-10",
+  "error": "Metadata query used SQL LIKE, denied by strict no-functions authorizer",
+  "resolution": "Filter sqlite_ names in Python after selecting only sqlite_schema metadata",
+  "production_rows_read": false,
+  "production_sql_writes_attempted": false
+}

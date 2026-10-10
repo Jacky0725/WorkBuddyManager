@@ -1,0 +1,86 @@
+test_guard_blocks_application_reads_writes_attachments_and_pragma_assignments (__main__.MetadataGuardTests.test_guard_blocks_application_reads_writes_attachments_and_pragma_assignments) ... ERROR
+test_probe_returns_structure_without_rows_and_preserves_database_bytes (__main__.MetadataGuardTests.test_probe_returns_structure_without_rows_and_preserves_database_bytes) ... ERROR
+test_uncheckpointed_wal_schema_is_visible (__main__.MetadataGuardTests.test_uncheckpointed_wal_schema_is_visible) ... ERROR
+
+======================================================================
+ERROR: test_guard_blocks_application_reads_writes_attachments_and_pragma_assignments (__main__.MetadataGuardTests.test_guard_blocks_application_reads_writes_attachments_and_pragma_assignments)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] ��һ����������ʹ�ô��ļ��������޷����ʡ�: 'C:\\Users\\admin\\AppData\\Local\\Temp\\wbm-metadata-guard-l9n3nkyf\\workbuddy.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codex\WorkBuddyManager\scripts\test-schema-probe.py", line 21, in tearDown
+    self.directory.cleanup()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] ��һ����������ʹ�ô��ļ��������޷����ʡ�: 'C:\\Users\\admin\\AppData\\Local\\Temp\\wbm-metadata-guard-l9n3nkyf\\workbuddy.db'
+
+======================================================================
+ERROR: test_probe_returns_structure_without_rows_and_preserves_database_bytes (__main__.MetadataGuardTests.test_probe_returns_structure_without_rows_and_preserves_database_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] ��һ����������ʹ�ô��ļ��������޷����ʡ�: 'C:\\Users\\admin\\AppData\\Local\\Temp\\wbm-metadata-guard-zjjjwlpj\\workbuddy.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codex\WorkBuddyManager\scripts\test-schema-probe.py", line 21, in tearDown
+    self.directory.cleanup()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] ��һ����������ʹ�ô��ļ��������޷����ʡ�: 'C:\\Users\\admin\\AppData\\Local\\Temp\\wbm-metadata-guard-zjjjwlpj\\workbuddy.db'
+
+======================================================================
+ERROR: test_uncheckpointed_wal_schema_is_visible (__main__.MetadataGuardTests.test_uncheckpointed_wal_schema_is_visible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] ��һ����������ʹ�ô��ļ��������޷����ʡ�: 'C:\\Users\\admin\\AppData\\Local\\Temp\\wbm-metadata-guard-65dez8ks\\workbuddy.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codex\WorkBuddyManager\scripts\test-schema-probe.py", line 21, in tearDown
+    self.directory.cleanup()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] ��һ����������ʹ�ô��ļ��������޷����ʡ�: 'C:\\Users\\admin\\AppData\\Local\\Temp\\wbm-metadata-guard-65dez8ks\\workbuddy.db'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.107s
+
+FAILED (errors=3)

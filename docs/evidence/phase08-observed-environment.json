@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-10",
+  "human_authorization": "授权读写兼容核验",
+  "executable": "D:\\Program Files\\WorkBuddy\\WorkBuddy.exe",
+  "file_version": "5.7.7",
+  "product_version": "5.7.7.0",
+  "product_name": "WorkBuddy",
+  "os_version": "10.0.26200",
+  "os_caption": "Microsoft Windows 11 家庭中文版",
+  "os_display_version": "25H2",
+  "data_root": "C:\\Users\\admin\\.workbuddy",
+  "official_running": true,
+  "official_processes_closed": false,
+  "credentials_read": false,
+  "official_application_rows_read": false,
+  "production_sql_writes_attempted": false,
+  "write_probe_scope": "schema-only reconstruction with fictional data"
+}

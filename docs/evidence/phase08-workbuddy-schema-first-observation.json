@@ -1,0 +1,1641 @@
+{
+  "date": "2026-10-10",
+  "client_version": "5.7.7",
+  "database": "C:\\Users\\admin\\.workbuddy\\workbuddy.db",
+  "connection_mode": "ro",
+  "query_only": true,
+  "application_rows_selected": false,
+  "metadata": {
+    "user_version": 0,
+    "application_id": 0,
+    "schema_version": 57,
+    "journal_mode": "wal",
+    "page_size": 4096,
+    "encoding": "UTF-8"
+  },
+  "objects": [
+    {
+      "type": "index",
+      "name": "automation_delivery_outbox_dedupe_key_unique",
+      "table": "automation_delivery_outbox",
+      "sql": "CREATE UNIQUE INDEX automation_delivery_outbox_dedupe_key_unique\n    ON automation_delivery_outbox(dedupe_key)"
+    },
+    {
+      "type": "index",
+      "name": "idx_automation_delivery_outbox_channel_status_next_run",
+      "table": "automation_delivery_outbox",
+      "sql": "CREATE INDEX idx_automation_delivery_outbox_channel_status_next_run\n    ON automation_delivery_outbox(channel, status, next_run_at)"
+    },
+    {
+      "type": "index",
+      "name": "idx_automation_delivery_outbox_owner_status",
+      "table": "automation_delivery_outbox",
+      "sql": "CREATE INDEX idx_automation_delivery_outbox_owner_status\n    ON automation_delivery_outbox(owner_user_id, status)"
+    },
+    {
+      "type": "index",
+      "name": "idx_automation_delivery_outbox_run",
+      "table": "automation_delivery_outbox",
+      "sql": "CREATE INDEX idx_automation_delivery_outbox_run\n    ON automation_delivery_outbox(automation_id, run_id)"
+    },
+    {
+      "type": "index",
+      "name": "idx_automation_delivery_outbox_status_next_run",
+      "table": "automation_delivery_outbox",
+      "sql": "CREATE INDEX idx_automation_delivery_outbox_status_next_run\n    ON automation_delivery_outbox(status, next_run_at)"
+    },
+    {
+      "type": "index",
+      "name": "idx_automation_delivery_outbox_supersede_lookup",
+      "table": "automation_delivery_outbox",
+      "sql": "CREATE INDEX idx_automation_delivery_outbox_supersede_lookup\n    ON automation_delivery_outbox(automation_id, channel, owner_user_id, host_id, created_at)"
+    },
+    {
+      "type": "index",
+      "name": "idx_automation_runs_automation_id",
+      "table": "automation_runs",
+      "sql": "CREATE INDEX idx_automation_runs_automation_id\n    ON automation_runs(automation_id)"
+    },
+    {
+      "type": "index",
+      "name": "idx_automation_runs_created_at",
+      "table": "automation_runs",
+      "sql": "CREATE INDEX idx_automation_runs_created_at\n    ON automation_runs(created_at)"
+    },
+    {
+      "type": "index",
+      "name": "idx_automations_owner",
+      "table": "automations",
+      "sql": "CREATE INDEX idx_automations_owner\n    ON automations(owner_user_id, owner_status, deleted_at)"
+    },
+    {
+      "type": "index",
+      "name": "idx_sessions_buddy_snapshot_id",
+      "table": "sessions",
+      "sql": "CREATE INDEX idx_sessions_buddy_snapshot_id\n    ON sessions(buddy_snapshot_id)"
+    },
+    {
+      "type": "index",
+      "name": "idx_sessions_cloud_group",
+      "table": "sessions",
+      "sql": "CREATE INDEX idx_sessions_cloud_group\n    ON sessions(user_id, conversation_origin, group_id)\n    WHERE transport = 'cloud' AND deleted_at = -1"
+    },
+    {
+      "type": "index",
+      "name": "idx_sessions_cloud_project",
+      "table": "sessions",
+      "sql": "CREATE INDEX idx_sessions_cloud_project\n    ON sessions(user_id, project_id, last_activity_at)\n    WHERE transport = 'cloud' AND deleted_at = -1"
+    },
+    {
+      "type": "index",
+      "name": "idx_sessions_cloud_sort",
+      "table": "sessions",
+      "sql": "CREATE INDEX idx_sessions_cloud_sort\n    ON sessions(user_id, last_activity_at, created_at)\n    WHERE transport = 'cloud' AND deleted_at = -1"
+    },
+    {
+      "type": "index",
+      "name": "idx_sessions_cloud_verified",
+      "table": "sessions",
+      "sql": "CREATE INDEX idx_sessions_cloud_verified\n    ON sessions(user_id, verified_at)\n    WHERE transport = 'cloud'"
+    },
+    {
+      "type": "table",
+      "name": "__workbuddy_drizzle_migrations",
+      "table": "__workbuddy_drizzle_migrations",
+      "sql": "CREATE TABLE __workbuddy_drizzle_migrations (\n            id SERIAL PRIMARY KEY,\n            hash text NOT NULL,\n            created_at numeric\n        )",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "SERIAL",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "hash",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "created_at",
+          "type": "numeric",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "sqlite_autoindex___workbuddy_drizzle_migrations_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "automation_delivery_outbox",
+      "table": "automation_delivery_outbox",
+      "sql": "CREATE TABLE automation_delivery_outbox (\n    id TEXT PRIMARY KEY,\n    dedupe_key TEXT NOT NULL,\n    channel TEXT NOT NULL DEFAULT 'wechatmp',\n    automation_id TEXT NOT NULL,\n    run_id TEXT NOT NULL,\n    automation_name TEXT NOT NULL,\n    owner_user_id TEXT,\n    host_id TEXT,\n    payload_json TEXT NOT NULL,\n    status TEXT NOT NULL,\n    attempt_count INTEGER NOT NULL DEFAULT 0,\n    max_attempts INTEGER NOT NULL DEFAULT 5,\n    next_run_at INTEGER NOT NULL,\n    lease_owner TEXT,\n    lease_expire_at INTEGER,\n    last_error_code TEXT,\n    last_error_message TEXT,\n    delivery_id TEXT,\n    created_at INTEGER NOT NULL,\n    updated_at INTEGER NOT NULL,\n    finished_at INTEGER\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "dedupe_key",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "channel",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'wechatmp'",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 3,
+          "name": "automation_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 4,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 5,
+          "name": "automation_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 6,
+          "name": "owner_user_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 7,
+          "name": "host_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 8,
+          "name": "payload_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 9,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 10,
+          "name": "attempt_count",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "0",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 11,
+          "name": "max_attempts",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "5",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 12,
+          "name": "next_run_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 13,
+          "name": "lease_owner",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 14,
+          "name": "lease_expire_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 15,
+          "name": "last_error_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 16,
+          "name": "last_error_message",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 17,
+          "name": "delivery_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 18,
+          "name": "created_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 19,
+          "name": "updated_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 20,
+          "name": "finished_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "idx_automation_delivery_outbox_supersede_lookup",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 1,
+          "name": "idx_automation_delivery_outbox_owner_status",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 2,
+          "name": "idx_automation_delivery_outbox_run",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 3,
+          "name": "idx_automation_delivery_outbox_channel_status_next_run",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 4,
+          "name": "idx_automation_delivery_outbox_status_next_run",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 5,
+          "name": "automation_delivery_outbox_dedupe_key_unique",
+          "unique": 1,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 6,
+          "name": "sqlite_autoindex_automation_delivery_outbox_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "automation_runs",
+      "table": "automation_runs",
+      "sql": "CREATE TABLE automation_runs (\n    thread_id TEXT PRIMARY KEY,\n    automation_id TEXT NOT NULL,\n    status TEXT NOT NULL,\n    read_at INTEGER,\n    thread_title TEXT,\n    source_cwd TEXT,\n    runs_json TEXT,\n    result_success INTEGER,\n    metadata_json TEXT,\n    created_at INTEGER NOT NULL,\n    updated_at INTEGER NOT NULL\n, failure_code TEXT, reason_code TEXT)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "thread_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "automation_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 3,
+          "name": "read_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 4,
+          "name": "thread_title",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 5,
+          "name": "source_cwd",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 6,
+          "name": "runs_json",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 7,
+          "name": "result_success",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 8,
+          "name": "metadata_json",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 9,
+          "name": "created_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 10,
+          "name": "updated_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 11,
+          "name": "failure_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 12,
+          "name": "reason_code",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "idx_automation_runs_created_at",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 1,
+          "name": "idx_automation_runs_automation_id",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 2,
+          "name": "sqlite_autoindex_automation_runs_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "automation_runtime_state",
+      "table": "automation_runtime_state",
+      "sql": "CREATE TABLE automation_runtime_state (\n    automation_id TEXT PRIMARY KEY,\n    last_run_at INTEGER,\n    last_error TEXT,\n    running INTEGER NOT NULL DEFAULT 0,\n    running_started_at INTEGER,\n    running_conversation_id TEXT,\n    metadata_json TEXT\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "automation_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "last_run_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "last_error",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 3,
+          "name": "running",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "0",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 4,
+          "name": "running_started_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 5,
+          "name": "running_conversation_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 6,
+          "name": "metadata_json",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "sqlite_autoindex_automation_runtime_state_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "automations",
+      "table": "automations",
+      "sql": "CREATE TABLE automations (\n    id TEXT PRIMARY KEY,\n    name TEXT NOT NULL,\n    prompt TEXT NOT NULL,\n    status TEXT NOT NULL,\n    schedule_type TEXT NOT NULL DEFAULT 'recurring',\n    next_run_at INTEGER,\n    last_run_at INTEGER,\n    cwds TEXT NOT NULL DEFAULT '[]',\n    rrule TEXT NOT NULL DEFAULT '',\n    scheduled_at TEXT,\n    valid_from TEXT,\n    valid_until TEXT,\n    model_id TEXT,\n    model_is_thinking INTEGER NOT NULL DEFAULT 0,\n    skills_json TEXT NOT NULL DEFAULT '[]',\n    push_to_wechat INTEGER NOT NULL DEFAULT 0,\n    push_to_wecom_bot INTEGER NOT NULL DEFAULT 0,\n    wecom_bot_source TEXT,\n    owner_user_id TEXT,\n    owner_status TEXT NOT NULL DEFAULT 'legacy_unassigned',\n    owner_source TEXT,\n    expert_id TEXT,\n    expert_marketplace TEXT,\n    connector_ids_json TEXT NOT NULL DEFAULT '[]',\n    permission_mode TEXT,\n    created_at INTEGER NOT NULL,\n    updated_at INTEGER NOT NULL,\n    deleted_at INTEGER\n, context_window INTEGER, reasoning_effort TEXT, workspace_scope TEXT)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "prompt",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 3,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 4,
+          "name": "schedule_type",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'recurring'",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 5,
+          "name": "next_run_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 6,
+          "name": "last_run_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 7,
+          "name": "cwds",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'[]'",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 8,
+          "name": "rrule",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "''",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 9,
+          "name": "scheduled_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 10,
+          "name": "valid_from",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 11,
+          "name": "valid_until",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 12,
+          "name": "model_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 13,
+          "name": "model_is_thinking",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "0",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 14,
+          "name": "skills_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'[]'",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 15,
+          "name": "push_to_wechat",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "0",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 16,
+          "name": "push_to_wecom_bot",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "0",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 17,
+          "name": "wecom_bot_source",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 18,
+          "name": "owner_user_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 19,
+          "name": "owner_status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'legacy_unassigned'",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 20,
+          "name": "owner_source",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 21,
+          "name": "expert_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 22,
+          "name": "expert_marketplace",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 23,
+          "name": "connector_ids_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'[]'",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 24,
+          "name": "permission_mode",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 25,
+          "name": "created_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 26,
+          "name": "updated_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 27,
+          "name": "deleted_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 28,
+          "name": "context_window",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 29,
+          "name": "reasoning_effort",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 30,
+          "name": "workspace_scope",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "idx_automations_owner",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 1,
+          "name": "sqlite_autoindex_automations_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "buddy_snapshots",
+      "table": "buddy_snapshots",
+      "sql": "CREATE TABLE buddy_snapshots (\n    snapshot_id TEXT PRIMARY KEY,\n    application_id TEXT NOT NULL,\n    template_id TEXT NOT NULL,\n    schema_version INTEGER NOT NULL,\n    template_version INTEGER NOT NULL,\n    snapshot_format_version INTEGER NOT NULL,\n    config_json TEXT NOT NULL,\n    config_digest TEXT NOT NULL,\n    created_at INTEGER NOT NULL\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "snapshot_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "application_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "template_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 3,
+          "name": "schema_version",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 4,
+          "name": "template_version",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 5,
+          "name": "snapshot_format_version",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 6,
+          "name": "config_json",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 7,
+          "name": "config_digest",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 8,
+          "name": "created_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "sqlite_autoindex_buddy_snapshots_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "migration_meta",
+      "table": "migration_meta",
+      "sql": "CREATE TABLE migration_meta (\n    key TEXT PRIMARY KEY,\n    value TEXT NOT NULL\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "key",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "value",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "sqlite_autoindex_migration_meta_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "session_usage",
+      "table": "session_usage",
+      "sql": "CREATE TABLE session_usage (\n    session_id TEXT PRIMARY KEY,\n    used INTEGER NOT NULL,\n    size INTEGER NOT NULL,\n    updated_at INTEGER NOT NULL,\n    credit_json TEXT\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "session_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "used",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "size",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 3,
+          "name": "updated_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 4,
+          "name": "credit_json",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "sqlite_autoindex_session_usage_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "sessions",
+      "table": "sessions",
+      "sql": "CREATE TABLE sessions (\n    id TEXT PRIMARY KEY,\n    cwd TEXT NOT NULL,\n    user_id TEXT NOT NULL,\n    title TEXT,\n    custom_title TEXT,\n    status TEXT NOT NULL DEFAULT 'Pending',\n    created_at INTEGER NOT NULL,\n    updated_at INTEGER NOT NULL,\n    last_activity_at INTEGER,\n    deleted_at INTEGER,\n    is_playground INTEGER NOT NULL DEFAULT 0,\n    source_mode TEXT,\n    is_background_automation INTEGER,\n    mode TEXT,\n    model TEXT,\n    expert_id TEXT,\n    expert_locale TEXT,\n    expert_runtime_identity TEXT,\n    expert_marketplace TEXT,\n    permission_mode TEXT,\n    use_sandbox_cli INTEGER,\n    project_id TEXT\n, plugin_context_json TEXT, addon_selection TEXT, session_settings TEXT, last_user_prompt_expert_selection TEXT, context_window INTEGER, buddy_snapshot_id TEXT, buddy_binding_json TEXT, thought_level TEXT, transport TEXT NOT NULL DEFAULT 'local', conversation_origin TEXT, visibility TEXT, group_id TEXT, group_title TEXT, agent_dirty INTEGER, agent_dirty_at INTEGER, agent_last_synced INTEGER, verified_at INTEGER, unread INTEGER NOT NULL DEFAULT 0)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "cwd",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "user_id",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 3,
+          "name": "title",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 4,
+          "name": "custom_title",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 5,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'Pending'",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 6,
+          "name": "created_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 7,
+          "name": "updated_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 8,
+          "name": "last_activity_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 9,
+          "name": "deleted_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 10,
+          "name": "is_playground",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "0",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 11,
+          "name": "source_mode",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 12,
+          "name": "is_background_automation",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 13,
+          "name": "mode",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 14,
+          "name": "model",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 15,
+          "name": "expert_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 16,
+          "name": "expert_locale",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 17,
+          "name": "expert_runtime_identity",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 18,
+          "name": "expert_marketplace",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 19,
+          "name": "permission_mode",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 20,
+          "name": "use_sandbox_cli",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 21,
+          "name": "project_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 22,
+          "name": "plugin_context_json",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 23,
+          "name": "addon_selection",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 24,
+          "name": "session_settings",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 25,
+          "name": "last_user_prompt_expert_selection",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 26,
+          "name": "context_window",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 27,
+          "name": "buddy_snapshot_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 28,
+          "name": "buddy_binding_json",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 29,
+          "name": "thought_level",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 30,
+          "name": "transport",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": "'local'",
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 31,
+          "name": "conversation_origin",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 32,
+          "name": "visibility",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 33,
+          "name": "group_id",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 34,
+          "name": "group_title",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 35,
+          "name": "agent_dirty",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 36,
+          "name": "agent_dirty_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 37,
+          "name": "agent_last_synced",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 38,
+          "name": "verified_at",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 39,
+          "name": "unread",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": "0",
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "idx_sessions_cloud_verified",
+          "unique": 0,
+          "origin": "c",
+          "partial": 1
+        },
+        {
+          "seq": 1,
+          "name": "idx_sessions_cloud_project",
+          "unique": 0,
+          "origin": "c",
+          "partial": 1
+        },
+        {
+          "seq": 2,
+          "name": "idx_sessions_cloud_group",
+          "unique": 0,
+          "origin": "c",
+          "partial": 1
+        },
+        {
+          "seq": 3,
+          "name": "idx_sessions_cloud_sort",
+          "unique": 0,
+          "origin": "c",
+          "partial": 1
+        },
+        {
+          "seq": 4,
+          "name": "idx_sessions_buddy_snapshot_id",
+          "unique": 0,
+          "origin": "c",
+          "partial": 0
+        },
+        {
+          "seq": 5,
+          "name": "sqlite_autoindex_sessions_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "workspace_trust_decisions",
+      "table": "workspace_trust_decisions",
+      "sql": "CREATE TABLE workspace_trust_decisions (\n    workspace_key TEXT PRIMARY KEY,\n    decision TEXT NOT NULL CHECK (decision IN ('trusted', 'rejected')),\n    revision INTEGER NOT NULL,\n    created_at INTEGER NOT NULL,\n    updated_at INTEGER NOT NULL\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "workspace_key",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "decision",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 2,
+          "name": "revision",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 3,
+          "name": "created_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        },
+        {
+          "cid": 4,
+          "name": "updated_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "sqlite_autoindex_workspace_trust_decisions_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "workspaces",
+      "table": "workspaces",
+      "sql": "CREATE TABLE workspaces (\n    path TEXT PRIMARY KEY,\n    last_opened_at INTEGER NOT NULL\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "path",
+          "type": "TEXT",
+          "notnull": 0,
+          "default": null,
+          "pk": 1,
+          "hidden": 0
+        },
+        {
+          "cid": 1,
+          "name": "last_opened_at",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0,
+          "hidden": 0
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "seq": 0,
+          "name": "sqlite_autoindex_workspaces_1",
+          "unique": 1,
+          "origin": "pk",
+          "partial": 0
+        }
+      ]
+    }
+  ],
+  "schema_sha256": "60f8b135b51659f0afbdef9d562f9aa1253fb085aabd46e7b5c0234e8ad61de4"
+}

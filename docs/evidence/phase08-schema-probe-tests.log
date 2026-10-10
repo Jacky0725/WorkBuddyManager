@@ -1,0 +1,8 @@
+test_guard_blocks_application_reads_writes_attachments_and_pragma_assignments (__main__.MetadataGuardTests.test_guard_blocks_application_reads_writes_attachments_and_pragma_assignments) ... ok
+test_probe_returns_structure_without_rows_and_preserves_database_bytes (__main__.MetadataGuardTests.test_probe_returns_structure_without_rows_and_preserves_database_bytes) ... ok
+test_uncheckpointed_wal_schema_is_visible (__main__.MetadataGuardTests.test_uncheckpointed_wal_schema_is_visible) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.066s
+
+OK

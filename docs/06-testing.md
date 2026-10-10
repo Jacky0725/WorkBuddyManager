@@ -92,3 +92,13 @@ NSIS 当前用户隔离循环：debug 安装 → 正常 UI → 卸载 → 优化
 最终提交重新优化构建成功（phase07-manager-release-build.log）；安装器 6,162,963 字节，SHA256 `30A93E5E0BE8E2F431967D8025EC7D83F4C4E0888F184E30F4A69A751EFEB700`，安装后 exe 23,792,640 字节，SHA256 `0674557F6F90B66680C7F009ADBFFB3924E5356E34C666CB0590F9878CE051A4`。再次隔离安装退出码 0，正常窗口显示三条虚构资料及生产接口禁用提示；截图为 manager-ui/final-installed-accounts.png，安装记录为 phase07-final-install.json，代码与测试提交关系见 phase07-final-build-source.json。
 
 最终隔离卸载退出码 0，主程序与本轮卸载注册项已移除，11 份 fixture 文件哈希全部不变，三条虚构资料和两份备份保留（phase07-final-uninstall.json）。最终候选字节核验通过：全部载荷与 SHA256SUMS 一致，827 份许可文本对照依赖清单，五份 MPL crate 对应源存在；安装依赖许可/对应源与源码 ZIP 一致，ZIP 重新导出与最终 Git 提交一致，开发 bundle 有效。详见 manager-candidate-verification.json。
+
+## 2026-10-10：阶段 08 国内版 5.7.7 结构与隔离写入核验
+
+已收到“授权读写兼容核验”。PE FileVersion 实测 5.7.7；只读采集主库和 edge v4 结构，重建空库及虚构会话后运行实际算法，未读取凭证/真实业务记录、未关闭官方进程、未写官方库。
+
+app `5c1e50fcbab4aeaa86d90d3ca27ea3cb178b7cbf` 仅测试改动。`Test-Development.ps1 -Target Core`：731 单元 + 73 集成 = 804 passed，0 failed/ignored；Python 探针保护测试 3 passed。新增 5 个结构用例验证复制、FastForward、WAL 快照、事务失败回滚及云字段现状。云绑定原样复制和 deleted_at=-1/NULL 条件差异是未解决发现，不代表云会话兼容通过。未改 host/前端，未重复全工程测试。
+
+初次探针 LIKE 被权限保护拒绝，改为 Python 名称过滤；初次 Python 测试因 Windows 未关闭 SQLite 连接导致清理失败，明确关闭连接后通过。失败与成功日志均保留。两份 fixture 的 sqlite_schema DDL 与实际观察对应一致；证据汇总为 phase08-compatibility-results.json，核心日志为 phase08-core-tests.log。完整范围见 14-workbuddy-577-compatibility.md。
+
+阶段 07 候选冻结于 `5c49371`，当前根开发 bundle 推进至 `5c1e50f`。候选校验按其历史提交而非最新 HEAD 比较；官方请求、官方数据库写入和正式发布均未放行。

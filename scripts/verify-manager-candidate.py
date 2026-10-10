@@ -26,8 +26,10 @@ def checked_file(relative):
 
 manifest = json.loads((CANDIDATE / "manifest.json").read_text(encoding="utf-8-sig"))
 assert manifest == json.loads((ROOT / "docs/evidence/windows-manager-artifacts.json").read_text(encoding="utf-8-sig")), "Tracked artifact record differs from candidate"
-app_commit = subprocess.check_output(["git", "-C", str(ROOT / "app"), "rev-parse", "HEAD"], text=True).strip()
-assert manifest["app_commit"] == app_commit, "Candidate commit differs from app HEAD"
+app_commit = manifest["app_commit"]
+# Historical candidates remain verifiable after later development commits.
+resolved_commit = subprocess.check_output(["git", "-C", str(ROOT / "app"), "rev-parse", "--verify", app_commit + "^{commit}"], text=True).strip()
+assert resolved_commit == app_commit, "Candidate commit is not available in the retained app history"
 names = set()
 for entry in manifest["files"]:
     assert entry["name"] not in names, f"Duplicate manifest entry: {entry['name']}"

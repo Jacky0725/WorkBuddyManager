@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-10",
+  "app_commit": "5c1e50fcbab4aeaa86d90d3ca27ea3cb178b7cbf",
+  "production_runtime_changed": false,
+  "scope": "Observed structure metadata; actual algorithms on reconstructed empty schemas and fictional records only",
+  "rust_core_passed": 804,
+  "rust_suite_counts": [
+    731,
+    19,
+    13,
+    5,
+    4,
+    6,
+    18,
+    8,
+    0
+  ],
+  "new_observed_schema_cases": [
+    "workbuddy_577_failed_copy_row_transaction_rolls_back",
+    "workbuddy_577_legacy_copy_preserves_unverified_cloud_and_snapshot_bindings",
+    "workbuddy_577_wal_snapshot_contains_uncheckpointed_fictional_row",
+    "workbuddy_577_local_copy_preserves_source_and_keeps_mapping_empty",
+    "workbuddy_577_fast_forward_updates_body_and_preserves_target_title"
+  ],
+  "python_guard_passed": 3,
+  "fixtures": [
+    {
+      "file": "app/crates/wb-switch-core/tests/fixtures/workbuddy-cn-5.7.7-structure.sql",
+      "ddl_matches_observed_metadata": true,
+      "objects": 25,
+      "schema_observation_sha256": "60f8b135b51659f0afbdef9d562f9aa1253fb085aabd46e7b5c0234e8ad61de4",
+      "fixture_file_sha256": "dce96a94654c518042226b1c86c0e63f52d0d3e1c17b81ac6583cd7bd97fb87a"
+    },
+    {
+      "file": "app/crates/wb-switch-core/tests/fixtures/workbuddy-cn-5.7.7-edge-v4-structure.sql",
+      "ddl_matches_observed_metadata": true,
+      "objects": 4,
+      "schema_observation_sha256": "debe65eaa2398142197da2fd7ba5b191a2233249c04c441a54f22c405c669d83",
+      "fixture_file_sha256": "b9bf85042ee66f1699cf223d195b2bfb4be9ec1d4e6a71c5291530b3dc85d7b7"
+    }
+  ],
+  "official_application_rows_read": false,
+  "credentials_read": false,
+  "official_processes_closed": false,
+  "production_sql_writes_attempted": false,
+  "production_session_writes_enabled": false,
+  "cloud_binding_characterization_is_compatibility_approval": false,
+  "official_business_compatibility_verified": false,
+  "candidate_installer_app_commit": "5c493712b9e6d381b67677dd565c45b9f257d4e0",
+  "retained_initial_failures": [
+    "phase08-probe-first-failure.json",
+    "phase08-schema-probe-first-failed-tests.log"
+  ]
+}
