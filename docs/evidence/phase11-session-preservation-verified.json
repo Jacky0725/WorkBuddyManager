@@ -1,0 +1,18 @@
+{
+  "test_step": "A->B->A switch session preservation verification",
+  "tested_at": "2026-10-10 15:35:00",
+  "account_a": {
+    "alias": "Account A (Work)",
+    "uid": "686f63f2-c0e9-426c-8c98-a333a673589f",
+    "session_count": 1,
+    "sample_session_id": "42754e64-2a01-48a8-bda1-7ffa6010d772"
+  },
+  "account_b": {
+    "alias": "Account B (Personal)",
+    "uid": "693f3ccd-e5cb-4f5c-af47-e3e2765cbed9",
+    "session_count": 9,
+    "sample_session_id": "260dddb6-93d6-415b-8626-7307886a95e5"
+  },
+  "result": "Preserved without data loss. SQLite database and NDJSON project files maintain clean ownership distinction.",
+  "account_c_status": "Planned. Account C has not logged into the official client yet."
+}

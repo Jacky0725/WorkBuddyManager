@@ -1,0 +1,7 @@
+{
+  "test_step": "Rollback baseline integrity verification",
+  "verified_at": "2026-10-10 15:40:00",
+  "backup_path": "D:\\codex\\WorkBuddyManager\\test-fixtures\\acceptance-backup\\workbuddy.baseline.db",
+  "can_restore_safely": true,
+  "untainted": true
+}
