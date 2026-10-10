@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-10",
+  "app_commit": "ad17460db9b587ba9fd5090987ad37415d6c94db",
+  "production_runtime_changed": true,
+  "production_session_writes_enabled": false,
+  "scope": "Installed program text as static data; fictional reconstructed databases and bodies for regression",
+  "rust_workspace_passed": 856,
+  "rust_suite_counts": [
+    734,
+    19,
+    13,
+    5,
+    4,
+    6,
+    18,
+    8,
+    34,
+    0,
+    15,
+    0,
+    0
+  ],
+  "rust_core_passed": 807,
+  "frontend_passed": 35,
+  "frontend_build_passed": true,
+  "workbuddy_577_cases": [
+    "workbuddy_577_failed_copy_row_transaction_rolls_back",
+    "workbuddy_577_copy_recovery_rejects_changed_binding_before_replay",
+    "workbuddy_577_wal_snapshot_contains_uncheckpointed_fictional_row",
+    "workbuddy_577_local_copy_preserves_source_and_keeps_mapping_empty",
+    "workbuddy_577_fast_forward_updates_body_and_preserves_target_title",
+    "workbuddy_577_sync_recovery_does_not_rollback_cloud_sentinel_body",
+    "workbuddy_577_sync_rechecks_transfer_metadata_after_preview",
+    "workbuddy_577_unsupported_copy_rejects_before_body_backup_and_row_writes"
+  ],
+  "unsupported_copy_matrix_cases": 11,
+  "credentials_read": false,
+  "official_application_rows_read": false,
+  "official_conversation_bodies_read": false,
+  "official_processes_closed": false,
+  "production_sql_writes_attempted": false,
+  "installed_program_code_executed": false,
+  "official_business_compatibility_verified": false,
+  "new_installer_built": false,
+  "candidate_installer_app_commit": "5c493712b9e6d381b67677dd565c45b9f257d4e0",
+  "generated_tauri_permissions_restored": true,
+  "evidence": [
+    {
+      "file": "phase09-installed-code-facts.json",
+      "sha256": "8b814fe177071c81d7f0e75fb2c597ed15b65755e3b7617d68bc325f8d451b13"
+    },
+    {
+      "file": "phase09-workspace-tests.log",
+      "sha256": "7f3ff344a952557dd8617121d94129c3e279c7ffe4f90bce6b55e08dc8761e8f"
+    },
+    {
+      "file": "phase09-frontend-tests.log",
+      "sha256": "f51028018bffeeb98af2fde3dd52005fa40d755a6a67a6d657f7030e682ca5bc"
+    },
+    {
+      "file": "phase09-frontend-build.log",
+      "sha256": "6e8766580c0bdf4795af6b9e221b1c0376caa364d9694e0e88307b9a38e9a569"
+    },
+    {
+      "file": "phase09-core-first-failed-build.log",
+      "sha256": "f48f0953464725b693b6446ee31d6c83f7fa8742156e0cf8af42886614509dbc"
+    },
+    {
+      "file": "phase09-core-first-failed-tests.log",
+      "sha256": "3cf392c2eb3a7c80e633d9f27cbf93bab844c033aae6f95a34cdeaa58d89bd7a"
+    }
+  ]
+}

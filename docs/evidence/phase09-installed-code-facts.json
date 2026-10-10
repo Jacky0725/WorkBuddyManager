@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-10",
+  "archive": "D:\\Program Files\\WorkBuddy\\resources\\app.asar",
+  "archive_bytes": 213178357,
+  "archive_sha256": "f3131a61636935a3cc83f23134656654b0ba4b227b0ddb04f7f4dbd7efa5517d",
+  "source_kind": "Installed 5.7.7 program text, static observation only",
+  "program_code_executed": false,
+  "user_data_opened": false,
+  "production_sql_writes_attempted": false,
+  "members": {
+    "main/conversations.js": {
+      "bytes": 717174,
+      "sha256": "10c31573f43c6d48cd2334dd00a83e6932f30bee55134ae54d42a10778488e98",
+      "facts": [
+        {
+          "fact": "cloud_deleted_normalization",
+          "matches": 1,
+          "character_offset": 552834,
+          "excerpt_start": 552744,
+          "excerpt": "at AS createdAt,\n    updated_at AS updatedAt,\n    last_activity_at AS lastActivityAt,\n    CASE WHEN deleted_at = -1 THEN NULL ELSE deleted_at END AS deletedAt,\n    project_id AS projectId,\n    cwd AS workDir,\n    is_playground AS isPlayground,\n    group_id AS groupId,\n    group_title AS groupTitle,\n    agen"
+        },
+        {
+          "fact": "cloud_upsert_sentinel",
+          "matches": 1,
+          "character_offset": 612598,
+          "excerpt_start": 612508,
+          "excerpt": "\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?)(?:[Zz])?$/);return t?`${t[1]}+08:00`:e}var KC=20,qC=-1,JC=`\n    INSERT INTO sessions (\n        id, user_id, transport, title, custom_title, conversation_origin, visibility,\n        status, created_at, updated"
+        }
+      ]
+    },
+    "main/handlers.js": {
+      "bytes": 367781,
+      "sha256": "5ec9d69edb1fdb6086858dd27bfaf187b0f26e88f3850d560729656db1cca7ef",
+      "facts": [
+        {
+          "fact": "local_active_predicate",
+          "matches": 7,
+          "character_offset": 202916,
+          "excerpt_start": 202826,
+          "excerpt": "is.sqlite.prepare(`\n            SELECT ${n.f}\n            FROM sessions\n            WHERE transport = 'local'\n              AND deleted_at IS NULL\n              AND (user_id = ? OR user_id = '')\n              AND id IN (${o})\n            ORDER BY COALESCE(last_activity_at, created_at) DESC, id A"
+        },
+        {
+          "fact": "cloud_active_predicate",
+          "matches": 5,
+          "character_offset": 219925,
+          "excerpt_start": 219835,
+          "excerpt": "d = ?\n              AND ((transport = 'local' AND deleted_at IS NULL)\n                OR (transport = 'cloud' AND deleted_at = -1))\n              AND (user_id = ? OR user_id = '')\n        `);this.sqlite.transaction(()=>{for(let t of r)i.run(t,e)})();try{await t.delete(yc,bc),awa"
+        },
+        {
+          "fact": "buddy_binding_reference_check",
+          "matches": 1,
+          "character_offset": 217410,
+          "excerpt_start": 217320,
+          "excerpt": "pshotId||e.buddyBindingJson)try{let t=n.bn(e.buddyBindingJson);if(!e.buddySnapshotId||!t||t.snapshotId!==e.buddySnapshotId)throw Error(`Buddy session binding is missing or does not match its reference`);let r=this.readBuddyAppSnapshot(e.buddySnapshotId);if(!r)throw Error("
+        },
+        {
+          "fact": "buddy_snapshot_lookup",
+          "matches": 1,
+          "character_offset": 218505,
+          "excerpt_start": 218415,
+          "excerpt": "       config_digest AS configDigest,\n                created_at AS createdAt\n            FROM buddy_snapshots\n            WHERE snapshot_id = ?\n            LIMIT 1\n        `).get(e);if(!i)return;let a=Ec(n.vn({version:i.snapshotFormatVersion,snapshotId:i.snap"
+        }
+      ]
+    },
+    "main/server.js": {
+      "bytes": 3074721,
+      "sha256": "ea34950748468888c7b7a7467364f562abb5e91ded104455c5761bbf5e6ddab7",
+      "facts": [
+        {
+          "fact": "local_active_predicate",
+          "matches": 2,
+          "character_offset": 366480,
+          "excerpt_start": 366390,
+          "excerpt": "dAt,\n           project_id AS projectId\n    FROM sessions\n    WHERE user_id = ?\n      AND transport = 'local'\n      AND deleted_at IS NULL\n      AND (title LIKE ? ESCAPE '\\\\' OR custom_title LIKE ? ESCAPE '\\\\')\n    ORDER BY COALESCE(last_activity_at, created_at) DESC\n    LIMIT ?\n`,Uu=cla"
+        },
+        {
+          "fact": "cloud_active_predicate",
+          "matches": 2,
+          "character_offset": 380514,
+          "excerpt_start": 380424,
+          "excerpt": "dAt,\n           project_id AS projectId\n    FROM sessions\n    WHERE user_id = ?\n      AND transport = 'cloud'\n      AND deleted_at = -1\n      AND (conversation_origin IS NULL OR conversation_origin NOT IN (${[`teams_scheduler`,`workbuddy-deploy`].map(e=>`'${e}'`).join(`, `)}))\n      A"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+   Compiling wb-switch-core v0.2.0-alpha.1 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+error[E0277]: can't compare `Vec<std::string::String>` with `{integer}`
+    --> crates\wb-switch-core\src\modules\session.rs:4316:13
+     |
+4316 |             assert_eq!(env.body_files(), 1);
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no implementation for `Vec<std::string::String> == {integer}`
+     |
+     = help: the trait `PartialEq<{integer}>` is not implemented for `Vec<std::string::String>`
+     = help: the following other types implement trait `PartialEq<Rhs>`:
+               `Vec<T, A1>` implements `PartialEq<Vec<U, A2>>`
+               `Vec<T, A>` implements `PartialEq<&[U; N]>`
+               `Vec<T, A>` implements `PartialEq<&[U]>`
+               `Vec<T, A>` implements `PartialEq<&mut [U]>`
+               `Vec<T, A>` implements `PartialEq<[U; N]>`
+               `Vec<T, A>` implements `PartialEq<[U]>`
+               `Vec<u8>` implements `PartialEq<ByteStr>`
+               `Vec<u8>` implements `PartialEq<ByteString>`
+             and 2 others
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `wb-switch-core` (lib test) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

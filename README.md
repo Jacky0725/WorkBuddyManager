@@ -18,6 +18,7 @@
 - 阶段 06：每日计划页、账号卡片状态、两种 host 配置服务与冲突保护已接入；阶段 07 已验证正常桌面下的计划保存、备份恢复与持久日志。
 - 阶段 07：本机会话、CSP、日志脱敏、加密备份恢复、认证写入锁、独立产品身份和许可材料已实现。Rust 848 + 前端 35 passed。0.2.0-alpha.1 优化版 x64 NSIS 候选生成，隔离安装、桌面交互、卸载及数据保留通过；本机实际测试环境为 Windows 11 25H2。
 - 阶段 08：用户授权读写兼容核验后，实测国内版 5.7.7，采集两个数据库的结构元数据，用空结构与虚构资料验证实际会话算法。核心 Rust 804 + Python 探针 3 passed；云绑定及删除标记的官方语义未确认，生产写入继续禁用。详见兼容核验报告。
+- 阶段 09：静态核对安装包程序，确认本地/云删除状态和 Buddy 快照引用检查；复制、同步、预览与恢复增加云/未知类型及绑定拒绝规则。Rust 856 + 前端 35 passed，前端构建成功；生产入口仍关闭。
 - 真实签到/积分授权边界未验证，相关生产请求已关闭。真实账号测试与产品发布尚未完成；原版构建不等于统一产品交付。
 
 ## 上游基线
@@ -51,6 +52,7 @@
 - [相对上游的改动](docs/12-upstream-differences.md)
 - [真实环境验收范围](docs/13-acceptance-plan.md)
 - [WorkBuddy 5.7.7 兼容核验](docs/14-workbuddy-577-compatibility.md)
+- [本地会话迁移范围与保护规则](docs/15-local-session-transfer-policy.md)
 
 ## 获取源码与复查证据
 
@@ -59,7 +61,7 @@ git submodule update --init -- upstream/workbuddy-switch upstream/workbuddy-help
 python scripts/collect-audit-evidence.py
 ```
 
-`app` 的本地开发提交尚未推送到上游远端，不能依靠原作者仓库获取 `5c1e50fcbab4aeaa86d90d3ca27ea3cb178b7cbf`。本地已保存完整 checkout；另提供 `docs/evidence/app-development.bundle`，可在克隆固定基线后恢复开发提交：
+`app` 的本地开发提交尚未推送到上游远端，不能依靠原作者仓库获取 `ad17460db9b587ba9fd5090987ad37415d6c94db`。本地已保存完整 checkout；另提供 `docs/evidence/app-development.bundle`，可在克隆固定基线后恢复开发提交：
 
 ```powershell
 git clone https://github.com/changexbc/workbuddy-switch.git app
@@ -75,6 +77,6 @@ git -C app checkout -b develop/workbuddy-manager FETCH_HEAD
 
 `release/0.2.0-alpha.1/local-candidate/` 保存未签名安装器、安装后的可执行文件、源码 ZIP、开发提交 bundle、许可材料、用户说明、测试报告与逐文件 SHA256。此目录被 Git 忽略，安装器校验清单另保存在 `docs/evidence/windows-manager-artifacts.json`。
 
-该候选固定于阶段 07 app `5c49371`；阶段 08 仅增加测试与结构 fixture，不改变运行时代码或重打包安装器。根工程开发 bundle 已推进到 `5c1e50f`，候选内的历史 bundle 和源码仍按固定提交核验。
+该候选固定于阶段 07 app `5c49371`；阶段 08 仅增加测试与结构 fixture，阶段 09 改变运行时迁移保护规则，均未重打包安装器。根工程开发 bundle 随开发提交更新；候选内的历史 bundle 和源码仍按固定提交核验，旧安装器不含阶段 09 改动。
 
 完整计划尚未验收：真实三账号与官方会话兼容性、签到接口许可、Windows 10/11 22H2，以及一项依赖许可文本的发行源对应仍需确认。相关生产门禁保持关闭，不以本地候选替代正式发布。

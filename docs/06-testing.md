@@ -102,3 +102,13 @@ app `5c1e50fcbab4aeaa86d90d3ca27ea3cb178b7cbf` 仅测试改动。`Test-Developme
 初次探针 LIKE 被权限保护拒绝，改为 Python 名称过滤；初次 Python 测试因 Windows 未关闭 SQLite 连接导致清理失败，明确关闭连接后通过。失败与成功日志均保留。两份 fixture 的 sqlite_schema DDL 与实际观察对应一致；证据汇总为 phase08-compatibility-results.json，核心日志为 phase08-core-tests.log。完整范围见 14-workbuddy-577-compatibility.md。
 
 阶段 07 候选冻结于 `5c49371`，当前根开发 bundle 推进至 `5c1e50f`。候选校验按其历史提交而非最新 HEAD 比较；官方请求、官方数据库写入和正式发布均未放行。
+
+## 2026-10-10：阶段 09 本地迁移类型与恢复保护
+
+静态读取安装包的三个程序文本成员，确认本地 NULL / 云 -1 活动条件以及 Buddy 快照引用校验。未执行官方代码、读取用户数据或修改官方数据库。程序事实证据为 phase09-installed-code-facts.json。
+
+app `ad17460db9b587ba9fd5090987ad37415d6c94db` 新增复制/同步/预览/恢复的迁移类型拒绝规则，并在读取元数据失败时停止，不把错误替换成 NULL。新增 3 个结构回归用例，原云字段现状用例改为 11 种不支持输入的拒绝检查；当前 5.7.7 结构用例共 8 个。同步恢复用例证明 cloud/-1 不再被误作本地删除而还原正文。
+
+完整 `Test-Development.ps1 -Target All`：core 807 + Tauri 34 + server 15 = **856 Rust passed**，前端 **35 passed**，前端生产构建成功；失败/跳过均为零。保留上游 warnings 和 chunk 提示。两次早期新测试错误（文件列表误与整数比较导致编译失败、预览 groups 字段误写为 items 导致断言失败）已修正，失败日志为 phase09-core-first-failed-build.log 和 phase09-core-first-failed-tests.log。最终日志为 phase09-workspace-tests.log、phase09-frontend-tests.log 和 phase09-frontend-build.log，汇总及哈希为 phase09-transfer-policy-results.json。
+
+生成的 vendor permissions 已还原。没有新 GUI、NSIS 安装/卸载、官方正文显示或接管验收，不能声称新运行时已交付安装器；阶段 07 候选仍固定于 `5c49371`，根开发 bundle 推进至 `ad17460`。复核历史候选载荷/许可文本/源码及 bundle 校验继续通过。范围与后续空白项目清单见 15-local-session-transfer-policy.md。

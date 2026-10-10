@@ -17,7 +17,9 @@
 
 没有读取/迁移生产 Token，没有真实三账号登录、A→B→C→A、真实签到或生产会话迁移结果。提供版本信息不构成真实账号操作授权，核验步骤见 13-acceptance-plan.md。
 
-2026-10-10 用户明确授权“授权读写兼容核验”，已执行安装版本和只读结构核验、隔离重建库上的写入与回滚测试。该授权已记录，无需重复申请同一范围。现有复制算法会保留云会话的 transport/group_id/buddy_snapshot_id，现有 owner 查询仅接收 deleted_at IS NULL，而官方云部分索引使用 deleted_at=-1。结构证据无法确认字段含义和跨账号可移植性，依任务书 12 暂停受影响的官方数据库写入。详见 14-workbuddy-577-compatibility.md。
+2026-10-10 用户明确授权“授权读写兼容核验”，已执行安装版本和只读结构核验、隔离重建库上的写入与回滚测试。该授权已记录，无需重复申请同一范围。阶段 08 发现当时的复制算法会保留云会话的 transport/group_id/buddy_snapshot_id，owner 查询仅接收 deleted_at IS NULL，而官方云部分索引使用 deleted_at=-1。该历史发现见 14-workbuddy-577-compatibility.md。
+
+阶段 09 已确认安装包中的本地 NULL / 云 -1 活动条件及 Buddy 引用校验，新增保护后不再允许复制上述云/非空绑定会话。当前行为以 15-local-session-transfer-policy.md 为准。官方客户端接管、正文、附件、跨账号身份和完整快照迁移仍未验收，依任务书 12 保持官方会话写入关闭；阶段 07 安装候选仍是旧开发提交。
 
 默认 .workbuddy-manager 数据目录，不自动迁移旧 .wb-switch。新格式不能由未改造的 Switch/Helper 回写。当前索引损坏时自动恢复停止并保留材料；旧加密 vault 不立即清理。日志可能含昵称和路径，已有历史不会自动重写。
 
