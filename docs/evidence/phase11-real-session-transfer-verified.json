@@ -1,0 +1,26 @@
+{
+  "test_step": "A->B local session transfer",
+  "status": "verified_by_user",
+  "verified_at": "2026-10-10 15:08:00",
+  "source_session": {
+    "id": "42754e64-2a01-48a8-bda1-7ffa6010d772",
+    "user_id": "686f63f2-c0e9-426c-8c98-a333a673589f",
+    "user_alias": "Account A (Work, Domestic)",
+    "project": "D:/codex/WorkBuddyManage"
+  },
+  "transferred_session": {
+    "id": "260dddb6-93d6-415b-8626-7307886a95e5",
+    "user_id": "693f3ccd-e5cb-4f5c-af47-e3e2765cbed9",
+    "user_alias": "Account B (Personal, Domestic)",
+    "project": "D:/codex/WorkBuddyManage",
+    "title": "测试文字 123 (复制)",
+    "transport": "local",
+    "jsonl_path": "C:\\Users\\admin\\.workbuddy\\projects\\d-codex-WorkBuddyManage\\260dddb6-93d6-415b-8626-7307886a95e5.jsonl"
+  },
+  "findings": [
+    "Official WorkBuddy client caches active sessions in memory",
+    "External DB writes require Ctrl+R reload or client restart to be recognized in UI",
+    "Local session metadata and .jsonl text transfer successfully adopted by official client",
+    "No unexpected cloud takeover or schema violation occurred"
+  ]
+}

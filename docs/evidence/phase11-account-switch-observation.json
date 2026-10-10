@@ -1,0 +1,24 @@
+{
+  "test_step": "Multi-account desktop auth switching observation",
+  "tested_at": "2026-10-10 15:25:00",
+  "accounts_detected": [
+    {
+      "alias": "Account A (Work)",
+      "uid": "686f63f2-c0e9-426c-8c98-a333a673589f",
+      "last_login_observed": "2026-10-10 15:08:37 (UTC+8)",
+      "backup_file": "workbuddy-desktop.2026-10-10T07-08-37-139Z.26380.50d48af2-afc4-49d4-bce3-3b6f5c3d0b55.info"
+    },
+    {
+      "alias": "Account B (Personal)",
+      "uid": "693f3ccd-e5cb-4f5c-af47-e3e2765cbed9",
+      "currently_active": true,
+      "active_file": "workbuddy-desktop.info"
+    }
+  ],
+  "findings": [
+    "WorkBuddy desktop client uses CodeBuddyExtension/Data/Public/auth/workbuddy-desktop.info as active auth anchor",
+    "Client preserves timestamped backup files during account switching",
+    "Both Account A and Account B have valid local credential structures and active session IDs",
+    "Session records retain proper user_id ownership in SQLite without cross-talk"
+  ]
+}

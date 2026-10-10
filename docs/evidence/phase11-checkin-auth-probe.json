@@ -1,0 +1,18 @@
+{
+  "test_step": "Official checkin endpoint authorization probe",
+  "tested_at": "2026-10-10 15:20:00",
+  "account_uid": "693f3ccd-e5cb-4f5c-af47-e3e2765cbed9",
+  "results": [
+    {
+      "url": "https://www.codebuddy.cn/v2/billing/meter/checkin-activity-status",
+      "status": 401,
+      "response": "401 Authorization Required (HTML Gateway rejection)"
+    },
+    {
+      "url": "https://www.codebuddy.cn/v2/billing/meter/user-resource",
+      "status": 404,
+      "response": "404 Route Not Found"
+    }
+  ],
+  "architectural_conclusion": "The private billing/meter checkin routes from upstream workbuddy-switch/helper are either obsolete or require proprietary gateway signatures/headers not exposed via standard OAuth bearer tokens. Keeping production checkin disabled is the strictly correct and safe engineering posture."
+}
