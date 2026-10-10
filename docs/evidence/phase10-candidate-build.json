@@ -1,0 +1,36 @@
+{
+  "build_environment": {
+    "os": "Windows 11 Home Chinese 25H2 / 10.0.26200 x64",
+    "rust": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+    "node": "v24.18.0"
+  },
+  "phase": "10",
+  "date": "2026-10-10",
+  "app_commit": "ad17460db9b587ba9fd5090987ad37415d6c94db",
+  "changes": [
+    "Session transfer protection rules from phase 09 included",
+    "PowerShell test/build scripts fixed for Rust stderr warnings",
+    "Full regression passed"
+  ],
+  "test_results": {
+    "rust_passed": 858,
+    "all_passed": true,
+    "frontend_build": "success",
+    "frontend_passed": 35
+  },
+  "version": "0.2.0-alpha.2",
+  "pending": [
+    "Real three-account login/switch",
+    "Checkin/credits authorization and live test",
+    "Official session write compatibility",
+    "Windows 10 and 11 22H2 acceptance",
+    "npm publish-to-license-source correspondence",
+    "Formal distribution review"
+  ],
+  "installer": {
+    "filename": "WorkBuddy Manager_0.2.0-alpha.2_x64-setup.exe",
+    "size_bytes": 6156354,
+    "sha256": "CC2467AD834BB41E7161F127C466E3180F025B4871FA890D5C79F96512782AC1",
+    "unsigned": true
+  }
+}

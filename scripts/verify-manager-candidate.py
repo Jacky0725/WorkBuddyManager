@@ -1,12 +1,20 @@
 """Offline byte-integrity check; this does not certify production compatibility or licensing."""
 import hashlib
+import argparse
 import json
 import subprocess
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CANDIDATE = ROOT / "release/0.2.0-alpha.1/local-candidate"
+current_record = json.loads((ROOT / "docs/evidence/windows-manager-artifacts.json").read_text(encoding="utf-8-sig"))
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--version", default=current_record["version"])
+args = parser.parse_args()
+import re
+if not re.fullmatch(r"\d+\.\d+\.\d+-alpha\.\d+", args.version):
+    parser.error("An alpha candidate version is required")
+CANDIDATE = ROOT / "release" / args.version / "local-candidate"
 
 
 def sha256(path):
@@ -25,7 +33,9 @@ def checked_file(relative):
 
 
 manifest = json.loads((CANDIDATE / "manifest.json").read_text(encoding="utf-8-sig"))
-assert manifest == json.loads((ROOT / "docs/evidence/windows-manager-artifacts.json").read_text(encoding="utf-8-sig")), "Tracked artifact record differs from candidate"
+record_path = ROOT / f"docs/evidence/windows-manager-{args.version}-artifacts.json"
+record = json.loads(record_path.read_text(encoding="utf-8-sig")) if record_path.is_file() else current_record
+assert manifest == record, "Tracked artifact record differs from candidate"
 app_commit = manifest["app_commit"]
 # Historical candidates remain verifiable after later development commits.
 resolved_commit = subprocess.check_output(["git", "-C", str(ROOT / "app"), "rev-parse", "--verify", app_commit + "^{commit}"], text=True).strip()
@@ -53,8 +63,8 @@ required = {
     "LICENSE", "THIRD_PARTY_NOTICES.md", "README.md", "INSTALLATION.md",
     "RELEASE_NOTES.md", "KNOWN_LIMITATIONS.md", "TEST_REPORT.md", "USER_GUIDE.md",
     "SECURITY_REVIEW.md", "ACCEPTANCE_PLAN.md", "app-development.bundle",
-    "WorkBuddy Manager_0.2.0-alpha.1_x64-setup.exe", "workbuddy-manager.exe",
-    "WorkBuddyManager-0.2.0-alpha.1-source.zip",
+    f"WorkBuddy Manager_{args.version}_x64-setup.exe", "workbuddy-manager.exe",
+    f"WorkBuddyManager-{args.version}-source.zip",
 }
 assert required <= names, "Required delivery files are missing"
 inventory = json.loads(checked_file("evidence/phase07-release-license-inventory.json").read_text(encoding="utf-8-sig"))
@@ -69,7 +79,7 @@ for package in inventory["packages"]:
         source = CANDIDATE / "licenses/rust" / f"{package['name']}-{package['version']}" / "corresponding-source"
         assert (source / "Cargo.toml").is_file(), f"MPL corresponding source missing: {package['name']}"
         mpl_sources.append(f"{package['name']} {package['version']}")
-with zipfile.ZipFile(checked_file("WorkBuddyManager-0.2.0-alpha.1-source.zip")) as archive:
+with zipfile.ZipFile(checked_file(f"WorkBuddyManager-{args.version}-source.zip")) as archive:
     assert archive.testzip() is None, "Source archive CRC failure"
     archive_names = set(archive.namelist())
     for path in ("Cargo.lock", "package-lock.json", "LICENSE", "THIRD_PARTY_NOTICES.md", "src-tauri/tauri.conf.json"):
@@ -86,7 +96,7 @@ for block in iter(lambda: source_process.stdout.read(1024 * 1024), b""):
     source_digest.update(block)
 source_process.stdout.close()
 assert source_process.wait() == 0, "Git source archive comparison failed"
-assert source_digest.hexdigest().upper() == sha256(checked_file("WorkBuddyManager-0.2.0-alpha.1-source.zip")), "Source archive differs from recorded Git commit"
+assert source_digest.hexdigest().upper() == sha256(checked_file(f"WorkBuddyManager-{args.version}-source.zip")), "Source archive differs from recorded Git commit"
 bundle = checked_file("app-development.bundle")
 subprocess.run(["git", "-C", str(ROOT / "app"), "bundle", "verify", str(bundle)], check=True, capture_output=True)
 heads = subprocess.check_output(["git", "bundle", "list-heads", str(bundle)], text=True)
@@ -102,5 +112,7 @@ result = {
     "all_payload_sha256_valid": True, "checksum_list_matches": True,
     "real_account_compatibility_certified": False, "public_distribution_license_review_complete": False,
 }
-(ROOT / "docs/evidence/manager-candidate-verification.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+(ROOT / f"docs/evidence/manager-{args.version}-verification.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+if args.version == current_record["version"]:
+    (ROOT / "docs/evidence/manager-candidate-verification.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(json.dumps(result, ensure_ascii=False))

@@ -21,6 +21,7 @@ try {
     Push-Location $taskApp
     try {
         $taskRustLog = Join-Path $taskEvidence "development-$($Target.ToLowerInvariant()).log"
+        $ErrorActionPreference = 'Continue'
         switch ($Target) {
             'Accounts' { & cargo test --locked -p wb-switch-core --test account_security *> $taskRustLog }
             'Checkin' { & cargo test --locked -p wb-switch-core --test checkin_mock_http *> $taskRustLog }
@@ -31,15 +32,22 @@ try {
             'All' { & cargo test --locked -p wb-switch-core -p wb-switch-server -p wb-switch-rust *> $taskRustLog }
         }
         $taskExit = $LASTEXITCODE
+        $ErrorActionPreference = 'Stop'
         Get-Content -LiteralPath $taskRustLog -Tail 20
         if ($taskExit -ne 0) { throw "Rust tests failed ($taskExit); see $taskRustLog" }
         if ($Target -eq 'All') {
             $taskNpmLog = Join-Path $taskEvidence 'development-frontend-test.log'
+            $ErrorActionPreference = 'Continue'
             & npm.cmd test *> $taskNpmLog
-            if ($LASTEXITCODE -ne 0) { throw "Frontend tests failed; see $taskNpmLog" }
+            $taskExit = $LASTEXITCODE
+            $ErrorActionPreference = 'Stop'
+            if ($taskExit -ne 0) { throw "Frontend tests failed; see $taskNpmLog" }
             $taskBuildLog = Join-Path $taskEvidence 'development-frontend-build.log'
+            $ErrorActionPreference = 'Continue'
             & npm.cmd run build *> $taskBuildLog
-            if ($LASTEXITCODE -ne 0) { throw "Frontend build failed; see $taskBuildLog" }
+            $taskExit = $LASTEXITCODE
+            $ErrorActionPreference = 'Stop'
+            if ($taskExit -ne 0) { throw "Frontend build failed; see $taskBuildLog" }
         }
     } finally { Pop-Location }
 } finally {

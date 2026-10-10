@@ -1,0 +1,129 @@
+{
+  "name": "react-remove-scroll-bar",
+  "version": "2.3.8",
+  "description": "Removes body scroll without content _shake_",
+  "main": "dist/es5/index.js",
+  "jsnext:main": "dist/es2015/index.js",
+  "module": "dist/es2015/index.js",
+  "types": "dist/es5/index.d.ts",
+  "scripts": {
+    "dev": "lib-builder dev",
+    "test": "jest",
+    "test:ci": "jest --runInBand --coverage",
+    "build": "lib-builder build && yarn size:report",
+    "release": "yarn build && yarn test",
+    "size": "yarn size-limit",
+    "size:report": "yarn --silent size-limit --json > .size.json",
+    "lint": "lib-builder lint",
+    "format": "lib-builder format",
+    "update": "lib-builder update",
+    "prepublish": "yarn build && yarn changelog",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog:rewrite": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "storybook": "start-storybook -p 6006"
+  },
+  "keywords": [
+    "scroll"
+  ],
+  "author": {
+    "name": "Anton Korzunov",
+    "email": "thekashey@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.0.2",
+    "size-limit": "^11.0.2",
+    "@storybook/react": "^6.4.22",
+    "@testing-library/react": "^12.1.5",
+    "@types/react": "^16.14.56",
+    "@theuiteam/lib-builder": "^0.1.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theKashey/react-remove-scroll-bar.git"
+  },
+  "dependencies": {
+    "react-style-singleton": "^2.2.2",
+    "tslib": "^2.0.0"
+  },
+  "module:es2019": "dist/es2019/index.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  },
+  "_id": "react-remove-scroll-bar@2.3.8",
+  "gitHead": "b3b1287aad81def2e2ae707274b74531b61ddbaf",
+  "bugs": {
+    "url": "https://github.com/theKashey/react-remove-scroll-bar/issues"
+  },
+  "homepage": "https://github.com/theKashey/react-remove-scroll-bar#readme",
+  "_nodeVersion": "18.20.1",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==",
+    "shasum": "99c20f908ee467b385b68a3469b4a3e750012223",
+    "tarball": "https://registry.npmmirror.com/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.8.tgz",
+    "fileCount": 27,
+    "unpackedSize": 24936,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIHlomVu71lQb8ZijaHqU1MLX+jfxogM47L/EfAgq1+nWAiEA5rJQaLl579SuaDGQcqDm9ikUi3EcxmDkxW7PSq8Auh0="
+      }
+    ],
+    "size": 4937
+  },
+  "_npmUser": {
+    "name": "kashey",
+    "email": "thekashey@gmail.com"
+  },
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "kashey",
+      "email": "thekashey@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages-npm-production",
+    "tmp": "tmp/react-remove-scroll-bar_2.3.8_1734228508491_0.5531994800882876"
+  },
+  "_hasShrinkwrap": false,
+  "_cnpmcore_publish_time": "2024-12-15T02:08:28.658Z",
+  "publish_time": 1734228508658,
+  "_source_registry_name": "default",
+  "readme": "<h1>react-remove-scroll-bar</h1>\n\n[![npm](https://img.shields.io/npm/v/react-remove-scroll-bar.svg)](https://www.npmjs.com/package/react-remove-scroll-bar)\n[![bundle size](https://badgen.net/bundlephobia/minzip/react-remove-scroll-bar)](https://bundlephobia.com/result?p=react-remove-scroll-bar)\n[![downloads](https://badgen.net/npm/dm/react-remove-scroll-bar)](https://www.npmtrends.com/react-remove-scroll-bar)\n\n<hr />\n\n> v1+ for React 15, v2+ requires React 16.8+\n\nRemoves scroll bar (by setting `overflow: hidden` on body), and preserves the scroll bar \"gap\".\n\nRead - it just makes scroll bar invisible.\n\nDoes nothing if scroll bar does not consume any space.\n\n# Usage\n\n```js\nimport {RemoveScrollBar} from 'react-remove-scroll-bar';\n\n<RemoveScrollBar /> -> no scroll bar\n```\n\n### The Right Border\nTo prevent content jumps __position:fixed__ elements with `right:0`  should have additional classname applied.\nIt will just provide a _non-zero_ right, when it needed, to maintain the right \"gap\".\n```js\nimport {zeroRightClassName,fullWidthClassName, noScrollbarsClassName} from 'react-remove-scroll-bar';\n\n// to set `right:0` on an element\n<div className={zeroRightClassName} />\n\n// to set `width:100%` on an element\n<div className={fullWidthClassName} />\n\n// to remove scrollbar from an element\n<div className={noScrollbarsClassName} />\n\n```\n\n# Size\n500b after compression (excluding tslib).\n\n# Scroll-Locky\nAll code is a result of a [react-scroll-locky](https://github.com/theKashey/react-scroll-locky) refactoring.\n\n# Article\nThere is a medium article about preventing the body scroll - [How to fight the <body> scroll](https://medium.com/@antonkorzunov/how-to-fight-the-body-scroll-2b00267b37ac)\n\n# License\nMIT\n"
+}

@@ -1,4 +1,10 @@
-param([switch]$RefreshMetadata)
+param(
+    [switch]$RefreshMetadata,
+    [ValidatePattern('^phase\d+$')][string]$EvidencePrefix = 'phase07',
+    [ValidatePattern('^[a-zA-Z0-9_.-]+\.log$')][string]$RustTestLog = 'phase07-all-tests.log',
+    [ValidatePattern('^[a-zA-Z0-9_.-]+\.log$')][string]$FrontendTestLog = 'phase07-frontend-final-tests.log',
+    [ValidatePattern('^[a-zA-Z0-9_.-]+$')][string]$UiEvidenceDirectory = 'manager-ui'
+)
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
 $taskConfig = Get-Content -LiteralPath (Join-Path $taskRoot 'app\src-tauri\tauri.conf.json') -Raw | ConvertFrom-Json
@@ -44,15 +50,20 @@ Copy-Item -LiteralPath (Join-Path $taskRoot 'docs\07-security-review.md') -Desti
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs\13-acceptance-plan.md') -Destination (Join-Path $taskOutput 'ACCEPTANCE_PLAN.md')
 $taskEvidenceOutput = Join-Path $taskOutput 'evidence'
 New-Item -ItemType Directory -Path $taskEvidenceOutput -Force | Out-Null
-Get-ChildItem -LiteralPath (Join-Path $taskRoot 'docs\evidence') -File -Filter 'phase07-*' | ForEach-Object {
-    Copy-Item -LiteralPath $_.FullName -Destination $taskEvidenceOutput
+foreach ($taskPhasePattern in @('phase08-*','phase09-*',"$EvidencePrefix-*")) {
+    Get-ChildItem -LiteralPath (Join-Path $taskRoot 'docs\evidence') -File -Filter $taskPhasePattern | ForEach-Object {
+        Copy-Item -LiteralPath $_.FullName -Destination $taskEvidenceOutput
+    }
+}
+foreach ($taskEvidenceName in @($RustTestLog,$FrontendTestLog,'phase07-release-license-inventory.json')) {
+    Copy-Item -LiteralPath (Join-Path $taskRoot "docs\evidence\$taskEvidenceName") -Destination $taskEvidenceOutput
 }
 $taskUiOutput = Join-Path $taskEvidenceOutput 'manager-ui'
 New-Item -ItemType Directory -Path $taskUiOutput -Force | Out-Null
-Get-ChildItem -LiteralPath (Join-Path $taskRoot 'docs\evidence\manager-ui') -File | ForEach-Object {
+Get-ChildItem -LiteralPath (Join-Path $taskRoot "docs\evidence\$UiEvidenceDirectory") -File | ForEach-Object {
     Copy-Item -LiteralPath $_.FullName -Destination $taskUiOutput
 }
-$taskRustLog = Get-Content -LiteralPath (Join-Path $taskEvidenceOutput 'phase07-all-tests.log') -Raw
+$taskRustLog = Get-Content -LiteralPath (Join-Path $taskEvidenceOutput $RustTestLog) -Raw
 $taskRustSummaries = [regex]::Matches($taskRustLog, 'test result: ok\. (\d+) passed; (\d+) failed; (\d+) ignored;')
 if ($taskRustSummaries.Count -eq 0 -or $taskRustLog -match 'test result: FAILED') { throw 'Missing or failed final Rust summary' }
 $taskRustCount = 0
@@ -60,7 +71,7 @@ foreach ($taskSummary in $taskRustSummaries) {
     if ([int]$taskSummary.Groups[2].Value -ne 0 -or [int]$taskSummary.Groups[3].Value -ne 0) { throw 'Final Rust suite failed or ignored tests' }
     $taskRustCount += [int]$taskSummary.Groups[1].Value
 }
-$taskFrontendLog = Get-Content -LiteralPath (Join-Path $taskEvidenceOutput 'phase07-frontend-final-tests.log') -Raw
+$taskFrontendLog = Get-Content -LiteralPath (Join-Path $taskEvidenceOutput $FrontendTestLog) -Raw
 $taskFrontendSummary = [regex]::Match($taskFrontendLog, '(?m)^\s*Tests\s+(\d+) passed \((\d+)\)')
 if (!$taskFrontendSummary.Success -or $taskFrontendSummary.Groups[1].Value -ne $taskFrontendSummary.Groups[2].Value) { throw 'Missing or unsuccessful final frontend summary' }
 $taskFrontendCount = [int]$taskFrontendSummary.Groups[1].Value
@@ -78,6 +89,16 @@ evidence/ 保存本轮原始日志及截图；TEST_REPORT.md 中较早阶段的�
 不要把本地候选当作经过平台许可或生产兼容认证的正式产品。
 '@
 $taskReadme | Set-Content -LiteralPath (Join-Path $taskOutput 'README.md') -Encoding utf8
+$taskDocsOutput = Join-Path $taskOutput 'docs'
+New-Item -ItemType Directory -Path $taskDocsOutput -Force | Out-Null
+Get-ChildItem -LiteralPath (Join-Path $taskRoot 'docs') -File -Filter '*.md' | ForEach-Object {
+    Copy-Item -LiteralPath $_.FullName -Destination $taskDocsOutput
+}
+$taskDocsEvidence = Join-Path $taskDocsOutput 'evidence'
+New-Item -ItemType Directory -Path $taskDocsEvidence -Force | Out-Null
+Get-ChildItem -LiteralPath $taskEvidenceOutput | ForEach-Object {
+    Copy-Item -LiteralPath $_.FullName -Destination $taskDocsEvidence -Recurse -Force
+}
 $taskFiles = @()
 $taskResolvedOutput = (Resolve-Path -LiteralPath $taskOutput).Path
 foreach ($taskFile in (Get-ChildItem -LiteralPath $taskOutput -File -Recurse | Sort-Object FullName)) {
@@ -89,10 +110,11 @@ foreach ($taskFile in (Get-ChildItem -LiteralPath $taskOutput -File -Recurse | S
 $taskManifest = [ordered]@{
     product='WorkBuddy Manager';version=$taskVersion;classification='local experimental candidate, not public release';build_profile='release optimized';target='Windows x64';app_commit=$taskAppSha
     upstream_switch_commit='9eb3f2a21ff3c3c85fef2f89e693c48792050ba1';upstream_helper_commit='10caebd9a1a848871ed5ada57d9c66d56d2e7a48'
-    code_signed=$false;smartscreen_trust_verified=$false;rust_tests_passed=$taskRustCount;frontend_tests_passed=$taskFrontendCount;test_evidence=@('evidence/phase07-all-tests.log','evidence/phase07-frontend-final-tests.log');real_account_tests_executed=$false;production_checkin_enabled=$false;production_session_writes_enabled=$false
+    code_signed=$false;smartscreen_trust_verified=$false;rust_tests_passed=$taskRustCount;frontend_tests_passed=$taskFrontendCount;test_evidence=@("evidence/$RustTestLog","evidence/$FrontendTestLog");real_account_tests_executed=$false;production_checkin_enabled=$false;production_session_writes_enabled=$false
     license_release_source_correspondence_verified=$false;source_archive_includes_historical_upstream_assets=$true;files=$taskFiles
 }
 $taskManifest | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $taskRoot 'docs\evidence\windows-manager-artifacts.json') -Encoding utf8
+$taskManifest | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $taskRoot "docs\evidence\windows-manager-$taskVersion-artifacts.json") -Encoding utf8
 $taskManifest | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $taskOutput 'manifest.json') -Encoding utf8
 $taskFiles | ForEach-Object { "$($_.sha256)  $($_.name)" } | Set-Content -LiteralPath (Join-Path $taskOutput 'SHA256SUMS.txt') -Encoding utf8
 Write-Output $taskOutput
