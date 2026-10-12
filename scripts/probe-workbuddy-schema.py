@@ -1,5 +1,6 @@
 """Read only SQLite structure metadata; application row reads and all writes are denied."""
 import argparse
+from datetime import date
 import hashlib
 import json
 import re
@@ -68,6 +69,7 @@ def probe(database):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--version", required=True, help="PE FileVersion independently read from the installed official executable")
+    parser.add_argument("--output", type=Path, required=True, help="New JSON evidence file directly inside docs/evidence")
     args = parser.parse_args()
     if not re.fullmatch(r"\d+(\.\d+){2,3}", args.version):
         parser.error("A numeric observed file version is required")
@@ -81,8 +83,12 @@ def main():
         if database.is_symlink() or database.resolve(strict=True).parent != data_root.resolve(strict=True):
             raise ValueError("Database path escaped the expected data root")
         results.append(probe(database))
-    result = {"date": "2026-10-10", "observed_client_file_version": args.version, "scope": "structure metadata only; no credentials or application rows", "databases": results}
-    output = ROOT / "docs/evidence/phase08-workbuddy-schema-metadata.json"
+    result = {"date": date.today().isoformat(), "observed_client_file_version": args.version, "scope": "structure metadata only; no credentials or application rows", "databases": results}
+    output = args.output.resolve()
+    if output.parent != (ROOT / "docs/evidence").resolve() or output.suffix != ".json":
+        parser.error("Output must be a JSON file directly inside docs/evidence")
+    if output.exists():
+        parser.error("Output already exists; choose a new evidence filename")
     output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"output": str(output), "databases": [{"filename": Path(item["database"]).name, "objects": len(item["objects"]), "schema_sha256": item["schema_sha256"]} for item in results]}, ensure_ascii=False))
 

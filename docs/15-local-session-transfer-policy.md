@@ -13,7 +13,7 @@
 | 云行投影将 -1 转成 deletedAt=NULL | conversations.js 的 cloud_deleted_normalization | 与本地/云分开使用删除约定一致；仍不能用它授权跨账号云写入 |
 | Buddy 绑定须引用相同 snapshotId，且快照须可读取 | handlers.js 的 buddy_binding_reference_check、buddy_snapshot_lookup | 仅复制两列不足以证明快照、身份和引用完整；本轮选择拒绝此类迁移 |
 
-证据见 [phase09-installed-code-facts.json](evidence/phase09-installed-code-facts.json)，可用 `python scripts/inspect-workbuddy-install.py` 对同一安装复查。该脚本只读取指定归档内三个成员，设有头部和成员边界检查；观察到的代码不是公开兼容性保证，也不是接口使用许可。
+证据见 [phase09-installed-code-facts.json](evidence/phase09-installed-code-facts.json)。若另有相同安装版本，可用 `python scripts/inspect-workbuddy-install.py --version 5.7.7 --output docs/evidence/NEW-INSTALL-FACTS.json` 重新观察；脚本会拒绝覆盖已有证据。当前本机已升级为 5.8.1，其结果见 [17-authorization-and-581-compatibility.md](17-authorization-and-581-compatibility.md)。该脚本只读取指定归档内三个成员，设有头部和成员边界检查；观察到的代码不是公开兼容性保证，也不是接口使用许可。
 
 ## 本轮实现
 

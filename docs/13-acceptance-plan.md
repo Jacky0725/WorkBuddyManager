@@ -1,5 +1,7 @@
 # 真实验收的执行边界
 
+**2026-10-12 更新：**本机官方客户端现为 5.8.1，5.7.7 的验收状态不可直接延用。最新授权、只读结构差异及仍未完成的真实验收见 [17-authorization-and-581-compatibility.md](17-authorization-and-581-compatibility.md)；以下保留原 5.7.7 计划与历史记录。
+
 目标环境由用户报告：WorkBuddy 国内版 v5.7.7；Windows 11 家庭中文版 22H2。没有国际版版本信息。该信息不能代替已测兼容性，见 `evidence/target-environment.json`。
 
 2026-10-10 实际本机 OS 元数据为 Windows 11 家庭中文版 25H2 / 10.0.26200 x64。隔离 Manager 验收在该环境完成，不能据此视为 22H2 验收；阶段 08 已确认安装 WorkBuddy PE FileVersion 5.7.7、ProductVersion 5.7.7.0。

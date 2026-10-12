@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-12",
+  "archive": "D:\\Program Files\\WorkBuddy\\resources\\app.asar",
+  "archive_bytes": 98527032,
+  "archive_sha256": "d2644ce221ed2da7a6f71ac1e469557b20cc07d8a2636dc44ff04e212af4e6d4",
+  "source_kind": "Installed 5.8.1 program text, static observation only",
+  "program_code_executed": false,
+  "user_data_opened": false,
+  "production_sql_writes_attempted": false,
+  "members": {
+    "main/conversations.js": {
+      "present": false,
+      "facts": []
+    },
+    "main/handlers.js": {
+      "present": true,
+      "bytes": 96,
+      "sha256": "fe4aa917772023050420d3db5df0da442f2d094fffba2dbf50109aa47687695f",
+      "facts": []
+    },
+    "main/server.js": {
+      "present": true,
+      "bytes": 3599196,
+      "sha256": "d43025527e2c648ee52203f864dbca138c1fb778aa40db76ce16fa9e1a80d829",
+      "facts": [
+        {
+          "fact": "local_active_predicate",
+          "matches": 2,
+          "character_offset": 404415,
+          "excerpt_start": 404325,
+          "excerpt": "dAt,\n           project_id AS projectId\n    FROM sessions\n    WHERE user_id = ?\n      AND transport = 'local'\n      AND deleted_at IS NULL\n      AND (title LIKE ? ESCAPE '\\\\' OR custom_title LIKE ? ESCAPE '\\\\')\n    ORDER BY COALESCE(last_activity_at, created_at) DESC\n    LIMIT ?\n`,TaskSe"
+        },
+        {
+          "fact": "cloud_active_predicate",
+          "matches": 1,
+          "character_offset": 1965926,
+          "excerpt_start": 1965836,
+          "excerpt": "us, project_id AS projectId\n             FROM sessions\n             WHERE user_id = ? AND transport = 'cloud' AND deleted_at = -1`).all(r),a=[];for(let e of i){let n=typeof e.id==`string`&&e.id.length>0?e.id:void 0;if(!n)continue;let r=(typeof e.customTitle==`string`&&e.customTi"
+        }
+      ]
+    }
+  }
+}

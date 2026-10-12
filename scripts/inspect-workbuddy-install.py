@@ -1,4 +1,6 @@
 """Read selected installed program text as data; never execute code or open user data."""
+import argparse
+from datetime import date
 import hashlib
 import json
 import re
@@ -10,7 +12,7 @@ ARCHIVE = Path(r"D:\Program Files\WorkBuddy\resources\app.asar")
 MEMBERS = ("main/conversations.js", "main/handlers.js", "main/server.js")
 
 
-def inspect():
+def inspect(version):
     size = ARCHIVE.stat().st_size
     with ARCHIVE.open("rb") as stream:
         prefix, header_size, payload_size, json_size = struct.unpack("<4I", stream.read(16))
@@ -24,7 +26,12 @@ def inspect():
         for name in MEMBERS:
             entry = catalog
             for part in name.split("/"):
-                entry = entry["files"][part]
+                entry = entry.get("files", {}).get(part)
+                if entry is None:
+                    members[name] = {"present": False, "facts": []}
+                    break
+            if entry is None:
+                continue
             if entry.get("unpacked") or "link" in entry:
                 raise ValueError("Selected member is not a packed regular file")
             offset, length = int(entry["offset"]), entry["size"]
@@ -51,18 +58,28 @@ def inspect():
                     start, end = max(0, first.start() - 90), min(len(text), first.end() + 150)
                     facts.append({"fact": key, "matches": len(matches), "character_offset": first.start(),
                                   "excerpt_start": start, "excerpt": text[start:end]})
-            members[name] = {"bytes": length, "sha256": hashlib.sha256(data).hexdigest(), "facts": facts}
+            members[name] = {"present": True, "bytes": length, "sha256": hashlib.sha256(data).hexdigest(), "facts": facts}
     with ARCHIVE.open("rb") as stream:
         archive_hash = hashlib.file_digest(stream, "sha256").hexdigest()
-    return {"date": "2026-10-10", "archive": str(ARCHIVE), "archive_bytes": size,
-            "archive_sha256": archive_hash, "source_kind": "Installed 5.7.7 program text, static observation only",
+    return {"date": date.today().isoformat(), "archive": str(ARCHIVE), "archive_bytes": size,
+            "archive_sha256": archive_hash, "source_kind": f"Installed {version} program text, static observation only",
             "program_code_executed": False, "user_data_opened": False, "production_sql_writes_attempted": False,
             "members": members}
 
 
 if __name__ == "__main__":
-    result = inspect()
-    output = ROOT / "docs/evidence/phase09-installed-code-facts.json"
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--version", required=True, help="PE FileVersion independently read from the installed official executable")
+    parser.add_argument("--output", type=Path, required=True, help="JSON file directly inside docs/evidence")
+    args = parser.parse_args()
+    if not re.fullmatch(r"\d+(\.\d+){2,3}", args.version):
+        parser.error("A numeric observed file version is required")
+    output = args.output.resolve()
+    if output.parent != (ROOT / "docs/evidence").resolve() or output.suffix != ".json":
+        parser.error("Output must be a JSON file directly inside docs/evidence")
+    if output.exists():
+        parser.error("Output already exists; choose a new evidence filename")
+    result = inspect(args.version)
     output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"output": str(output), "facts": {name: [fact["fact"] for fact in member["facts"]]
                                                       for name, member in result["members"].items()}}, ensure_ascii=False))

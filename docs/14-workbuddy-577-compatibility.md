@@ -43,7 +43,7 @@ python scripts/test-schema-probe.py
 ./scripts/Test-Development.ps1 -Target Core
 ```
 
-`python scripts/probe-workbuddy-schema.py --version 5.7.7` 会再次读取实际安装的数据库结构，仅应在对应授权环境执行；参数是独立观察到的版本记录，不会自动验证 PE。
+`python scripts/probe-workbuddy-schema.py --version 5.7.7 --output docs/evidence/NEW-SCHEMA-EVIDENCE.json` 会再次读取实际安装的数据库结构，仅应在对应授权环境执行；参数是独立观察到的版本记录，不会自动验证 PE。输出文件必须事先不存在，以保留历史证据。
 
 ## 尚未解决的官方语义
 
