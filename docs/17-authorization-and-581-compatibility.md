@@ -2,6 +2,8 @@
 
 **后续补充：**用户已确认既有测试项目为 `D:\codex\WorkBuddyManage`，并指出此前 A→B 测试已经执行。对历史记录与当前数据的核对见 [18-confirmed-test-scope-and-current-state.md](18-confirmed-test-scope-and-current-state.md)；下文“尚未提供路径”仅反映本报告首次编写时的状态。
 
+**签到/积分复核：**阶段 11 的 401/404 不能单独证成“接口过时或需要私有签名”；见 [19-checkin-credits-verification-decision.md](19-checkin-credits-verification-decision.md)。生产门禁保持关闭的依据是第三方授权与可验证接口材料不足，而非把两次失败解释为所有路径都不可用。
+
 日期：2026-10-12。此报告只陈述本轮实际完成的核验；不把结构相似、用户对本地测试的授权或历史 5.7.7 结果等同于服务接口授权或 5.8.1 业务兼容放行。
 
 ## 授权边界

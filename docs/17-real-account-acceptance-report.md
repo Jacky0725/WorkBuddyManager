@@ -32,6 +32,7 @@
 - **工程证据**：docs/evidence/phase11-incremental-interaction-verified.json
 
 ### 2.3 官方签到/积分端点只读授权核验
+**2026-10-12 复核：**下述历史描述超出了原始记录。证据 JSON 只记录 `checkin-activity-status` 的 401 和 `user-resource` 的 404，没有 `checkin-status` 的独立响应；且 404 路径名称与当前源码的 `get-user-resource` 不同。这两次失败不能证明所有私有接口失效或需要特殊签名。更正分析见 [19-checkin-credits-verification-decision.md](19-checkin-credits-verification-decision.md)。
 - **执行动作**：依据用户 A 选项授权，使用账号 B 本地 Bearer 凭证对上游记录的官方端点进行只读状态探测。
 - **实测结果**：
   - /checkin-activity-status 与 /checkin-status 返回 HTTP 401（网关级凭证 scope 保护）；

@@ -2,6 +2,10 @@
 
 **2026-10-12 更新：**用户确认阶段 11 的 A→B 测试已在旧项目 `D:\codex\WorkBuddyManage` 执行；当前 5.8.1 数据状态不同，C 仍未验收。最新核对见 [18-confirmed-test-scope-and-current-state.md](18-confirmed-test-scope-and-current-state.md)。以下为原截至 2026-10-10 的阶段性状态，部分“下一步所需事实”已被后续用户回复更新。
 
+**签到/积分门禁复核：**GitHub 实现不能代替服务方授权，历史 401/404 也不足以断言全部接口失效。详见 [19-checkin-credits-verification-decision.md](19-checkin-credits-verification-decision.md)；三账号及真实签到/积分均不得强制标记通过。
+
+**授权与候选包边界：**用户明确目前只有账号持有人的测试授权；C 尚未加入当前 Manager。运行中的 `0.2.0-alpha.2` 二进制早于开发源码的生产门禁修复，不得用它操作手动签到或积分刷新；详细核对见 19 号报告。真实签到/积分和 A/B/C 端到端验收仍未完成。
+
 截至 2026-10-10。状态区分实现、隔离测试与真实业务验收；完整项目尚未完成最终验收。工作目录按用户要求为 `D:\codex\WorkBuddyManager`。
 
 ## 目标功能
