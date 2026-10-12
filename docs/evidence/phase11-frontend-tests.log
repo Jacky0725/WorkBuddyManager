@@ -1,0 +1,12 @@
+
+> wb-switch-rust@0.2.0-alpha.2 test
+> vitest run
+
+
+ RUN  v5.0.2 D:/codex/WorkBuddyManager/app
+
+
+ Test Files  4 passed (4)
+      Tests  35 passed (35)
+   Start at  12:31:18
+   Duration  1.06s (transform 49%, worker 23%, import 20%, tests 8%)

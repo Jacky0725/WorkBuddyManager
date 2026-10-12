@@ -112,3 +112,11 @@ app `ad17460db9b587ba9fd5090987ad37415d6c94db` 新增复制/同步/预览/恢复
 完整 `Test-Development.ps1 -Target All`：core 807 + Tauri 34 + server 15 = **856 Rust passed**，前端 **35 passed**，前端生产构建成功；失败/跳过均为零。保留上游 warnings 和 chunk 提示。两次早期新测试错误（文件列表误与整数比较导致编译失败、预览 groups 字段误写为 items 导致断言失败）已修正，失败日志为 phase09-core-first-failed-build.log 和 phase09-core-first-failed-tests.log。最终日志为 phase09-workspace-tests.log、phase09-frontend-tests.log 和 phase09-frontend-build.log，汇总及哈希为 phase09-transfer-policy-results.json。
 
 生成的 vendor permissions 已还原。没有新 GUI、NSIS 安装/卸载、官方正文显示或接管验收，不能声称新运行时已交付安装器；阶段 07 候选仍固定于 `5c49371`，根开发 bundle 推进至 `ad17460`。复核历史候选载荷/许可文本/源码及 bundle 校验继续通过。范围与后续空白项目清单见 15-local-session-transfer-policy.md。
+
+## 2026-10-12：审查问题修复回归
+
+独立审查发现四个生产门禁和接口返回值问题。开发源码恢复 Checkin/PointsRead 的未验证授权拒绝、每日计划 `production_enabled=false` 与 `run_now()` 的明确暂停结果，以及官方会话写入 `require_verified_client()` 拒绝；服务端手动签到路由按 `Result` 分支返回，避免成功值触发 `unwrap_err()` panic。普通账号切换仍可进行，会话写入请求在读取路径或凭证前被拒绝。
+
+修复前 `Test-Development.ps1 -Target Core` 在账号安全用例 `unverified_checkin_and_points_are_gated_before_refresh_or_request` 失败，原始记录为 `phase11-core-first-failed-tests.log`。修复后完整 `Test-Development.ps1 -Target All`：**858 Rust passed**、**35 前端 passed**，前端生产构建成功；相关路由和账号安全测试均通过。日志分别为 `phase11-all-tests.log`、`phase11-frontend-tests.log`、`phase11-frontend-build.log`。测试使用隔离 fixture，未执行官方签到、积分请求或会话数据库写入。
+
+同时开发源码对 Windows 客户端关闭失败显示残留 PID，并在强制关闭后重新核对是否还有新进程。用户自行关闭官方进程、重试切换后反馈成功；该反馈未经本轮独立采集业务验收证据。本轮没有自动关闭用户官方进程。GitHub 上已上传的 `v0.2.0-alpha.2` 安装包早于这次源码修复，不能用上述新测试结果为该已上传二进制背书。
