@@ -1,5 +1,7 @@
 # 授权与 WorkBuddy 5.8.1 兼容性核验
 
+**后续补充：**用户已确认既有测试项目为 `D:\codex\WorkBuddyManage`，并指出此前 A→B 测试已经执行。对历史记录与当前数据的核对见 [18-confirmed-test-scope-and-current-state.md](18-confirmed-test-scope-and-current-state.md)；下文“尚未提供路径”仅反映本报告首次编写时的状态。
+
 日期：2026-10-12。此报告只陈述本轮实际完成的核验；不把结构相似、用户对本地测试的授权或历史 5.7.7 结果等同于服务接口授权或 5.8.1 业务兼容放行。
 
 ## 授权边界

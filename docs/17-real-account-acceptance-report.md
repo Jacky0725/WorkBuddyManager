@@ -1,5 +1,7 @@
 # 阶段 11：真实环境验收与实测报告
 
+**历史记录提示（2026-10-12）：**本报告记录 5.7.7 时的人工观察。用户已确认测试路径，但在当前 5.8.1 数据库中，A 原会话仍在、B 复制会话及其 JSONL 已不在，C 未加入 Manager 账号索引；见 [18-confirmed-test-scope-and-current-state.md](18-confirmed-test-scope-and-current-state.md)。请勿将下文的历史“通过”视为当前 5.8.1 的完整验收。
+
 日期：2026-10-10  
 环境：Windows 11 家庭中文版 25H2 (Build 26200 x64)  
 被测官方客户端：WorkBuddy 国内版 v5.7.7 (FileVersion 5.7.7, ProductVersion 5.7.7.0)  

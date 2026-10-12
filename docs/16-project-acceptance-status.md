@@ -1,5 +1,7 @@
 # 任务书逐项验收状态
 
+**2026-10-12 更新：**用户确认阶段 11 的 A→B 测试已在旧项目 `D:\codex\WorkBuddyManage` 执行；当前 5.8.1 数据状态不同，C 仍未验收。最新核对见 [18-confirmed-test-scope-and-current-state.md](18-confirmed-test-scope-and-current-state.md)。以下为原截至 2026-10-10 的阶段性状态，部分“下一步所需事实”已被后续用户回复更新。
+
 截至 2026-10-10。状态区分实现、隔离测试与真实业务验收；完整项目尚未完成最终验收。工作目录按用户要求为 `D:\codex\WorkBuddyManager`。
 
 ## 目标功能

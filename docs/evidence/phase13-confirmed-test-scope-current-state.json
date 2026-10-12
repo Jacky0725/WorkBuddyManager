@@ -1,0 +1,59 @@
+{
+  "observed_at_local": "2026-10-12T12:55:40+08:00",
+  "scope": "two exact test session metadata rows, two body path existence/size checks, account index selected metadata, baseline backup hashes only",
+  "source_paths": {
+    "confirmed_test_project": "D:\\codex\\WorkBuddyManage",
+    "confirmed_test_project_exists": true,
+    "superseded_path": "D:\\WorkBuddy\\TestProject",
+    "superseded_path_exists": false
+  },
+  "sessions": {
+    "42754e64-2a01-48a8-bda1-7ffa6010d772": {
+      "database_row": {
+        "id": "42754e64-2a01-48a8-bda1-7ffa6010d772",
+        "user_id": "686f63f2-c0e9-426c-8c98-a333a673589f",
+        "cwd": "D:/codex/WorkBuddyManage",
+        "transport": "local",
+        "deleted_at": null
+      },
+      "body_file": {
+        "exists": true,
+        "bytes": 44145
+      }
+    },
+    "260dddb6-93d6-415b-8626-7307886a95e5": {
+      "database_row": null,
+      "body_file": {
+        "exists": false,
+        "bytes": null
+      },
+      "related_artifact": {
+        "path": "C:\\Users\\admin\\.workbuddy\\projects\\d-codex-WorkBuddyManage\\260dddb6-93d6-415b-8626-7307886a95e5.file-rollback.ndjson",
+        "exists": true,
+        "bytes": 101,
+        "interpretation": "rollback-named file only; content and restore suitability not assessed"
+      }
+    }
+  },
+  "manager_account_index": {
+    "count": 2,
+    "uids": [
+      "693f3ccd-e5cb-4f5c-af47-e3e2765cbed9",
+      "686f63f2-c0e9-426c-8c98-a333a673589f"
+    ]
+  },
+  "baseline_backups": {
+    "db": {
+      "exists": true,
+      "hash_matches_manifest": true
+    },
+    "jsonl": {
+      "exists": true,
+      "hash_matches_manifest": true
+    }
+  },
+  "production_sql_writes_attempted": false,
+  "credential_fields_extracted": false,
+  "production_body_contents_extracted": false,
+  "historical_backup_bytes_hashed_without_decoding": true
+}
