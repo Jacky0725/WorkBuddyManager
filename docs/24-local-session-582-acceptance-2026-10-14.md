@@ -9,6 +9,10 @@
 - `cargo test -p wb-switch-core --test session_safety`：8 通过；`cargo test -p wb-switch-core modules::session::tests`：101 通过。
 - `./scripts/Build-Manager.ps1 -EvidencePrefix phase24` 成功生成可执行文件与 NSIS 安装包；候选文件位于 `release/0.2.0-alpha.3/session-582-candidate-20261014/`，尚未安装或发布。
 
-上述证明本地复制的落盘结构完整。官方 5.8.2 客户端中能否打开 C 的副本，仍待人工确认；同步与恢复目前只有自动化测试，没有本次真实客户端端到端验收。云会话、Buddy、附件及非空文件历史引用仍保持写入门禁，不属于本次开放范围。
+用户随后确认：账号 C 下的副本在官方 5.8.2 客户端中可见且可正常打开。复制的落盘和客户端读取因此通过本轮验收。
+
+用户又在 C 的虚构会话中追加一条纯文字并退出客户端。新增后 C 为 17 条、B 为 11 条，双方无外部资源引用；预览仅给出 `fastForward` 模式。于 `%USERPROFILE%\.workbuddy-manager\backups\acceptance-582-sync-20261014-104821` 备份后执行 C→B 一次：`synced=1`、`skipped=0`、`errors=0`、`needsRecovery=false`。写后 B 与 C 均为 17 条，除会话 ID 外正文一致；主库和映射库完整性检查为 `ok`，无未完成操作。为核验客户端读取，当前暂切到账号 B，等待用户打开确认，随后须恢复原账号 C。
+
+恢复路径目前只有自动化测试，没有本次真实客户端端到端验收。云会话、Buddy、附件及非空文件历史引用仍保持写入门禁，不属于本次开放范围。
 
 验收前备份：`%USERPROFILE%\.workbuddy-manager\backups\acceptance-582-local-copy-20261014-103602`。
