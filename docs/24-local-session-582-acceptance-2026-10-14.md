@@ -7,7 +7,7 @@
 - 三份 JSONL 正文仅会话 ID 不同；关联表中只有一个包含 A/B/C 的三成员组，两次操作均为 `completed`，无未完成操作。
 - 写后主库和映射库 `PRAGMA integrity_check` 均为 `ok`；切换测试后官方登录态恢复到账号 C。
 - `cargo test -p wb-switch-core --test session_safety`：8 通过；`cargo test -p wb-switch-core modules::session::tests`：101 通过。
-- `./scripts/Build-Manager.ps1 -EvidencePrefix phase24` 成功生成可执行文件与 NSIS 安装包；候选文件位于 `release/0.2.0-alpha.3/session-582-candidate-20261014/`，尚未安装或发布。
+- `./scripts/Build-Manager.ps1 -EvidencePrefix phase24` 成功生成可执行文件与 NSIS 安装包；候选文件位于 `release/0.2.0-alpha.3/session-582-candidate-20261014/`。用户退出旧包后，已将 EXE 和安装包复制到 `release/0.2.0-alpha.3/local-candidate/` 并启动；旧文件备份于 `release/0.2.0-alpha.3/local-candidate-previous-20261014/`。运行进程及登录自启动均指向新版路径，SHA-256 与构建产物一致。今日三账号任务仍各为一次尝试、一次事件且状态成功。尚未上传 GitHub Releases。
 
 用户随后确认：账号 C 下的副本在官方 5.8.2 客户端中可见且可正常打开。复制的落盘和客户端读取因此通过本轮验收。
 
