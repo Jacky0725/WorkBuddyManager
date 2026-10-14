@@ -1,6 +1,6 @@
 # 文件历史引用迁移候选（2026-10-14）
 
-alpha.3 已发布：[GitHub Releases](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.3)。本文件记录其后开发的资源迁移候选，尚未构建替换已发布安装包或本机运行版本。
+alpha.3 已发布：[GitHub Releases](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.3)。本文件记录其后开发的文件历史资源迁移与官方预览验收。
 
 最小实现沿用现有本地会话算法：解析 `file-history-snapshot.snapshot.trackedFileBackups` 中的 `backupFileName`，从 `.workbuddy/file-history/<源会话 ID>/` 读取引用资源，并保存到目标会话专属目录。拒绝路径越界、重解析路径、缺失资源、未知格式和同名不同内容；不覆盖已有历史文件。同步预览绑定资源摘要，同步备份保存引用资源及摘要，恢复校验并重用这份资源。旧版无资源的预览和备份格式仍兼容。回滚保留原历史资源，新增但未引用的文件不覆盖业务数据。
 
@@ -10,6 +10,8 @@ alpha.3 已发布：[GitHub Releases](https://github.com/Jacky0725/WorkBuddyMana
 
 写入前独立备份：`%USERPROFILE%\.workbuddy-manager\backups\acceptance-582-history-20261014-144647`。复制后原账号 C 曾恢复；为官方只读打开验证，又暂切到新副本所属账号索引 1。用户未按 ID 找到副本后，经只读数据库与官方 UI 核对确认：当前账号只有两条同名“测试文字 123”，较早活动的下方一条（4 天前）是新副本，且已经在官方客户端打开；上方 2 天前的是纯文字会话。ID 不直接显示在侧栏，副本沿用旧 `last_activity_at` 导致时间标记不直观。源码已修正后续新副本的活动时间并通过回归测试，源会话活动时间保持不变；没有在运行中的客户端修改当前副本。
 
-仍等待文件历史/回退预览结果以及客户端退出，之后恢复 C。尚未在真实客户端执行文件回退或文件历史增量同步，不将隔离测试表述为此类真实验收。
+用户随后确认“可查看并已退出”：新副本的官方文件历史/回退预览可用。客户端进程退出后，账号 C 已恢复，两库完整性检查为 `ok`，无未完成操作。没有实际执行文件回退或文件历史增量同步，不将隔离测试表述为此类真实验收。文件历史迁移及侧栏排序修复将随 alpha.4 发布，alpha.3 保持原包不变。
 
 云会话、Buddy 绑定与附件仍未开放：当前云会话不在测试项目且没有本地正文，Buddy 绑定会话为 0；这些对象不能由此文件历史资源算法完整迁移。待复用相应已有测试记录或明确的虚构样本后，继续处理各类型所需的目标身份和资源规则。
+
+alpha.4 已通过 `./scripts/Build-Manager.ps1 -EvidencePrefix phase25` 生成 Windows x64 安装包。app 构建提交 `494b4d7`。本机已从 `release/0.2.0-alpha.4/local-candidate/workbuddy-manager.exe` 启动，现有登录自启动入口已更新到同一路径；alpha.3 文件保留。启动后今日三账号任务仍各一次尝试、一次事件且成功。EXE SHA-256：`FC7C8EEEFFA5B0D3815CD393B0FFC684C5A0F0FC93504A048FA3CBBC716EB9BC`；安装包 SHA-256：`E92D01B5E315A9E71C3ACBE323738639FBF9FA64C213B0C1A5C0E62896685C0F`。
