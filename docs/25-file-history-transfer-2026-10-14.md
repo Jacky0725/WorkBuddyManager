@@ -15,3 +15,5 @@ alpha.3 已发布：[GitHub Releases](https://github.com/Jacky0725/WorkBuddyMana
 云会话、Buddy 绑定与附件仍未开放：当前云会话不在测试项目且没有本地正文，Buddy 绑定会话为 0；这些对象不能由此文件历史资源算法完整迁移。待复用相应已有测试记录或明确的虚构样本后，继续处理各类型所需的目标身份和资源规则。
 
 alpha.4 已通过 `./scripts/Build-Manager.ps1 -EvidencePrefix phase25` 生成 Windows x64 安装包。app 构建提交 `494b4d7`。本机已从 `release/0.2.0-alpha.4/local-candidate/workbuddy-manager.exe` 启动，现有登录自启动入口已更新到同一路径；alpha.3 文件保留。启动后今日三账号任务仍各一次尝试、一次事件且成功。EXE SHA-256：`FC7C8EEEFFA5B0D3815CD393B0FFC684C5A0F0FC93504A048FA3CBBC716EB9BC`；安装包 SHA-256：`E92D01B5E315A9E71C3ACBE323738639FBF9FA64C213B0C1A5C0E62896685C0F`。
+
+[alpha.4 GitHub Release](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.4) 已发布，安装包、独立 EXE、SHA256SUMS 和法律声明上传完成；GitHub 的安装包与 EXE SHA-256 与上述本地值一致。发布说明明确标出未做实际文件回退或文件历史增量同步，并保留其他未验证类型的写入门禁。
