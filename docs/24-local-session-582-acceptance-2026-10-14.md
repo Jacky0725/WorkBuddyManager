@@ -7,7 +7,7 @@
 - 三份 JSONL 正文仅会话 ID 不同；关联表中只有一个包含 A/B/C 的三成员组，两次操作均为 `completed`，无未完成操作。
 - 写后主库和映射库 `PRAGMA integrity_check` 均为 `ok`；切换测试后官方登录态恢复到账号 C。
 - `cargo test -p wb-switch-core --test session_safety`：8 通过；`cargo test -p wb-switch-core modules::session::tests`：101 通过。
-- `./scripts/Build-Manager.ps1 -EvidencePrefix phase24` 成功生成可执行文件与 NSIS 安装包；候选文件位于 `release/0.2.0-alpha.3/session-582-candidate-20261014/`。用户退出旧包后，已将 EXE 和安装包复制到 `release/0.2.0-alpha.3/local-candidate/` 并启动；旧文件备份于 `release/0.2.0-alpha.3/local-candidate-previous-20261014/`。运行进程及登录自启动均指向新版路径，SHA-256 与构建产物一致。今日三账号任务仍各为一次尝试、一次事件且状态成功。尚未上传 GitHub Releases。
+- `./scripts/Build-Manager.ps1 -EvidencePrefix phase24` 成功生成可执行文件与 NSIS 安装包；候选文件位于 `release/0.2.0-alpha.3/session-582-candidate-20261014/`。用户退出旧包后，已将 EXE 和安装包复制到 `release/0.2.0-alpha.3/local-candidate/` 并启动；旧文件备份于 `release/0.2.0-alpha.3/local-candidate-previous-20261014/`。运行进程及登录自启动均指向新版路径，SHA-256 与构建产物一致。今日三账号任务仍各为一次尝试、一次事件且状态成功。
 
 用户随后确认：账号 C 下的副本在官方 5.8.2 客户端中可见且可正常打开。复制的落盘和客户端读取因此通过本轮验收。
 
@@ -16,3 +16,9 @@
 恢复路径的隔离故障测试 7 项通过（备份缺失、目标变化、数据库读取失败与回滚等）；Manager 加密备份恢复测试 4 项通过。本轮没有在真实客户端人为制造中断并恢复，不把这些测试写成真实环境验收。云会话、Buddy、附件及非空文件历史引用仍保持写入门禁，不属于本次开放范围。
 
 验收前备份：`%USERPROFILE%\.workbuddy-manager\backups\acceptance-582-local-copy-20261014-103602`。
+
+## 发布与未验证类型
+
+2026-10-14 已发布 [v0.2.0-alpha.3](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.3) 预发布版本，含 Windows x64 安装包、独立 EXE、SHA256SUMS、LICENSE 和第三方声明。GitHub 资产状态全部为 `uploaded`，安装包和 EXE 的服务器 SHA-256 分别为 `6b578ced15e2e3ffe7be685cd6ddd005a27d34cf3a737d363e633864cc199b62`、`c3888d549493a1ded6a1cdc2b9343e80a862604f99a574846431b177f8f33b64`，与本地一致。源码根提交 `8f75a428d5d6ba071d456c4b6ddea41043056f33`，app 提交 `61e6fced1999dbbc2bc79f451f1cfe54915df2d6` 均已推送。
+
+再次只读检查：当前一条云会话不在已授权测试项目、没有本地 JSONL，且不符合观察到的云端有效删除标记 `-1`；Buddy 绑定会话为 0。现有本地正文复制算法不能据此获得云端正文或目标账号的 Buddy 对象。已有文件历史测试会话可复用，但其外部备份文件尚未进入复制、同步和恢复事务。这些门禁没有解除，也没有将本地纯文字验收扩写为所有类型通过。
