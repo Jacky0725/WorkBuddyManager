@@ -1,0 +1,105 @@
+{
+  "detail_checks": [
+    {
+      "account_index": 1,
+      "business_code": 0,
+      "data_keys": [
+        "acpBackend",
+        "agentDirty",
+        "conversationOrigin",
+        "createdAt",
+        "currentVersionId",
+        "extraInfo",
+        "id",
+        "isPlayground",
+        "isUserDefinedTitle",
+        "lastActivityAt",
+        "link",
+        "manifest",
+        "name",
+        "runtimeId",
+        "sandboxDataLink",
+        "sandboxHostTemplate",
+        "sandboxLink",
+        "sessionId",
+        "sessionStatus",
+        "status",
+        "type",
+        "updatedAt",
+        "userId",
+        "visibility"
+      ],
+      "has_project_id": false,
+      "http_status": 200,
+      "origin": "workbuddy-mp",
+      "owner_matches_caller": true,
+      "sample_id_matches": true,
+      "type": "cloud",
+      "visibility": "PRIVATE"
+    },
+    {
+      "account_index": 2,
+      "business_code": 14287,
+      "data_keys": null,
+      "has_project_id": false,
+      "http_status": 403,
+      "origin": null,
+      "owner_matches_caller": null,
+      "sample_id_matches": false,
+      "type": null,
+      "visibility": null
+    }
+  ],
+  "read_only": true,
+  "results": [
+    {
+      "account_index": 2,
+      "business_code": 0,
+      "http_status": 200,
+      "list_schema_present": true,
+      "matches": []
+    },
+    {
+      "account_index": 1,
+      "business_code": 0,
+      "http_status": 200,
+      "list_schema_present": true,
+      "matches": [
+        {
+          "createdAt": "2026-10-15T14:23:48+08:00",
+          "id": "2110617615877951488",
+          "keys": [
+            "acpBackend",
+            "agentDirty",
+            "conversationOrigin",
+            "createdAt",
+            "currentVersionId",
+            "extraInfo",
+            "id",
+            "isPlayground",
+            "isUserDefinedTitle",
+            "lastActivityAt",
+            "link",
+            "manifest",
+            "name",
+            "runtimeId",
+            "sandboxDataLink",
+            "sandboxHostTemplate",
+            "sandboxLink",
+            "sessionId",
+            "sessionStatus",
+            "status",
+            "type",
+            "updatedAt",
+            "userId",
+            "visibility"
+          ],
+          "origin": "workbuddy-mp",
+          "owner_matches": true,
+          "type": "cloud"
+        }
+      ]
+    }
+  ],
+  "sample_title": "云迁移验收测试"
+}
