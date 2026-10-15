@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0-alpha.5",
+  "app_commit": "7965f0afc7ff1e6ace6caf46af598c07f0e3cce0",
+  "classification": "Windows x64 alpha prerelease",
+  "code_signed": false,
+  "core_tests_passed": 761,
+  "session_safety_tests_passed": 8,
+  "live_buddy_attachment_copy_and_view": true,
+  "live_buddy_attachment_incremental_sync": false,
+  "live_buddy_attachment_recovery": false,
+  "cloud_session_writes_enabled": false,
+  "files": [
+    {
+      "name": "LICENSE",
+      "bytes": 1087,
+      "sha256": "56821BAC86BC8027C358328AEDE0473ADAF18CC76F17B48CE43371CE101B944B"
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.md",
+      "bytes": 77924,
+      "sha256": "DB267ABC410A5E602F7E3700E0E28ACA41972F886954D764372B8037ACE1D460"
+    },
+    {
+      "name": "WorkBuddy Manager_0.2.0-alpha.5_x64-setup.exe",
+      "bytes": 6382787,
+      "sha256": "50DCFF486A09063F822B9FEC80DFFE5744EE305C3B4D31AC2EC012DE4A5C532C"
+    },
+    {
+      "name": "workbuddy-manager.exe",
+      "bytes": 24616448,
+      "sha256": "82FECBDCE15888C573BBF303A1C82A7A19683B3FA1510E0C4A45C579471BAB4B"
+    }
+  ],
+  "installer_exit_code": 0,
+  "standalone_matches_installed_binary": true
+}
