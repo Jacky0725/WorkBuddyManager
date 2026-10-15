@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-15",
+  "client_version": "5.8.2",
+  "inspection": "read-only metadata and installed static code",
+  "cloud_rows": 1,
+  "active_cloud_rows": 0,
+  "test_project_cloud_rows": 0,
+  "local_cloud_transcripts": 0,
+  "desktop_entry_has_explicit_product_flag": true,
+  "runtime_flag_value_confirmed": false,
+  "cloud_writes_enabled": false,
+  "cloud_live_migration_tested": false,
+  "official_sample_creation_guide": "https://www.workbuddy.cn/docs/workbuddymini/quick-start/Quickstart"
+}
