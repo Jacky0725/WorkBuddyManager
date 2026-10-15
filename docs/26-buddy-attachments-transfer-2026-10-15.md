@@ -30,3 +30,5 @@ Buddy 完整保留会话绑定和全局配置快照引用；验证绑定版本�
 真实复制的结构检查和官方客户端查看确认完成，写入安全集成测试 8 项及服务端编译检查通过；未进行真实附件/Buddy 增量同步或故障恢复，不能将隔离测试写为真实验收。新逻辑准备随 alpha.5 发布，已发布 alpha.4 保持不变。当前仍未发现明确的虚构云会话样本，不标记云会话迁移通过。
 
 alpha.5 优化构建及 NSIS 打包成功，app 提交 `7965f0afc7ff1e6ace6caf46af598c07f0e3cce0`。使用独立安装测试目录静默安装，退出码 0，安装后版本为 `0.2.0-alpha.5`。构建缓存 EXE 与安装后 EXE 只相差 Tauri 的 3 字节 bundle 类型标记（`UNK`/`NSS`）；交付独立 EXE 采用安装后版本，与安装器实际交付文件一致。产物摘要和安装记录见 `docs/evidence/windows-manager-0.2.0-alpha.5-artifacts.json`。
+
+[alpha.5 GitHub 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.5) 已上传安装包、独立程序、SHA256SUMS 和法律声明。GitHub 资产摘要与本地一致：安装包 `50DCFF486A09063F822B9FEC80DFFE5744EE305C3B4D31AC2EC012DE4A5C532C`，独立 EXE `82FECBDCE15888C573BBF303A1C82A7A19683B3FA1510E0C4A45C579471BAB4B`。本机已从 `release/0.2.0-alpha.5/local-candidate/workbuddy-manager.exe --hidden` 运行，既有启用的登录自启动项已更新至同一路径。alpha.4 原文件保留。发布不代表云会话或未执行的真实同步/恢复测试通过。
