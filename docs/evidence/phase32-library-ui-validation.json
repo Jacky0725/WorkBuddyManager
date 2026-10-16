@@ -1,0 +1,64 @@
+{
+  "account": "A",
+  "client": "5.8.2",
+  "task": "Library_read",
+  "before": {
+    "observed_at_ms": 1792127650053,
+    "status": "accepted",
+    "current": 0,
+    "target": 1
+  },
+  "actual_action": "Open official library introduction card through WorkBuddy UI",
+  "action_attempts": 1,
+  "model_requests": 0,
+  "manual_activity_reports": 0,
+  "stage_3_passed": false,
+  "opened_document_title": "WorkBuddy资料库介绍.html",
+  "after_action": {
+    "observed_at_ms": 1792127669001,
+    "status": "completed",
+    "current": 1,
+    "target": 1
+  },
+  "journal_before_claim": {
+    "sha256": "c8007f2eaa139b4826b02744b2cc97ea23429757f19adec59efd05d969508770",
+    "backup_created": true,
+    "operation_count": 6
+  },
+  "claim": {
+    "verified": 1,
+    "pending": 0,
+    "halted": false,
+    "errors": [],
+    "official_status": "claimed",
+    "official_observed_at_ms": 1792127835869
+  },
+  "independent_process_repeat": {
+    "verified": 0,
+    "pending": 0,
+    "halted": false,
+    "errors": [],
+    "official_status": "claimed",
+    "official_observed_at_ms": 1792127856024
+  },
+  "durable_library_operations": [
+    {
+      "task": "Library_read",
+      "state": "Verified",
+      "submitted_at_ms": 1792127833618,
+      "verified_at_ms": 1792127855504,
+      "error": null
+    }
+  ],
+  "verification": {
+    "claim_regression_tests_passed": 4,
+    "core_format_check": "passed",
+    "workspace_format_check": "preexisting vendor formatting differences; vendor left untouched",
+    "frontend_typecheck": "passed"
+  },
+  "remaining": [
+    "Task was already accepted before this validation; acceptance not exercised.",
+    "Official client action driven by agent UI automation, not yet integrated into Manager scheduler.",
+    "B/C execution not verified; no production automatic-execution toggle enabled."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-10-16T02:40:26.857156+00:00",
+  "client_version": "5.8.2",
+  "scope": "stage_3_readonly_entrypoint_check",
+  "official_bundle": "D:\\Program Files\\WorkBuddy\\resources\\app.asar.unpacked\\cli\\dist\\codebuddy-lite-wb.mjs",
+  "bundle_sha256": "1b1a01bc5f7b1121931b594770167ec6738b73b90b9d7d934d9aa9cab79db433",
+  "help_exit_code": 0,
+  "help_environment": {
+    "CODEBUDDY_FORCE_LITE_WB_BUNDLE": "1"
+  },
+  "help_warning": "configuration fetch proxy TypeError; help availability does not prove runtime availability",
+  "documented_options": [
+    "--print",
+    "--tools",
+    "--max-turns",
+    "--no-session-persistence",
+    "--strict-mcp-config",
+    "--setting-sources"
+  ],
+  "natural_chat_telemetry_present": true,
+  "growth_endpoint_literal_present": false,
+  "runtime_account_binding_verified": false,
+  "official_task_progress_from_this_entrypoint_verified": false,
+  "model_requests_submitted_this_check": 0,
+  "activity_events_manually_submitted": 0,
+  "desktop_window_available": false,
+  "desktop_unlock_requested": true,
+  "stage_3_passed": false,
+  "next_step": "One controlled official-client operation with fictional text and before/after official task progress verification; no repeated operations on delayed or unchanged progress."
+}
