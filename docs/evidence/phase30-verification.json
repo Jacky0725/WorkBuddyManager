@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0-alpha.6",
+  "app_commit": "c76202f",
+  "tests": {
+    "core": 775,
+    "growth": 13,
+    "server": 16,
+    "frontend": 37,
+    "session_safety": 8
+  },
+  "host_compile_check": true,
+  "format_check": true,
+  "clippy_default_exit_code": 0,
+  "new_growth_clippy_warnings": 0,
+  "strict_clippy_passed": false,
+  "strict_clippy_limitation": "Existing warnings in unchanged modules",
+  "live": {
+    "three_account_query": true,
+    "ordinary_rewards_verified": 2,
+    "travel_claim_verified": 1,
+    "travel_departure_verified": 1,
+    "restart_duplicate_operations": 0,
+    "first_background_batch": true,
+    "actual_cross_day": false,
+    "real_task_execution_closed_loop": false
+  },
+  "default_new_automation_enabled": false,
+  "local_test_plan": {
+    "accounts": 3,
+    "time": "09:30",
+    "timezone": "Asia/Shanghai",
+    "ordinary_claim": true,
+    "travel_claim": true,
+    "travel_depart": false
+  },
+  "full_extension_plan_complete": false
+}

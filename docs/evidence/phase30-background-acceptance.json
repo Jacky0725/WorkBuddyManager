@@ -1,0 +1,14 @@
+{
+  "automatic_departure": false,
+  "business_date": "2026-10-15",
+  "config_enabled": true,
+  "daily_time": "09:30",
+  "error": null,
+  "finished": true,
+  "next_verification_scheduled": true,
+  "operation_records_after": 4,
+  "operation_records_before": 4,
+  "ordinary_auto_claim": true,
+  "selected_accounts": 3,
+  "travel_auto_claim": true
+}

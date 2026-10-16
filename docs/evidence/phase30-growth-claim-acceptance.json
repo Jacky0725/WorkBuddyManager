@@ -1,0 +1,27 @@
+{
+  "account": "A",
+  "first": {
+    "already_claimed": 3,
+    "awaiting_verification": 0,
+    "errors": [],
+    "skipped": 10,
+    "verified": 2
+  },
+  "official_states": [
+    {
+      "official_state": "claimed",
+      "task": "chat_5"
+    },
+    {
+      "official_state": "claimed",
+      "task": "skill_1"
+    }
+  ],
+  "repeat": {
+    "already_claimed": 5,
+    "awaiting_verification": 0,
+    "errors": [],
+    "skipped": 10,
+    "verified": 0
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "read_only": true,
+  "results": [
+    {
+      "account_index": 1,
+      "code": 0,
+      "daily_limit_reached": null,
+      "data_keys": [
+        "buddy",
+        "poll_interval_seconds"
+      ],
+      "has_buddy": true,
+      "has_record": false,
+      "http": 200,
+      "path": "/activity/growth/buddy/info",
+      "state": null
+    },
+    {
+      "account_index": 1,
+      "code": 0,
+      "daily_limit_reached": true,
+      "data_keys": [
+        "arrive_at",
+        "buddy_id",
+        "daily_limit_reached",
+        "depart_at",
+        "duration_hours",
+        "letter",
+        "location",
+        "record_id",
+        "reward_credit",
+        "server_now",
+        "state",
+        "use_deeplink"
+      ],
+      "has_buddy": null,
+      "has_record": false,
+      "http": 200,
+      "path": "/activity/growth/buddy/travel/status",
+      "state": "idle"
+    },
+    {
+      "account_index": 2,
+      "code": 0,
+      "daily_limit_reached": null,
+      "data_keys": [
+        "buddy",
+        "poll_interval_seconds"
+      ],
+      "has_buddy": true,
+      "has_record": false,
+      "http": 200,
+      "path": "/activity/growth/buddy/info",
+      "state": null
+    },
+    {
+      "account_index": 2,
+      "code": 0,
+      "daily_limit_reached": false,
+      "data_keys": [
+        "arrive_at",
+        "buddy_id",
+        "daily_limit_reached",
+        "depart_at",
+        "duration_hours",
+        "letter",
+        "location",
+        "record_id",
+        "reward_credit",
+        "server_now",
+        "state",
+        "use_deeplink"
+      ],
+      "has_buddy": null,
+      "has_record": false,
+      "http": 200,
+      "path": "/activity/growth/buddy/travel/status",
+      "state": "idle"
+    },
+    {
+      "account_index": 3,
+      "code": 0,
+      "daily_limit_reached": null,
+      "data_keys": [
+        "buddy",
+        "poll_interval_seconds"
+      ],
+      "has_buddy": true,
+      "has_record": false,
+      "http": 200,
+      "path": "/activity/growth/buddy/info",
+      "state": null
+    },
+    {
+      "account_index": 3,
+      "code": 0,
+      "daily_limit_reached": true,
+      "data_keys": [
+        "arrive_at",
+        "buddy_id",
+        "daily_limit_reached",
+        "depart_at",
+        "duration_hours",
+        "letter",
+        "location",
+        "record_id",
+        "reward_credit",
+        "server_now",
+        "state",
+        "use_deeplink"
+      ],
+      "has_buddy": null,
+      "has_record": true,
+      "http": 200,
+      "path": "/activity/growth/buddy/travel/status",
+      "state": "arrived"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "read_only": true,
+  "results": [
+    {
+      "account_index": 3,
+      "code": 0,
+      "data_keys": [
+        "intro_slogan_items",
+        "intro_slogans",
+        "locations",
+        "server_now"
+      ],
+      "enabled": null,
+      "http": 200,
+      "is_enabled": null,
+      "locations": [
+        {
+          "id": 1,
+          "keys": [
+            "code",
+            "cover_url",
+            "description",
+            "duration_hours_max",
+            "duration_hours_min",
+            "id",
+            "name",
+            "preview_photos",
+            "reward_credit_max",
+            "reward_credit_min",
+            "sort",
+            "traveling_photos"
+          ],
+          "name": "咖啡馆"
+        },
+        {
+          "id": 2,
+          "keys": [
+            "code",
+            "cover_url",
+            "description",
+            "duration_hours_max",
+            "duration_hours_min",
+            "id",
+            "name",
+            "preview_photos",
+            "reward_credit_max",
+            "reward_credit_min",
+            "sort",
+            "traveling_photos"
+          ],
+          "name": "商场店铺"
+        },
+        {
+          "id": 3,
+          "keys": [
+            "code",
+            "cover_url",
+            "description",
+            "duration_hours_max",
+            "duration_hours_min",
+            "id",
+            "name",
+            "preview_photos",
+            "reward_credit_max",
+            "reward_credit_min",
+            "sort",
+            "traveling_photos"
+          ],
+          "name": "健身房"
+        },
+        {
+          "id": 4,
+          "keys": [
+            "code",
+            "cover_url",
+            "description",
+            "duration_hours_max",
+            "duration_hours_min",
+            "id",
+            "name",
+            "preview_photos",
+            "reward_credit_max",
+            "reward_credit_min",
+            "sort",
+            "traveling_photos"
+          ],
+          "name": "古镇客栈"
+        }
+      ],
+      "path": "/activity/growth/buddy/travel/config"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "accepted_verified": true,
+  "account": "B",
+  "chat_http": 200,
+  "chat_requests": 1,
+  "progress_after": {
+    "current": 0,
+    "status": "accepted",
+    "target": 5
+  },
+  "progress_before": {
+    "current": 0,
+    "target": 5
+  },
+  "real_response_content_received": true,
+  "stage": "probe_finished_no_replay",
+  "synthetic_events_sent": 0,
+  "task": "chat_5"
+}

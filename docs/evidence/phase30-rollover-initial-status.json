@@ -1,0 +1,26 @@
+{
+  "B_travel_state": "arrived",
+  "daily_time": "09:30",
+  "growth_error": null,
+  "growth_last_business_date": "2026-10-15",
+  "note": "09:30前不将未执行判为失败",
+  "observed_at_ms": 1792106697171,
+  "read_only_activity_requests": true,
+  "task_queries": [
+    {
+      "account_index": 1,
+      "claimed": 5,
+      "query_ok": true
+    },
+    {
+      "account_index": 2,
+      "claimed": 1,
+      "query_ok": true
+    },
+    {
+      "account_index": 3,
+      "claimed": 1,
+      "query_ok": true
+    }
+  ]
+}

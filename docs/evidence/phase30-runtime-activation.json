@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-10-16T07:24:07.3892616+08:00",
+  "version": "0.2.0-alpha.6",
+  "installed": true,
+  "running": true,
+  "autostart_points_to_candidate": true,
+  "last_growth_business_date": "2026-10-15",
+  "growth_error": null,
+  "ui_click_verified": false,
+  "ui_limit": "Lock screen process detected; no input geometry",
+  "full_extension_plan_complete": false
+}

@@ -1,0 +1,46 @@
+{
+  "claim": {
+    "account": "C",
+    "after": "idle",
+    "before": "arrived",
+    "daily_limit_reached": true,
+    "first": {
+      "already_claimed": 0,
+      "awaiting_verification": 0,
+      "errors": [],
+      "skipped": 0,
+      "verified": 1,
+      "waiting": 0
+    },
+    "repeat": {
+      "already_claimed": 0,
+      "awaiting_verification": 0,
+      "errors": [],
+      "skipped": 1,
+      "verified": 0,
+      "waiting": 0
+    }
+  },
+  "departure": {
+    "account": "B",
+    "first": {
+      "already_claimed": 0,
+      "awaiting_verification": 0,
+      "errors": [],
+      "skipped": 0,
+      "verified": 1,
+      "waiting": 0
+    },
+    "has_record": true,
+    "location_matches": true,
+    "repeat": {
+      "already_claimed": 0,
+      "awaiting_verification": 0,
+      "errors": [],
+      "skipped": 1,
+      "verified": 0,
+      "waiting": 0
+    },
+    "state": "traveling"
+  }
+}

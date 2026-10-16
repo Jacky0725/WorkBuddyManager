@@ -1,0 +1,9 @@
+   Compiling wb-switch-core v0.2.0-alpha.6 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+   Compiling wb-switch-server v0.2.0-alpha.6 (D:\codex\WorkBuddyManager\app\crates\wb-switch-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 02s
+     Running unittests src\main.rs (target\debug\deps\wb_switch-c62aef79160cb44b.exe)
+
+running 16 tests
+................
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
