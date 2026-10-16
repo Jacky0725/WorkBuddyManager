@@ -53,3 +53,5 @@ alpha.6 优化版 x64 NSIS 构建成功，静默安装返回 0。交付目录内
 本机启动副本为 `release/0.2.0-alpha.6/local-candidate/workbuddy-manager.exe`，Windows 登录自启动指向同一副本并带 `--hidden`。2026-10-16 早间检查进程正常，成长计划无错误。B 已到达，09:30 批次尚未到时，09:40 复核继续待真实运行结果。
 
 新版本窗口可识别到“成长任务”和“操作日志”导航；当前检测到锁屏进程且点击无窗口几何信息，尚未完成实际页面交互核验，已请求解锁。此限制不影响后台执行，但不能记为 UI 验收通过。运行与只读状态见 `evidence/phase30-runtime-activation.json`、`evidence/phase30-rollover-initial-status.json`。
+
+alpha.6 已上传 [GitHub Releases](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.6)，标为预发布。安装器、独立 EXE、SHA256 清单及许可材料共 5 个资源的服务端摘要已逐项与本地核对一致，见 `evidence/phase30-release-upload.json`。本机仍运行同一交付副本。
