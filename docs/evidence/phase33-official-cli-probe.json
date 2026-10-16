@@ -1,0 +1,39 @@
+{
+  "accept_http": 200,
+  "accepted_verified": true,
+  "account": "C",
+  "after": {
+    "current": 0,
+    "status": "accepted",
+    "target": 5
+  },
+  "authentication_error": false,
+  "before": {
+    "current": null,
+    "status": "not_accepted",
+    "target": null
+  },
+  "cli_exit_code": 0,
+  "client": "5.8.2",
+  "configuration_proxy_error": false,
+  "manual_activity_reports": 0,
+  "model_action_limit": 1,
+  "stage": "cli_finished_no_replay",
+  "stage_3_passed": false,
+  "started_at_ms": 1792129149087,
+  "task": "chat_5",
+  "test_marker_present_in_stdout": true,
+  "delayed_readback": {
+    "observed_at_ms": 1792129222554,
+    "status": "accepted",
+    "current": 0,
+    "target": 5
+  },
+  "normal_runtime_report": {
+    "chat_request_send_logged": true,
+    "mode_unknown_logged": true,
+    "finish_done_stop_logged": true,
+    "explicit_report_failure_logged": false
+  },
+  "conclusion": "Task acceptance verified. One CLI action exited normally; task progress remained zero after delayed readback. Marker presence and runtime logs are not treated as task completion. No replay."
+}

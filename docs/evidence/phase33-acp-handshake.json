@@ -1,0 +1,58 @@
+{
+  "client": "5.8.2",
+  "scope": "ACP initialize and local session creation; no model prompt",
+  "prompts_submitted": 0,
+  "manual_activity_reports": 0,
+  "initialized": true,
+  "protocol_version": 1,
+  "agent_capabilities": {
+    "promptCapabilities": {
+      "image": true,
+      "embeddedContext": true
+    },
+    "mcpCapabilities": {
+      "http": true,
+      "sse": true
+    },
+    "loadSession": true,
+    "delegateToolsSupport": true,
+    "mainAgentSupport": false,
+    "multitaskSupport": true,
+    "metaPromptSupport": true
+  },
+  "auth_method_count": 4,
+  "session_created": true,
+  "stdout_bytes": 13682,
+  "json_messages": 3,
+  "non_json_lines": 11,
+  "stderr_bytes": 0,
+  "available_permission_modes": [
+    "default",
+    "acceptEdits",
+    "plan",
+    "auto",
+    "dontAsk",
+    "bypassPermissions",
+    "fullAccess",
+    "delegate"
+  ],
+  "permission_modes_are_conversation_modes": false,
+  "craft_selection_verified_without_prompt": false,
+  "installed_prompt_metadata_contract": {
+    "parameter": "_meta[\"codebuddy.ai\"].mode",
+    "accepted_values": [
+      "craft",
+      "ask",
+      "plan",
+      "expert"
+    ],
+    "source": "Installed 5.8.2 bundled CLI ACP prompt() implementation; metadata is passed with a real prompt, not submitted as a standalone activity event."
+  },
+  "cli_bundle_sha256": "1b1a01bc5f7b1121931b594770167ec6738b73b90b9d7d934d9aa9cab79db433",
+  "entrypoint_note": "Bundled runtime required --serve --acp for this stdio handshake. --acp alone exited without initialize response.",
+  "next_prompt_authorization": "Pending explicit per-run action budget selection under doc29; no ACP prompts submitted.",
+  "prepared_prompt_script_syntax_check": "passed",
+  "acp_prompt_sent": false,
+  "isolated_fixture_jwt_like_values_found": 0,
+  "fixture_cleanup": "Recursive cleanup blocked by automatic policy review; fixtures retained, not published."
+}
