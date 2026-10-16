@@ -75,3 +75,5 @@ alpha.7 已成功静默安装，安装后 EXE 与交付副本一致；本机副�
 没有手动清除旧批次错误或修改复查时间：按原计划等待下一次实际复查。10:00:06 启动、10:00:08 完成的 alpha.7 后台批次错误为空。此后对 A/B/C 的任务及旅行共六次固定官方 GET 均成功；B 为 idle、当前记录为空，其唯一待核实领取已恢复为已核实；普通任务状态未被伪造。操作总数仍为 5，待核实为 0。见 `evidence/phase31-cross-day-final-get.json`。
 
 本轮跨日批次、B 到达领取与重启防重复核完成；结论包含“alpha.6 发现缺陷 → alpha.7 修复 → 实际批次复核”，不表示 alpha.7 本身已经再跨一次午夜。Manager 的自动领取继续运行，自动出发保持关闭。本次复核自动化按要求暂停；阶段 3 真实任务自动完成以及未完成的 UI 交互验收不在此结论中冒充通过。
+
+修复版已发布为 [alpha.7 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.7)，5 个资源的 GitHub 服务端摘要与本地逐项一致；alpha.6 发布说明已提示更新。见 `evidence/phase31-release-upload.json`。本机当前运行 alpha.7，启动项指向同一副本；最终后台证据见 `evidence/phase31-runtime-verified.json`。本次复核自动化 `workbuddy-2` 已确认状态为 PAUSED，Manager 自身的领取计划保持开启。
