@@ -1,6 +1,6 @@
 {
   "version": "0.2.0-alpha.6",
-  "app_commit": "c76202f",
+  "app_commit": "c76202f57931c2fcc5b405d1a93a1c1776eb7a6f",
   "classification": "Windows x64 alpha prerelease",
   "code_signed": false,
   "core_tests_passed": 775,
@@ -25,14 +25,14 @@
       "sha256": "DB267ABC410A5E602F7E3700E0E28ACA41972F886954D764372B8037ACE1D460"
     },
     {
-      "name": "WorkBuddy Manager_0.2.0-alpha.6_x64-setup.exe",
-      "bytes": 6481674,
-      "sha256": "D8C8188DEDD4FB9165CB0B181EF28277223BE771E4A04C466ACE8F653519D636"
-    },
-    {
       "name": "workbuddy-manager.exe",
       "bytes": 24905216,
       "sha256": "412ED6F7BE9A844E00A403750A4E66640A84B4E09C30A22DD7B47DF524051988"
+    },
+    {
+      "name": "WorkBuddy.Manager_0.2.0-alpha.6_x64-setup.exe",
+      "bytes": 6481674,
+      "sha256": "D8C8188DEDD4FB9165CB0B181EF28277223BE771E4A04C466ACE8F653519D636"
     }
   ]
 }
