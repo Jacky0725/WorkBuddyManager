@@ -1,0 +1,14 @@
+✔ one protocol prompt produces only a bounded summary (5217.3902ms)
+✔ preflight never sends a model prompt (202.9238ms)
+✔ echoed user text is not accepted as a model reply (5222.9178ms)
+✔ unexpected client operations are rejected without further prompts (205.1344ms)
+✔ protocol rejection cannot be reported as completion (176.8239ms)
+✔ official runtime remains alive for its deferred completion work (5217.8347ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16247.2388

@@ -1,0 +1,27 @@
+{
+  "action_limit": 9,
+  "active_account": "C",
+  "approved_accounts": [
+    "C",
+    "B"
+  ],
+  "results": [
+    {
+      "account": "C",
+      "result": {
+        "accepted": false,
+        "actions_verified": 2,
+        "awaiting_verification": true,
+        "budget_exhausted": false,
+        "halted": false,
+        "skipped": false,
+        "task_claimed": false
+      }
+    }
+  ],
+  "scope": "C at most 4; B at most 5 only if included; A has no chat budget",
+  "stage": "stopped_awaiting_official_progress",
+  "started_at_ms": 1792166352377,
+  "model_prompts_submitted": 3,
+  "following_account_submitted": false
+}

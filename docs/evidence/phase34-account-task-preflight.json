@@ -14,11 +14,11 @@
     },
     {
       "account": "C",
-      "current": 1,
+      "current": 3,
       "status": "in_progress",
       "target": 5
     }
   ],
   "model_actions": 0,
-  "observed_at_ms": 1792163436696
+  "observed_at_ms": 1792166523265
 }
