@@ -1,0 +1,24 @@
+{
+  "accounts": [
+    {
+      "account": "A",
+      "current": 5,
+      "status": "claimed",
+      "target": 5
+    },
+    {
+      "account": "B",
+      "current": 0,
+      "status": "accepted",
+      "target": 5
+    },
+    {
+      "account": "C",
+      "current": 1,
+      "status": "in_progress",
+      "target": 5
+    }
+  ],
+  "model_actions": 0,
+  "observed_at_ms": 1792163436696
+}

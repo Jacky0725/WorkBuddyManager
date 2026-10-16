@@ -1,0 +1,59 @@
+{
+  "client": "5.8.2",
+  "scope": "One authorized real ACP craft prompt",
+  "prompts_submitted": 1,
+  "manual_activity_reports": 0,
+  "initialized": true,
+  "protocol_version": 1,
+  "agent_capabilities": {
+    "promptCapabilities": {
+      "image": true,
+      "embeddedContext": true
+    },
+    "mcpCapabilities": {
+      "http": true,
+      "sse": true
+    },
+    "loadSession": true,
+    "delegateToolsSupport": true,
+    "mainAgentSupport": false,
+    "multitaskSupport": true,
+    "metaPromptSupport": true
+  },
+  "auth_method_count": 4,
+  "session_created": true,
+  "available_permission_modes": [
+    "default",
+    "acceptEdits",
+    "plan",
+    "auto",
+    "dontAsk",
+    "bypassPermissions",
+    "fullAccess",
+    "delegate"
+  ],
+  "stage": "prompt_finished_no_replay",
+  "stop_reason": "end_turn",
+  "agent_reply_matches": true,
+  "agent_reply_received": true,
+  "stdout_bytes": 47537,
+  "json_messages": 33,
+  "non_json_lines": 11,
+  "stderr_bytes": 0,
+  "account": "C",
+  "task": "chat_5",
+  "official_after": {
+    "observed_at_ms": 1792129803220,
+    "status": "in_progress",
+    "current": 1,
+    "target": 5
+  },
+  "official_before": {
+    "status": "accepted",
+    "current": 0,
+    "target": 5
+  },
+  "counting_verified": true,
+  "full_task_completion_verified": false,
+  "remaining_messages": 4
+}

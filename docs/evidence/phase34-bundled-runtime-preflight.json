@@ -1,0 +1,40 @@
+{
+  "client": "5.8.2",
+  "scope": "ACP initialize and create local session; no prompt",
+  "prompts_submitted": 0,
+  "manual_activity_reports": 0,
+  "initialized": true,
+  "protocol_version": 1,
+  "agent_capabilities": {
+    "promptCapabilities": {
+      "image": true,
+      "embeddedContext": true
+    },
+    "mcpCapabilities": {
+      "http": true,
+      "sse": true
+    },
+    "loadSession": true,
+    "delegateToolsSupport": true,
+    "mainAgentSupport": false,
+    "multitaskSupport": true,
+    "metaPromptSupport": true
+  },
+  "auth_method_count": 4,
+  "session_created": true,
+  "available_permission_modes": [
+    "default",
+    "acceptEdits",
+    "plan",
+    "auto",
+    "dontAsk",
+    "bypassPermissions",
+    "fullAccess",
+    "delegate"
+  ],
+  "prompt_sent": false,
+  "stdout_bytes": 14374,
+  "json_messages": 3,
+  "non_json_lines": 11,
+  "stderr_bytes": 0
+}

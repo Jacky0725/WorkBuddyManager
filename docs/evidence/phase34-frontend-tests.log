@@ -1,0 +1,30 @@
+
+> wb-switch-rust@0.2.0-alpha.7 pretest
+> node scripts/test-growth-acp.cjs
+
+✔ one real protocol prompt produces only a bounded summary (729.2493ms)
+✔ preflight never sends a model prompt (736.8105ms)
+✔ echoed user text is not accepted as a model reply (652.7061ms)
+✔ unexpected client operations are rejected without further prompts (732.2808ms)
+✔ protocol rejection cannot be reported as completion (1703.1344ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4571.1243
+
+> wb-switch-rust@0.2.0-alpha.7 test
+> vitest run src/lib/growth.test.ts
+
+
+ RUN  v5.0.2 D:/codex/WorkBuddyManager/app
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  14:02:01
+   Duration  895ms (transform 89%, import 6%, worker 4%, tests 1%)
+
