@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-16T10:01:54.4620985+08:00",
+  "version": "0.2.0-alpha.7",
+  "running": true,
+  "autostart_matches": true,
+  "business_date": "2026-10-16",
+  "last_started_ms": 1792116006857,
+  "finished_ms": 1792116008098,
+  "batch_error": null,
+  "selected_accounts": 3,
+  "automatic_departure": false,
+  "operations": 5,
+  "uncertain": 0,
+  "config_unchanged": true,
+  "journal_unchanged_after_restart_and_batch": true,
+  "post_repair_runtime_verified": true,
+  "real_task_execution_closed_loop": false
+}

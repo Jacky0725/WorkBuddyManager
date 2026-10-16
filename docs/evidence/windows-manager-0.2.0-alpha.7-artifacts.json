@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0-alpha.7",
+  "app_commit": "0174b71c9ab4ea130449a8bc370d1c777ffab400",
+  "classification": "Windows x64 alpha prerelease hotfix",
+  "code_signed": false,
+  "core_tests_passed": 778,
+  "growth_tests_passed": 16,
+  "installer_exit_code": 0,
+  "standalone_matches_installed_binary": true,
+  "automatic_departure_enabled": false,
+  "real_growth_task_execution_enabled": false,
+  "full_extension_plan_complete": false,
+  "files": [
+    {
+      "name": "LICENSE",
+      "bytes": 1087,
+      "sha256": "56821BAC86BC8027C358328AEDE0473ADAF18CC76F17B48CE43371CE101B944B"
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.md",
+      "bytes": 77924,
+      "sha256": "DB267ABC410A5E602F7E3700E0E28ACA41972F886954D764372B8037ACE1D460"
+    },
+    {
+      "name": "workbuddy-manager.exe",
+      "bytes": 24906752,
+      "sha256": "505B36E2A5FB9573C9466B435DE5CBB6D8E10DF4C5DF8A9B4EC4B675293DEEFF"
+    },
+    {
+      "name": "WorkBuddy.Manager_0.2.0-alpha.7_x64-setup.exe",
+      "bytes": 6478437,
+      "sha256": "A27F7D8E9CA291900B71685053BD616D537357BCB268BBA7F512F318476F6D50"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "activity_post_requests": 0,
+  "business_date": "2026-10-16",
+  "finished_ms": 1792116008098,
+  "last_started_ms": 1792116006857,
+  "observed_at_ms": 1792116031240,
+  "operation_count": 5,
+  "results": [
+    {
+      "account": "A",
+      "tasks": {
+        "code": 0,
+        "http": 200,
+        "states": [
+          {
+            "status": "claimed",
+            "task": "chat_5"
+          },
+          {
+            "status": "claimed",
+            "task": "skill_1"
+          }
+        ]
+      },
+      "travel": {
+        "code": 0,
+        "daily_limit_reached": true,
+        "has_record": true,
+        "http": 200,
+        "state": "traveling"
+      }
+    },
+    {
+      "account": "B",
+      "tasks": {
+        "code": 0,
+        "http": 200,
+        "states": [
+          {
+            "status": "accepted",
+            "task": "chat_5"
+          },
+          {
+            "status": "not_accepted",
+            "task": "skill_1"
+          }
+        ]
+      },
+      "travel": {
+        "code": 0,
+        "daily_limit_reached": false,
+        "has_record": false,
+        "http": 200,
+        "state": "idle"
+      }
+    },
+    {
+      "account": "C",
+      "tasks": {
+        "code": 0,
+        "http": 200,
+        "states": [
+          {
+            "status": "not_accepted",
+            "task": "chat_5"
+          },
+          {
+            "status": "not_accepted",
+            "task": "skill_1"
+          }
+        ]
+      },
+      "travel": {
+        "code": 0,
+        "daily_limit_reached": true,
+        "has_record": false,
+        "http": 200,
+        "state": "idle"
+      }
+    }
+  ],
+  "scheduler_error": null,
+  "uncertain_count": 0
+}

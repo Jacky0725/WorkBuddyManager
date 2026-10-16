@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-10-16T09:56:29.2212379+08:00",
+  "version": "0.2.0-alpha.7",
+  "restarted": true,
+  "operations_before": 5,
+  "operations_after": 5,
+  "uncertain": 0,
+  "journal_unchanged": true,
+  "config_unchanged": true,
+  "last_business_date": "2026-10-16",
+  "last_batch_error": "待核实 0 项；查询异常 1 项",
+  "next_retry_ms": 1792116000244
+}
