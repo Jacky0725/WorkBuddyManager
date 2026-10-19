@@ -1,0 +1,32 @@
+{
+  "url": "https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.9",
+  "target_commit": "196976cb58f66be5b4d52b116cc366ae3ee06847",
+  "assets": [
+    {
+      "name": "LICENSE",
+      "uploaded": true,
+      "sha256_matches": true
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "uploaded": true,
+      "sha256_matches": true
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.md",
+      "uploaded": true,
+      "sha256_matches": true
+    },
+    {
+      "name": "workbuddy-manager.exe",
+      "uploaded": true,
+      "sha256_matches": true
+    },
+    {
+      "name": "WorkBuddy.Manager_0.2.0-alpha.9_x64-setup.exe",
+      "uploaded": true,
+      "sha256_matches": true
+    }
+  ],
+  "all_verified": true
+}

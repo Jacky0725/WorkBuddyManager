@@ -165,3 +165,5 @@ C 再次零预算只读核实仍为 AwaitingVerification，操作标识集合不
 官方进度达到目标后，可领取奖励并刷新 Manager；现有后台在后续复核中按新的官方业务状态结束待核实，不表示旧调用后来被单独计数。也可在用户完成后由代理运行零预算复核，明确核对进度与领奖结果。服务端未达标前继续保留 C 的暂停，不把本次文案修订当作 C 验收通过。
 
 alpha.9 前端 TypeScript/生产构建及优化版 x64 NSIS 打包成功；直接运行进度格式函数验证未接受、已接受无数值、3/5 三种显示符合要求，见 `evidence/phase39-progress-format-check.json`。隔离安装返回 0、启动保持运行、交付 EXE 与安装后 EXE 摘要一致，正式配置与活动记录保持不变，原 alpha.8 后台已恢复。见 `evidence/phase39-package-smoke.json`。本轮未激活 alpha.9 为生产版本，也未追加真实聊天。
+
+[alpha.9 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.9) 已上传，5 个资源均上传完成且 GitHub 服务端摘要与本地一致，见 `evidence/phase39-release-upload.json`。新文案升级后生效；当前正式运行仍为 alpha.8。C 待用户通过官方客户端完成剩余进度后再核实，尚未收尾成功。
