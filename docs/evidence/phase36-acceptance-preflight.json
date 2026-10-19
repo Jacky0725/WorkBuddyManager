@@ -1,0 +1,37 @@
+{
+  "checked_on": "2026-10-19",
+  "model_prompts_submitted": 0,
+  "batch_limit": 9,
+  "previously_submitted": 3,
+  "remaining_upper_bound": 6,
+  "account_rows": [
+    {
+      "account": "A",
+      "stale": true,
+      "error": "凭证不可用，请重新登录",
+      "observed_at_ms": 1792247860051,
+      "status": "claimed",
+      "current": 5,
+      "target": 5
+    },
+    {
+      "account": "B",
+      "stale": true,
+      "error": "凭证不可用，请重新登录",
+      "observed_at_ms": 1792247860423,
+      "status": "accepted",
+      "current": 0,
+      "target": 5
+    },
+    {
+      "account": "C",
+      "stale": false,
+      "error": null,
+      "observed_at_ms": 1792370843129,
+      "status": "in_progress",
+      "current": 3,
+      "target": 5
+    }
+  ],
+  "note": "Stale A/B values are historical, not fresh successful queries. C pending operation retained."
+}
