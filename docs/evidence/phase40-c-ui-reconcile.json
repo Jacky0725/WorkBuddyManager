@@ -1,0 +1,31 @@
+{
+  "account": "C",
+  "claim": {
+    "already_claimed": 2,
+    "awaiting_verification": 0,
+    "errors": [],
+    "halted": false,
+    "skipped": 14,
+    "verified": 0,
+    "waiting": 0
+  },
+  "desktop_account": "A",
+  "mode": "reconcile",
+  "model_prompts_submitted_by_helper": 0,
+  "observed_at_ms": 1792408321505,
+  "official": {
+    "current": 5,
+    "status": "claimed",
+    "target": 5
+  },
+  "operation_ids_unchanged": true,
+  "reconcile": {
+    "accepted": false,
+    "actions_verified": 0,
+    "awaiting_verification": false,
+    "budget_exhausted": false,
+    "halted": false,
+    "skipped": false,
+    "task_claimed": true
+  }
+}

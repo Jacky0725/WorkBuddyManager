@@ -1,0 +1,12 @@
+{
+  "account": "C",
+  "desktop_account": "A",
+  "mode": "before",
+  "model_prompts_submitted_by_helper": 0,
+  "observed_at_ms": 1792408234905,
+  "official": {
+    "current": 4,
+    "status": "in_progress",
+    "target": 5
+  }
+}

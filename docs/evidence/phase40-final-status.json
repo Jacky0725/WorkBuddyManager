@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-10-19",
+  "account": "C",
+  "official_status": "claimed",
+  "official_current": 5,
+  "official_target": 5,
+  "new_prompts_this_turn": 1,
+  "independent_rechecks": 2,
+  "new_operations_during_rechecks": 0,
+  "pending_total": 0,
+  "last_batch_error": null,
+  "automatic_chat_enabled": false,
+  "desktop_account_unchanged": "A",
+  "old_operation_deleted": false,
+  "manual_activity_reports": 0,
+  "original_batch_prompts_total": 8,
+  "original_batch_limit": 9
+}

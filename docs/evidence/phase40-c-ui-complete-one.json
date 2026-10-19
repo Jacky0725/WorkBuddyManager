@@ -1,0 +1,22 @@
+{
+  "account": "C",
+  "desktop_account": "A",
+  "execution": {
+    "accepted": false,
+    "actions_verified": 1,
+    "awaiting_verification": false,
+    "budget_exhausted": false,
+    "halted": false,
+    "skipped": false,
+    "task_claimed": true
+  },
+  "mode": "complete-one",
+  "model_prompts_submitted_by_helper": 1,
+  "observed_at_ms": 1792408280817,
+  "official": {
+    "current": 4,
+    "status": "in_progress",
+    "target": 5
+  },
+  "stage": "finished_no_replay"
+}
