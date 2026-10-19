@@ -1,0 +1,34 @@
+
+> wb-switch-rust@0.2.0-alpha.8 pretest
+> node scripts/test-growth-acp.cjs
+
+✔ one protocol prompt produces only a bounded summary (5461.0936ms)
+✔ preflight never sends a model prompt (499.6312ms)
+✔ echoed user text is not accepted as a model reply (5589.0664ms)
+✔ unexpected client operations are rejected without further prompts (639.4559ms)
+✔ protocol rejection cannot be reported as completion (560.657ms)
+✔ official runtime remains alive for its deferred completion work (5603.4281ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 18362.0514
+
+> wb-switch-rust@0.2.0-alpha.8 test
+> vitest run
+
+
+ RUN  v5.0.2 D:/codex/WorkBuddyManager/app
+
+
+ Test Files  5 passed (5)
+      Tests  38 passed (38)
+   Start at  10:15:21
+   Duration  3.46s (transform 86%, worker 8%, import 5%, tests 1%)
+
+  Transform  transforming modules took 6.83s · 86% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns

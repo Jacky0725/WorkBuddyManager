@@ -1,0 +1,29 @@
+   Compiling tokio-rustls v0.26.4
+   Compiling rust-embed-impl v8.12.0
+   Compiling hyper-rustls v0.27.9
+   Compiling reqwest v0.12.28
+   Compiling rust-embed v8.12.0
+   Compiling wb-switch-core v0.2.0-alpha.8 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+   Compiling wb-switch-server v0.2.0-alpha.8 (D:\codex\WorkBuddyManager\app\crates\wb-switch-server)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 02s
+     Running unittests src\main.rs (test-fixtures\cargo-target\debug\deps\wb_switch-6abe2b29114673e7.exe)
+
+running 16 tests
+test api::tests::variant_query_defaults_to_cn ... ok
+test api::tests::variant_body_defaults_to_cn ... ok
+test api::tests::web_checkin_status_preserves_failure_state ... ok
+test api::tests::web_checkin_status_keeps_account_identity ... ok
+test api::tests::web_checkin_status_preserves_exclusion_without_inventing_today_status ... ok
+test api::tests::web_checkin_status_row_carries_variant ... ok
+test tests::cli_variant_defaults_to_cn ... ok
+test tests::cli_variant_reads_space_and_equals_forms ... ok
+test security::tests::all_api_routes_require_session_and_reject_foreign_sources ... ok
+test security::tests::session_cannot_be_reused_after_server_restart ... ok
+test api::tests::manager_rejects_foreign_origin_and_dns_rebinding ... ok
+test api::tests::spa_fallback_serves_html_content_type ... ok
+test api::tests::manager_manual_and_legacy_save_are_blocked_before_any_store_access ... ok
+test api::tests::manager_read_is_readonly_and_does_not_claim_execution ... ok
+test api::tests::growth_routes_cannot_touch_live_credentials_from_fixture_or_cross_origin ... ok
+test api::tests::manager_save_roundtrip_rejects_stale_revision_and_invalid_schema ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s

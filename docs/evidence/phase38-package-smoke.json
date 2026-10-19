@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0-alpha.8",
+  "app_commit": "f534bfad5c85979c0488de6153d9e80b1297fbfd",
+  "installer_exit": 0,
+  "installed_matches_candidate": true,
+  "files": [
+    {
+      "name": "LICENSE",
+      "sha256": "56821bac86bc8027c358328aede0473adaf18cc76f17b48ce43371ce101b944b",
+      "bytes": 1087
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.md",
+      "sha256": "db267abc410a5e602f7e3700e0e28aca41972f886954d764372b8037ace1d460",
+      "bytes": 77924
+    },
+    {
+      "name": "workbuddy-manager.exe",
+      "sha256": "3d33cd2e62ef28af45e87d072e88ee01e6dbe5edb8324a90dd129cc48ea7b483",
+      "bytes": 25550336
+    },
+    {
+      "name": "WorkBuddy.Manager_0.2.0-alpha.8_x64-setup.exe",
+      "sha256": "c351aa59ddde3f5dde53575dc22695b03f21eeb27818d3acc81fa9d4e0658d7b",
+      "bytes": 6578549
+    }
+  ],
+  "production_chat_switch_enabled": false,
+  "smoke_started": true,
+  "fixture_chat_config_created": false,
+  "production_config_and_activity_unchanged": true,
+  "production_runtime_version": "0.2.0-alpha.7",
+  "production_runtime_restored": true
+}
