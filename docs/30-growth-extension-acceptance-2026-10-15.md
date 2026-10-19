@@ -153,3 +153,5 @@ C 的第三条保留 AwaitingVerification，禁止删除记录或重放；两次
 alpha.8 优化版 x64 NSIS 构建成功，源提交 app `f534bfad5c85979c0488de6153d9e80b1297fbfd` 已推送。最终核心 792 项单元测试与 77 项集成测试（合计 869）、服务端 16 项、前端 38 项、协议适配器 6 项通过；成长 30 项包含在核心单元测试中。普通 Clippy 成功，新增模块告警为 0，旧模块仍有 9 条告警。两种 host 编译及核心包格式检查通过。
 
 安装器在 `test-fixtures/install-manager-alpha8` 静默安装返回 0，隔离空白配置启动并保持运行，未创建聊天执行配置。交付 EXE 与安装后 EXE 摘要一致；生产配置与活动记录字节校验保持不变。完成隔离检查后已恢复原 alpha.7 后台运行及原自启动指向，未把 alpha.8 激活为生产版本。证据 `evidence/phase38-package-smoke.json`；这不是新聊天计划已启用或跨日通过的证据。
+
+已发布 [alpha.8 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.8)，安装器、独立 EXE、SHA256 清单与许可材料共 5 个资源的 GitHub 服务端摘要与本地逐项一致，见 `evidence/phase38-release-upload.json`。正式环境再次检查：聊天配置文件不存在（有效开关关闭），alpha.7 进程及 `--hidden` 自启动路径仍指向原交付副本。本批批准的调度/UI 接入、回归、隔离安装构建及发布已完成；正式升级、启用后的真实定时聊天和 C 未核实问题仍明确保留，不将整个项目写为全部验收通过。
