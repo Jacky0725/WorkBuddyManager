@@ -1,0 +1,143 @@
+    Checking wb-switch-core v0.2.0-alpha.7 (D:\codex\WorkBuddyManager\app\crates\wb-switch-core)
+warning: unneeded `return` statement
+  --> crates\wb-switch-core\src\modules\auth_file.rs:31:9
+   |
+31 |         return crate::modules::process::windows_default_app_path(variant);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#needless_return
+   = note: `#[warn(clippy::needless_return)]` on by default
+help: remove `return`
+   |
+31 -         return crate::modules::process::windows_default_app_path(variant);
+31 +         crate::modules::process::windows_default_app_path(variant)
+   |
+
+warning: unneeded `return` statement
+   --> crates\wb-switch-core\src\modules\codebuddy_cli.rs:378:9
+    |
+378 | /         return stdout
+379 | |             .lines()
+380 | |             .filter_map(|line| line.trim().parse::<u32>().ok())
+381 | |             .filter(|pid| *pid != self_pid)
+382 | |             .collect();
+    | |______________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#needless_return
+help: remove `return`
+    |
+378 ~         stdout
+379 +             .lines()
+380 +             .filter_map(|line| line.trim().parse::<u32>().ok())
+381 +             .filter(|pid| *pid != self_pid)
+382 ~             .collect()
+    |
+
+warning: this boolean expression can be simplified
+  --> crates\wb-switch-core\src\modules\session_resources.rs:93:16
+   |
+93 |               if !entry
+   |  ________________^
+94 | |                 .get("version")
+95 | |                 .and_then(|v| v.as_u64())
+96 | |                 .is_some_and(|v| v > 0)
+   | |_______________________________________^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#nonminimal_bool
+   = note: `#[warn(clippy::nonminimal_bool)]` on by default
+help: try
+   |
+93 ~             if entry
+94 +                 .get("version")
+95 +                 .and_then(|v| v.as_u64()).is_none_or(|v| v <= 0)
+   |
+
+warning: this boolean expression can be simplified
+   --> crates\wb-switch-core\src\modules\session_shared_assets.rs:233:16
+    |
+233 |               || !mode["applicationId"]
+    |  ________________^
+234 | |                 .as_str()
+235 | |                 .is_some_and(|s| !s.is_empty())
+    | |_______________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#nonminimal_bool
+help: try
+    |
+233 ~             || mode["applicationId"]
+234 +                 .as_str().is_none_or(|s| s.is_empty())
+    |
+
+warning: the function `CryptUnprotectData` doesn't need a mutable reference
+   --> crates\wb-switch-core\src\modules\vscode_cn_inject.rs:454:28
+    |
+454 |         CryptUnprotectData(&mut data_in, None, None, None, None, 0, &mut data_out)
+    |                            ^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#unnecessary_mut_passed
+    = note: `#[warn(clippy::unnecessary_mut_passed)]` on by default
+help: remove this `mut`
+    |
+454 -         CryptUnprotectData(&mut data_in, None, None, None, None, 0, &mut data_out)
+454 +         CryptUnprotectData(&data_in, None, None, None, None, 0, &mut data_out)
+    |
+
+warning: unneeded `return` statement
+   --> crates\wb-switch-core\src\modules\vscode_cn_inject.rs:532:9
+    |
+532 |         return decrypt_windows_gcm_v10(&key, encrypted);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#needless_return
+help: remove `return`
+    |
+532 -         return decrypt_windows_gcm_v10(&key, encrypted);
+532 +         decrypt_windows_gcm_v10(&key, encrypted)
+    |
+
+warning: unneeded `return` statement
+   --> crates\wb-switch-core\src\modules\vscode_cn_inject.rs:580:9
+    |
+580 |         return encrypt_windows_gcm_v10(&key, plaintext);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#needless_return
+help: remove `return`
+    |
+580 -         return encrypt_windows_gcm_v10(&key, plaintext);
+580 +         encrypt_windows_gcm_v10(&key, plaintext)
+    |
+
+warning: called `Iterator::last` on a `DoubleEndedIterator`; this will needlessly iterate the entire iterator
+  --> crates\wb-switch-core\src\modules\manager_security.rs:24:19
+   |
+24 |           let sid = output
+   |  ___________________^
+25 | |             .split(',')
+26 | |             .last()
+   | |___________________^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#double_ended_iterator_last
+   = note: `#[warn(clippy::double_ended_iterator_last)]` on by default
+help: try
+   |
+26 -             .last()
+26 +             .next_back()
+   |
+
+warning: consider using `sort_by_key`
+   --> crates\wb-switch-core\src\modules\manager_backup.rs:240:5
+    |
+240 |     result.sort_by(|a, b| b.created_at_ms.cmp(&a.created_at_ms));
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.96.0/index.html#unnecessary_sort_by
+    = note: `#[warn(clippy::unnecessary_sort_by)]` on by default
+help: try
+    |
+240 -     result.sort_by(|a, b| b.created_at_ms.cmp(&a.created_at_ms));
+240 +     result.sort_by_key(|b| std::cmp::Reverse(b.created_at_ms));
+    |
+
+warning: `wb-switch-core` (lib) generated 9 warnings (run `cargo clippy --fix --lib -p wb-switch-core -- ` to apply 8 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 15.98s

@@ -1,0 +1,24 @@
+{
+  "account": "B",
+  "budget": 5,
+  "finished_at_ms": 1792371488699,
+  "new_chat_operations": 4,
+  "new_operations": 5,
+  "official": {
+    "current": 5,
+    "status": "claimed",
+    "target": 5
+  },
+  "other_account_operations_unchanged": true,
+  "report": {
+    "accepted": false,
+    "actions_verified": 4,
+    "awaiting_verification": false,
+    "budget_exhausted": false,
+    "halted": false,
+    "skipped": false,
+    "task_claimed": true
+  },
+  "stage": "finished_no_replay",
+  "started_at_ms": 1792371428244
+}

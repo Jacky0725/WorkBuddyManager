@@ -1,0 +1,57 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.39s
+     Running unittests src\lib.rs (test-fixtures\cargo-target\debug\deps\wb_switch_core-8d0cdf1fd9df362d.exe)
+
+running 9 tests
+test modules::growth_execution::tests::zero_budget_never_accepts_or_sends_even_for_an_eligible_task ... ok
+test modules::growth_execution::tests::unsupported_or_expired_tasks_never_accept_or_chat ... ok
+test modules::growth_execution::tests::lost_claim_receipt_is_reconciled_from_claimed_without_any_new_action ... ok
+test modules::growth_execution::tests::unknown_accept_is_not_submitted_again_after_restart ... ok
+test modules::growth_execution::tests::budget_one_accepts_and_executes_only_one_action ... ok
+test modules::growth_execution::tests::lost_reply_with_official_progress_is_verified_without_extra_chat ... ok
+test modules::growth_execution::tests::delayed_progress_and_restart_never_replay_unknown_chat ... ok
+test modules::growth_execution::tests::other_accounts_acknowledged_chat_does_not_block_but_unknown_result_does ... ok
+test modules::growth_execution::tests::five_actions_stop_on_target_and_repeat_does_not_send ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 779 filtered out; finished in 0.33s
+
+     Running tests\account_security.rs (test-fixtures\cargo-target\debug\deps\account_security-a41e706d1e3b9a24.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 20 filtered out; finished in 0.00s
+
+     Running tests\checkin_mock_http.rs (test-fixtures\cargo-target\debug\deps\checkin_mock_http-bb029fbb829377dc.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.00s
+
+     Running tests\cli_auth_sync_e2e.rs (test-fixtures\cargo-target\debug\deps\cli_auth_sync_e2e-d913990d86d3db54.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.00s
+
+     Running tests\manager_backup.rs (test-fixtures\cargo-target\debug\deps\manager_backup-db0468fc6ed81496.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.00s
+
+     Running tests\manager_scheduler.rs (test-fixtures\cargo-target\debug\deps\manager_scheduler-5eef265f93b95197.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 6 filtered out; finished in 0.00s
+
+     Running tests\scheduler_clock.rs (test-fixtures\cargo-target\debug\deps\scheduler_clock-ea5fa590168475f1.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 19 filtered out; finished in 0.00s
+
+     Running tests\session_safety.rs (test-fixtures\cargo-target\debug\deps\session_safety-c5d0b462551208bc.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.00s

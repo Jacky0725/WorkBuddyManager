@@ -1,0 +1,16 @@
+{
+  "account": "B",
+  "budget": 5,
+  "error": "Stopped; inspect durable operations before any retry",
+  "finished_at_ms": 1792371384614,
+  "new_chat_operations": 0,
+  "new_operations": 0,
+  "official": {
+    "current": 1,
+    "status": "in_progress",
+    "target": 5
+  },
+  "other_account_operations_unchanged": true,
+  "stage": "finished_no_replay",
+  "started_at_ms": 1792371383223
+}

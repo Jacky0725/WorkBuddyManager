@@ -8,8 +8,8 @@
     },
     {
       "account": "B",
-      "current": 0,
-      "status": "accepted",
+      "current": 5,
+      "status": "claimed",
       "target": 5
     },
     {
@@ -20,5 +20,5 @@
     }
   ],
   "model_actions": 0,
-  "observed_at_ms": 1792166523265
+  "observed_at_ms": 1792371519358
 }
