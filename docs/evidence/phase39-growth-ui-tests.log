@@ -1,0 +1,8 @@
+
+ RUN  v5.0.2 D:/codex/WorkBuddyManager/app
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  14:21:20
+   Duration  1.32s (transform 47%, worker 29%, import 20%, tests 3%)
