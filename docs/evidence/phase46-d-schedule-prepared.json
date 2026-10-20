@@ -1,0 +1,13 @@
+{
+  "accept_requests_by_schedule_preparation": 0,
+  "acceptance_recovery_preceded_this_batch": true,
+  "account": "D",
+  "auto_claim": true,
+  "before_task_status": "accepted_after_authorized_recovery",
+  "due_time_beijing": "14:52",
+  "maximum_new_prompts": 5,
+  "only_D_selected": true,
+  "prepared_ms": 1792479022779,
+  "scheduled_by": "public save; actual Manager coordinator must trigger",
+  "travel_actions": false
+}

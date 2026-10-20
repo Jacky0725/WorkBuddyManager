@@ -1,0 +1,12 @@
+{
+  "original_config_restored": true,
+  "original_chat_restored": true,
+  "daily_files_unchanged": {
+    "daily_scheduler_config.json": true,
+    "daily_scheduler_state.json": true
+  },
+  "chat_execution_enabled": false,
+  "D_model_calls_used": 5,
+  "D_model_call_limit": 5,
+  "acceptance_recovery_requests_used": 1
+}

@@ -1,0 +1,38 @@
+{
+  "account": "D",
+  "after": {
+    "current": 0,
+    "status": "accepted",
+    "target": 5
+  },
+  "business_code": 0,
+  "current_task_status": "not_accepted",
+  "existing_records_retained": true,
+  "http": 200,
+  "model_calls": 0,
+  "new_accept_requests": 1,
+  "observed_ms": 1792478996156,
+  "pending_accept_count": 1,
+  "proposed_request": {
+    "body": {
+      "task_codes": [
+        "chat_5"
+      ]
+    },
+    "maximum_requests": 1,
+    "method": "POST",
+    "url": "https://www.workbuddy.cn/activity/growth/tasks/accept"
+  },
+  "requires_explicit_recovery_authorization": true,
+  "zero_budget_reconcile": {
+    "accepted": false,
+    "actions_verified": 0,
+    "awaiting_verification": false,
+    "budget_exhausted": false,
+    "halted": false,
+    "skipped": false,
+    "task_claimed": false
+  },
+  "explicit_recovery_authorization_received": true,
+  "one_time_recovery_consumed": true
+}

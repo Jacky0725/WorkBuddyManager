@@ -1,0 +1,63 @@
+{
+  "observed_ms": 1792479232214,
+  "test_batch_started": true,
+  "batch": {
+    "date": "2026-10-20",
+    "last_started_ms": 1792479133953,
+    "finished_ms": 1792479216260,
+    "next_retry_ms": null,
+    "error": null
+  },
+  "D_new_operations": [
+    {
+      "kind": "chat_5/execute/0",
+      "state": "Verified",
+      "submitted_ms": 1792479136533,
+      "verified_ms": 1792479148438,
+      "acknowledged": true,
+      "error": null
+    },
+    {
+      "kind": "chat_5/execute/3",
+      "state": "Verified",
+      "submitted_ms": 1792479174361,
+      "verified_ms": 1792479198784,
+      "acknowledged": true,
+      "error": null
+    },
+    {
+      "kind": "chat_5/execute/2",
+      "state": "Verified",
+      "submitted_ms": 1792479160975,
+      "verified_ms": 1792479174171,
+      "acknowledged": true,
+      "error": null
+    },
+    {
+      "kind": "chat_5",
+      "state": "Verified",
+      "submitted_ms": 1792479214036,
+      "verified_ms": 1792479216252,
+      "acknowledged": null,
+      "error": null
+    },
+    {
+      "kind": "chat_5/execute/4",
+      "state": "Verified",
+      "submitted_ms": 1792479199043,
+      "verified_ms": 1792479213648,
+      "acknowledged": true,
+      "error": null
+    },
+    {
+      "kind": "chat_5/execute/1",
+      "state": "Verified",
+      "submitted_ms": 1792479148587,
+      "verified_ms": 1792479160785,
+      "acknowledged": true,
+      "error": null
+    }
+  ],
+  "new_prompt_operations": 5,
+  "other_accounts_new_operations": 0
+}

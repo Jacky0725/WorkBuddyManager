@@ -1,0 +1,69 @@
+{
+  "account": "D",
+  "batch": {
+    "config_revision": "137a0a52cc8aff83d32a81208a8ce27cc7f121a137be1ca58b910ed4ea0452d9:true",
+    "date": "2026-10-20",
+    "error": null,
+    "finished_ms": 1792479216260,
+    "last_started_ms": 1792479133953,
+    "next_retry_ms": null
+  },
+  "batch_complete": true,
+  "claimed_and_batch_complete": true,
+  "due_time_beijing": "14:52",
+  "new_D_operations": [
+    {
+      "error": null,
+      "kind": "chat_5/execute/0",
+      "state": "Verified",
+      "submitted_ms": 1792479136533,
+      "verified_ms": 1792479148438
+    },
+    {
+      "error": null,
+      "kind": "chat_5/execute/3",
+      "state": "Verified",
+      "submitted_ms": 1792479174361,
+      "verified_ms": 1792479198784
+    },
+    {
+      "error": null,
+      "kind": "chat_5/execute/2",
+      "state": "Verified",
+      "submitted_ms": 1792479160975,
+      "verified_ms": 1792479174171
+    },
+    {
+      "error": null,
+      "kind": "chat_5",
+      "state": "Verified",
+      "submitted_ms": 1792479214036,
+      "verified_ms": 1792479216252
+    },
+    {
+      "error": null,
+      "kind": "chat_5/execute/4",
+      "state": "Verified",
+      "submitted_ms": 1792479199043,
+      "verified_ms": 1792479213648
+    },
+    {
+      "error": null,
+      "kind": "chat_5/execute/1",
+      "state": "Verified",
+      "submitted_ms": 1792479148587,
+      "verified_ms": 1792479160785
+    }
+  ],
+  "new_prompt_operations": 5,
+  "observed_at_ms": 1792479316828,
+  "original_plan_restored": false,
+  "other_accounts_new_operations": 0,
+  "pending_D": 0,
+  "preexisting_operations_unchanged": true,
+  "task": {
+    "current": 5,
+    "status": "claimed",
+    "target": 5
+  }
+}
