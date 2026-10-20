@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0-alpha.10",
+  "app_commit": "81b64dd1372e82adfd721b918c968e5cf41ec00b",
+  "installer_exit": 0,
+  "installed_matches_candidate": true,
+  "files": [
+    {
+      "name": "LICENSE",
+      "sha256": "56821bac86bc8027c358328aede0473adaf18cc76f17b48ce43371ce101b944b",
+      "bytes": 1087
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.md",
+      "sha256": "db267abc410a5e602f7e3700e0e28aca41972f886954d764372b8037ace1d460",
+      "bytes": 77924
+    },
+    {
+      "name": "workbuddy-manager.exe",
+      "sha256": "d4f1ddb3a4e2cb6cf5cd038b90f1a47272280632c72c685b0bb540e3f9c52888",
+      "bytes": 25551360
+    },
+    {
+      "name": "WorkBuddy.Manager_0.2.0-alpha.10_x64-setup.exe",
+      "sha256": "4de04074e9e617504e73e12cff5f6d3b6ff9cfa707382ba9e6dedb8e83423a7e",
+      "bytes": 6583171
+    }
+  ],
+  "production_chat_switch_enabled": false,
+  "smoke_started": true,
+  "fixture_chat_config_created": false,
+  "production_config_and_activity_unchanged": true,
+  "production_runtime_version": "0.2.0-alpha.9",
+  "production_runtime_after_smoke": "not running; installer closed prior Manager"
+}

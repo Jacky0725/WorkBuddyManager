@@ -32,3 +32,15 @@ Buddy 完整保留会话绑定和全局配置快照引用；验证绑定版本�
 alpha.5 优化构建及 NSIS 打包成功，app 提交 `7965f0afc7ff1e6ace6caf46af598c07f0e3cce0`。使用独立安装测试目录静默安装，退出码 0，安装后版本为 `0.2.0-alpha.5`。构建缓存 EXE 与安装后 EXE 只相差 Tauri 的 3 字节 bundle 类型标记（`UNK`/`NSS`）；交付独立 EXE 采用安装后版本，与安装器实际交付文件一致。产物摘要和安装记录见 `docs/evidence/windows-manager-0.2.0-alpha.5-artifacts.json`。
 
 [alpha.5 GitHub 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.5) 已上传安装包、独立程序、SHA256SUMS 和法律声明。GitHub 资产摘要与本地一致：安装包 `50DCFF486A09063F822B9FEC80DFFE5744EE305C3B4D31AC2EC012DE4A5C532C`，独立 EXE `82FECBDCE15888C573BBF303A1C82A7A19683B3FA1510E0C4A45C579471BAB4B`。本机已从 `release/0.2.0-alpha.5/local-candidate/workbuddy-manager.exe --hidden` 运行，既有启用的登录自启动项已更新至同一路径。alpha.4 原文件保留。发布不代表云会话或未执行的真实同步/恢复测试通过。
+
+## 2026-10-20 现场增量同步补充
+
+沿用上述源 C／目标 B 的两组已授权测试会话。用户保存并退出后，确认官方进程为 0，使用 SQLite 在线备份保存两库一致快照，同时备份四个正文、关联基线及资源。本机 5.8.3 的两库结构与已验收结构完全一致，小版本更新不撤销原验收。
+
+Buddy 来源在后续使用中已有 11 条自然新增记录（并非本轮新生成的虚构消息），目标由 6 条同步到 17 条；原来源正文未改动。附件会话引用的两个桌面原文件已经缺失，预览按既有规则停止写入。找到先前迁移备份中的原件并校验 SHA256 后，仅恢复这两个不存在的测试文件，没有覆盖现存文件；再次预览两边 6 条一致。随后仅向该附件测试源添加一条明确标记的受控本地虚构用户记录，目标由 6 条同步到 7 条；本轮没有提交模型请求。附件测试增量不是官方客户端发送产生，不将它描述成模型执行验收。
+
+两次均仅用 fastForward，错误 0，重新预览 identical，无待恢复操作。独立比对确认目标正文等于来源替换目标会话 ID；来源数据库行不变、Buddy 快照表不变、目标账号/项目/绑定保留、附件摘要与历史原件一致，两库 integrity_check 均 ok。
+
+临时切到 B 并打开官方客户端，在 WorkBuddyManage 中核对附件新增文字和原附件引用显示、Buddy 会话及新增问答显示。Buddy 新增内容通过本地原文与截图的布尔比对核对，不将正文写入公开证据。之后关闭官方客户端，恢复进入验收前的原账号 A 并核对身份，官方进程为 0。
+
+证据：`phase41-buddy-live-sync.json`、`phase41-attachment-live-sync.json`、`phase41-live-sync-verification.json`。真实同步与官方显示已补齐；不在真实项目制造故障，恢复能力沿用隔离回归，不将它冒充现场故障恢复。

@@ -1,0 +1,12 @@
+{
+  "account": "B",
+  "completed": true,
+  "error": null,
+  "finished_ms": 1792409049029,
+  "last_started_ms": 1792409048468,
+  "model_prompts_submitted": 0,
+  "note": "already claimed task; validates real scheduler dispatch, not fresh task completion",
+  "observed_at_ms": 1792457746692,
+  "operation_ids_unchanged": false,
+  "running": false
+}

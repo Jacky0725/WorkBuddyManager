@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "kind": "attachment",
+      "target_equals_source_with_target_session_id": true,
+      "source_db_row_unchanged": true,
+      "target_identity_project_buddy_preserved": true,
+      "source_body_original_prefix_preserved": true,
+      "source_records": 7,
+      "target_records": 7
+    },
+    {
+      "kind": "buddy",
+      "target_equals_source_with_target_session_id": true,
+      "source_db_row_unchanged": true,
+      "target_identity_project_buddy_preserved": true,
+      "source_body_original_prefix_preserved": true,
+      "source_records": 17,
+      "target_records": 17,
+      "source_body_unchanged": true
+    }
+  ],
+  "buddy_snapshots_unchanged": true,
+  "database_integrity": [
+    "ok",
+    "ok"
+  ],
+  "resource_hashes_match_historical_backup": true,
+  "attachment_delta_origin": "controlled local fictional record; no model call or official UI submission",
+  "live_fault_injection": false,
+  "official_client_post_sync_view": {
+    "attachment_increment_visible": true,
+    "attachment_text_reference_visible": true,
+    "attachment_image_reference_visible": true,
+    "buddy_title_visible": true,
+    "buddy_note": "Existing named test session contains subsequent natural messages; no new Buddy message submitted in this run.",
+    "buddy_added_messages_visual_match": {
+      "added_user_message_matches_observed_screenshot": true,
+      "added_answer_matches_observed_screenshot": true
+    },
+    "buddy_accessibility_match_count": 0
+  },
+  "cleanup": {
+    "original_login_restored": true,
+    "official_client_processes_after_cleanup": 0,
+    "missing_test_files_restored_from_existing_backup": 2,
+    "no_existing_file_overwritten": true,
+    "model_requests_submitted": 0,
+    "restored_account_label": "A"
+  }
+}

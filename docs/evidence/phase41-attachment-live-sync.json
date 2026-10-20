@@ -1,0 +1,49 @@
+{
+  "after": [
+    {
+      "kind": "attachment",
+      "modes": [],
+      "recordCount": {
+        "baseline": 7,
+        "source": 7,
+        "target": 7
+      },
+      "verdict": "identical"
+    },
+    {
+      "kind": "buddy",
+      "modes": [],
+      "recordCount": {
+        "baseline": 17,
+        "source": 17,
+        "target": 17
+      },
+      "verdict": "identical"
+    }
+  ],
+  "errors": 0,
+  "items": [
+    {
+      "kind": "attachment",
+      "modes": [
+        "fastForward"
+      ],
+      "reason": "目标账号没有独有改动，来源账号新增 1 条，可以直接同步",
+      "recordCount": {
+        "baseline": 6,
+        "source": 7,
+        "target": 6
+      },
+      "verdict": "fastForward"
+    }
+  ],
+  "mode": "execute-attachment",
+  "model_requests": 0,
+  "needsRecovery": null,
+  "original_login_restored": true,
+  "recovery_clean": true,
+  "source": "C",
+  "success": true,
+  "synced": 1,
+  "target": "B"
+}

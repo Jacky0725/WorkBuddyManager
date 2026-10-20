@@ -1,0 +1,9 @@
+{
+  "application_rows_read": false,
+  "client": "WorkBuddy CN 5.8.3",
+  "error": null,
+  "historical_acceptance_preserved": true,
+  "profile_allowed": true,
+  "read_only_profile_check": true,
+  "session_writes": 0
+}

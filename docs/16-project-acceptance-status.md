@@ -1,5 +1,7 @@
 # 任务书逐项验收状态
 
+**当前入口（2026-10-20）：**见 [最终验收表](31-final-acceptance-checklist-2026-10-20.md)。本文件以下内容保留为历史状态，不用于覆盖后续真实验收结论。
+
 **2026-10-12 更新：**用户确认阶段 11 的 A→B 测试已在旧项目 `D:\codex\WorkBuddyManage` 执行；当前 5.8.1 数据状态不同，C 仍未验收。最新核对见 [18-confirmed-test-scope-and-current-state.md](18-confirmed-test-scope-and-current-state.md)。以下为原截至 2026-10-10 的阶段性状态，部分“下一步所需事实”已被后续用户回复更新。
 
 **签到/积分门禁复核：**GitHub 实现不能代替服务方授权，历史 401/404 也不足以断言全部接口失效。详见 [19-checkin-credits-verification-decision.md](19-checkin-credits-verification-decision.md)；三账号及真实签到/积分均不得强制标记通过。

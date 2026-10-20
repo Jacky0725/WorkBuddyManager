@@ -1,0 +1,12 @@
+{
+  "checked_on": "2026-10-20",
+  "real_scheduler_dispatched": true,
+  "batch_last_started_ms": 1792409048468,
+  "batch_finished_ms": 1792409049029,
+  "new_chat_operations_since_prepare": 0,
+  "new_operations_in_observed_batch": 0,
+  "later_other_operations": 3,
+  "original_operation_ids_preserved": true,
+  "original_plan_restored": true,
+  "test_scope": "already claimed B chat task; no new model calls"
+}

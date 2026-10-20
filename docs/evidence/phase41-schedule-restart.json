@@ -1,0 +1,10 @@
+{
+  "checked_on": "2026-10-20",
+  "manager_restarted": true,
+  "process_alive": true,
+  "operation_ids_unchanged": true,
+  "growth_config_unchanged": true,
+  "chat_config_unchanged": true,
+  "model_prompts_submitted": 0,
+  "note": "Restart after restoring original plan; claimed chat tasks are not replayed"
+}
