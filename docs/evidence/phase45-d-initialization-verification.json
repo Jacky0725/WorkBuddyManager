@@ -1,0 +1,52 @@
+{
+  "D_operations": [
+    {
+      "acknowledged": true,
+      "kind": "chat_5/accept",
+      "state": "AwaitingVerification",
+      "submitted_ms": 1792476739174,
+      "verified_ms": null
+    }
+  ],
+  "account": "D",
+  "core_task": {
+    "current": null,
+    "status": "not_accepted",
+    "target": null
+  },
+  "new_accept_requests": 0,
+  "new_model_calls": 0,
+  "new_operation_ids": 0,
+  "observed_ms": 1792477207889,
+  "official_checks": [
+    {
+      "agreed": null,
+      "buddy_count": 1,
+      "chat_task": null,
+      "code": 0,
+      "http": 200,
+      "path": "/activity/growth/buddy/list"
+    },
+    {
+      "agreed": true,
+      "buddy_count": null,
+      "chat_task": null,
+      "code": 0,
+      "http": 200,
+      "path": "/activity/growth/buddy/agreement"
+    },
+    {
+      "agreed": null,
+      "buddy_count": null,
+      "chat_task": {
+        "locked": false,
+        "progress": null,
+        "status": "not_accepted"
+      },
+      "code": 0,
+      "http": 200,
+      "path": "/v2/activity/growth/tasks"
+    }
+  ],
+  "zero_budget_reconcile": null
+}

@@ -1,0 +1,20 @@
+{
+  "account": "D",
+  "current_task_status": "not_accepted",
+  "existing_records_retained": true,
+  "model_calls": 0,
+  "new_accept_requests": 0,
+  "observed_ms": 1792477344693,
+  "pending_accept_count": 1,
+  "proposed_request": {
+    "body": {
+      "task_codes": [
+        "chat_5"
+      ]
+    },
+    "maximum_requests": 1,
+    "method": "POST",
+    "url": "https://www.workbuddy.cn/activity/growth/tasks/accept"
+  },
+  "requires_explicit_recovery_authorization": true
+}
