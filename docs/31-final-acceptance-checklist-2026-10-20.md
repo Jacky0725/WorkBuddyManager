@@ -25,7 +25,7 @@
 | 聊天计划触发、关闭和重启防重 | 定时/取消/锁/恢复回归通过；真实 Manager 已在约定分钟扫描已完成的 B；恢复原计划后重启未新增操作 | 本次真实定时为已完成任务的空转验证，不能写成新任务定时执行通过 | 阶段 38；`phase41-schedule-dispatch.json`、`phase41-schedule-scoped-summary.json`、`phase41-schedule-restart.json` |
 | 新任务自动接受并定时执行 | 自动接受接口已有真实调用，生产执行器接受分支及故障边界隔离回归通过 | 当前 A/B/C 的一次性聊天任务均已领取，缺少可用未接受样本；待自然出现适用任务时补完整定时链路，不新增账号或伪造任务 | 阶段 33、38、40 |
 | 旅行 | 到达领取与跨日恢复已通过；另有实际出发成功记录 | 不将测试批次结束十多个小时后的出发归因给本次聊天定时测试；未证明自动出发定时链路 | 阶段 31；阶段 41 归因说明 |
-| 安装器、界面与发布 | alpha.10 优化构建、隔离安装启动及摘要检查通过，包含 alpha.9 的进度文案修正 | 本机已运行 alpha.10，自启动旧 alpha.7 路径已更新；发布记录另核对 | 阶段 38/39；`phase41-package-smoke.json`、`phase41-deployed-runtime.json` |
+| 安装器、界面与发布 | alpha.10 优化构建、隔离安装启动及摘要检查通过，包含 alpha.9 的进度文案修正 | 本机已运行 alpha.10，自启动旧 alpha.7 路径已更新；GitHub 五项资源摘要已复核 | 阶段 38/39；`phase41-package-smoke.json`、`phase41-deployed-runtime.json`、`phase41-release-upload.json` |
 
 ## 本轮已补的兼容性与调度证据
 
@@ -50,3 +50,5 @@ WorkBuddy 5.8.3 的主库 `schema_version=58`、映射库 `user_version=1`，按
 应用源码提交 `81b64dd`。本轮仅增加已核对的 5.8.3 兼容登记并更新版本号；成长执行器逻辑不变。相关 2 项结构回归、核心格式检查及 ACP JavaScript 语法检查通过；前端生产构建、Windows 优化构建、NSIS 安装、隔离启动和安装文件摘要比对通过。此前完整回归不重新记作本轮执行。
 
 安装器关闭了后台旧版 Manager，因此安装检查后的进程状态明确记录为未运行，未假称已恢复旧版。随后启动 alpha.10：实际运行原为 alpha.9，自启动却仍指向 alpha.7；仅更新已有 Run 路径到 alpha.10，StartupApproved 原始状态保持不变。现有签到/成长配置摘要不变、自动聊天仍关闭，官方客户端进程为 0。
+
+[alpha.10 GitHub 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.10) 已上传五项资源，服务端 SHA256 与本地逐项相符，详情见 `phase41-release-upload.json`。本轮交付完成；上表条件尚未满足的定时链路继续如实保留，不影响其他已通过项。
