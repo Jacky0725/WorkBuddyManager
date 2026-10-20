@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0-alpha.11",
+  "running_path": "D:\\codex\\WorkBuddyManager\\release\\0.2.0-alpha.11\\local-candidate\\workbuddy-manager.exe",
+  "previous_running_version": "0.2.0-alpha.10",
+  "previous_startup_version": "0.2.0-alpha.10",
+  "startup_path_matches_runtime": true,
+  "startup_approval_bytes_preserved": true,
+  "schedule_configurations_unchanged": true,
+  "official_client_processes": 7,
+  "chat_execution_enabled": false
+}
