@@ -25,7 +25,7 @@
 | 聊天计划触发、关闭和重启防重 | D 的真实 Manager 14:52 批次完成 5 条、计数与领奖；保持同一计划重启观察 73 秒，记录和配置摘要不变 | 原计划及聊天关闭状态已恢复，独立签到账本未变 | 阶段 46；`phase46-d-observation.json`、`phase46-d-after-restart.json`、`phase46-restart-observation.json` |
 | 新任务接受与定时执行闭环 | D 初始化后，经一次明确授权在当前官方入口恢复接受，旧记录核实；后续真实定时执行、计数、领奖和重启防重通过 | 本次包含受控报名恢复，首次未接受→领奖的无人干预整段未一次性通过；保留此边界，不增加账号或调用掩盖 | 阶段 33、38、40、44—46 |
 | 旅行 | 到达领取与跨日恢复已通过；另有实际出发成功记录 | 不将测试批次结束十多个小时后的出发归因给本次聊天定时测试；未证明自动出发定时链路 | 阶段 31；阶段 41 归因说明 |
-| 安装器、界面与发布 | alpha.11 优化构建、安装和隔离启动、文件摘要及实际版本检查通过，包含当前报名入口修复 | 本机运行与自启动均为 alpha.11，原计划保留、聊天关闭；发布资源另复核 | 阶段 46；`phase46-package-smoke.json`、`phase46-deployed-runtime.json` |
+| 安装器、界面与发布 | alpha.11 优化构建、安装和隔离启动、文件摘要及实际版本检查通过，包含当前报名入口修复 | 本机运行与自启动均为 alpha.11，原计划保留、聊天关闭；GitHub 五项发布资源摘要已复核 | 阶段 46；`phase46-package-smoke.json`、`phase46-deployed-runtime.json`、`phase46-release-upload.json` |
 
 ## 本轮已补的兼容性与调度证据
 
@@ -112,3 +112,5 @@ WorkBuddy 5.8.3 的主库 `schema_version=58`、映射库 `user_version=1`，按
 ### alpha.11 交付核对
 
 安装前先在成长/签到/客户端锁保护下退出 alpha.10，再执行隔离安装，避免安装器在活动提交期间直接关闭旧进程。安装退出码 0，隔离启动保持运行且未创建聊天执行配置，交付 EXE 与安装后文件摘要一致，生产配置及活动记录摘要不变。完成后运行 alpha.11，已有自启动路径同步更新，StartupApproved 原始状态保留；原有计划配置不变、聊天执行仍关闭。官方客户端是用户初始化后自行保持运行的进程，本轮未要求其退出，也不进行会话迁移写入。见 `phase46-package-smoke.json` 与 `phase46-deployed-runtime.json`。
+
+[alpha.11 GitHub 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.11) 五项资源已上传，服务端摘要与本地逐项一致，见 `phase46-release-upload.json`。本轮 D 定时执行／领奖／防重及修复包交付结束，包含一次已授权报名恢复的边界保留；明日自动出发实际验收仍待执行。
