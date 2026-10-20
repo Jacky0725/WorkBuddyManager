@@ -1,0 +1,46 @@
+{
+  "observed_ms": 1792459830612,
+  "config": {
+    "enabled": true,
+    "daily_time": "09:30",
+    "travel_claim": true,
+    "travel_depart": false,
+    "travel_location_id": null
+  },
+  "selected_accounts": [
+    "A",
+    "B",
+    "C"
+  ],
+  "schedule": {
+    "date": "2026-10-20",
+    "config_revision": "d5764b61ecba9473c513c844b4c210393e64ae0760a38a33060fe2f9ded2f022:false",
+    "last_started_ms": 1792459813954,
+    "finished_ms": 1792459815526,
+    "next_retry_ms": 1792460713954,
+    "error": null
+  },
+  "travel_operations_today": [
+    {
+      "account": "B",
+      "kind": "travel_depart",
+      "submitted_ms": 1792457600983,
+      "verified_ms": 1792457601360,
+      "state": "Verified"
+    },
+    {
+      "account": "C",
+      "kind": "travel_depart",
+      "submitted_ms": 1792457606421,
+      "verified_ms": 1792457606804,
+      "state": "Verified"
+    },
+    {
+      "account": "A",
+      "kind": "travel_depart",
+      "submitted_ms": 1792457594521,
+      "verified_ms": 1792457594875,
+      "state": "Verified"
+    }
+  ]
+}

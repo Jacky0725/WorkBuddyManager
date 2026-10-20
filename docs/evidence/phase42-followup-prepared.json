@@ -1,0 +1,14 @@
+{
+  "automation_id": "workbuddy-2",
+  "name": "WorkBuddy 自动出发定时验收",
+  "status": "ACTIVE",
+  "first_eligible_start_beijing": "2026-10-21 09:20",
+  "schedule_kind": "thread heartbeat, daily 09:20 Beijing",
+  "account": "B",
+  "location_id": 1,
+  "maximum_new_departures": 1,
+  "restore_original_config_after_test": true,
+  "new_chat_calls_authorized_by_this_automation": 0,
+  "actual_acceptance_passed": false,
+  "production_schedule_changed_in_preparation": false
+}

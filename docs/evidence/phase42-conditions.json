@@ -1,0 +1,548 @@
+{
+  "accounts": [
+    {
+      "account": "A",
+      "error": null,
+      "stale": false,
+      "tasks": [
+        {
+          "code": "create_canvas",
+          "current": 0,
+          "locked": false,
+          "status": "accepted",
+          "target": 1
+        },
+        {
+          "code": "playbook_prompt",
+          "current": 0,
+          "locked": false,
+          "status": "accepted",
+          "target": 1
+        },
+        {
+          "code": "RichMeow_Chat",
+          "current": 1,
+          "locked": false,
+          "status": "claimed",
+          "target": 1
+        },
+        {
+          "code": "Library_read",
+          "current": 1,
+          "locked": false,
+          "status": "claimed",
+          "target": 1
+        },
+        {
+          "code": "Expert_lighthouse",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Hp_Appearance",
+          "current": 1,
+          "locked": false,
+          "status": "claimed",
+          "target": 1
+        },
+        {
+          "code": "Buddy_App",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "wb_wechat_oa_subscribe_task",
+          "current": 0,
+          "locked": false,
+          "status": "accepted",
+          "target": 1
+        },
+        {
+          "code": "WorkBuddy_Valorant",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Expert_team_use_3",
+          "current": 0,
+          "locked": false,
+          "status": "accepted",
+          "target": 3
+        },
+        {
+          "code": "first_buddy",
+          "current": 1,
+          "locked": false,
+          "status": "claimed",
+          "target": 1
+        },
+        {
+          "code": "chat_5",
+          "current": 5,
+          "locked": false,
+          "status": "claimed",
+          "target": 5
+        },
+        {
+          "code": "skill_1",
+          "current": 1,
+          "locked": false,
+          "status": "claimed",
+          "target": 1
+        },
+        {
+          "code": "expert_5",
+          "current": 0,
+          "locked": false,
+          "status": "accepted",
+          "target": 5
+        },
+        {
+          "code": "template_5",
+          "current": 0,
+          "locked": false,
+          "status": "accepted",
+          "target": 5
+        },
+        {
+          "code": "automation_1",
+          "current": 0,
+          "locked": false,
+          "status": "accepted",
+          "target": 1
+        }
+      ],
+      "travel": {
+        "arrive_at": 1792461196,
+        "daily_limit_reached": true,
+        "depart_at": 1792457596,
+        "enabled": true,
+        "location_id": 1,
+        "offered_locations": [
+          {
+            "id": 1,
+            "name": "咖啡馆"
+          },
+          {
+            "id": 2,
+            "name": "商场店铺"
+          },
+          {
+            "id": 3,
+            "name": "健身房"
+          },
+          {
+            "id": 4,
+            "name": "古镇客栈"
+          }
+        ],
+        "record_present": true,
+        "state": "traveling"
+      },
+      "travel_operations": [
+        {
+          "kind": "travel_depart:1",
+          "state": "Verified",
+          "submitted_ms": 1792390126736,
+          "verified_ms": 1792390127031
+        },
+        {
+          "kind": "travel_claim:20284087",
+          "state": "Verified",
+          "submitted_ms": 1792120553137,
+          "verified_ms": 1792120554003
+        },
+        {
+          "kind": "travel_claim:23162439",
+          "state": "Verified",
+          "submitted_ms": 1792401693306,
+          "verified_ms": 1792401694113
+        },
+        {
+          "kind": "travel_depart:1",
+          "state": "Verified",
+          "submitted_ms": 1792457594521,
+          "verified_ms": 1792457594875
+        },
+        {
+          "kind": "travel_claim:21190277",
+          "state": "Verified",
+          "submitted_ms": 1792389888189,
+          "verified_ms": 1792389888835
+        }
+      ]
+    },
+    {
+      "account": "B",
+      "error": null,
+      "stale": false,
+      "tasks": [
+        {
+          "code": "create_canvas",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "playbook_prompt",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "RichMeow_Chat",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Library_read",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Expert_lighthouse",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Hp_Appearance",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Buddy_App",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "wb_wechat_oa_subscribe_task",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "WorkBuddy_Valorant",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Expert_team_use_3",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "first_buddy",
+          "current": 1,
+          "locked": false,
+          "status": "claimed",
+          "target": 1
+        },
+        {
+          "code": "chat_5",
+          "current": 5,
+          "locked": false,
+          "status": "claimed",
+          "target": 5
+        },
+        {
+          "code": "skill_1",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "expert_5",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "template_5",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "automation_1",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        }
+      ],
+      "travel": {
+        "arrive_at": 1792461202,
+        "daily_limit_reached": true,
+        "depart_at": 1792457602,
+        "enabled": true,
+        "location_id": 1,
+        "offered_locations": [
+          {
+            "id": 1,
+            "name": "咖啡馆"
+          },
+          {
+            "id": 2,
+            "name": "商场店铺"
+          },
+          {
+            "id": 3,
+            "name": "健身房"
+          },
+          {
+            "id": 4,
+            "name": "古镇客栈"
+          }
+        ],
+        "record_present": true,
+        "state": "traveling"
+      },
+      "travel_operations": [
+        {
+          "kind": "travel_depart:1",
+          "state": "Verified",
+          "submitted_ms": 1792457600983,
+          "verified_ms": 1792457601360
+        },
+        {
+          "kind": "travel_depart:1",
+          "state": "Verified",
+          "submitted_ms": 1792064751563,
+          "verified_ms": 1792064751925
+        },
+        {
+          "kind": "travel_claim:22680145",
+          "state": "Verified",
+          "submitted_ms": 1792389889172,
+          "verified_ms": 1792389889882
+        },
+        {
+          "kind": "travel_claim:19797885",
+          "state": "Verified",
+          "submitted_ms": 1792114201311,
+          "verified_ms": 1792115196618
+        }
+      ]
+    },
+    {
+      "account": "C",
+      "error": null,
+      "stale": false,
+      "tasks": [
+        {
+          "code": "create_canvas",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "playbook_prompt",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "RichMeow_Chat",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Library_read",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Expert_lighthouse",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Hp_Appearance",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Buddy_App",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "wb_wechat_oa_subscribe_task",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "WorkBuddy_Valorant",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "Expert_team_use_3",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "first_buddy",
+          "current": 1,
+          "locked": false,
+          "status": "claimed",
+          "target": 1
+        },
+        {
+          "code": "chat_5",
+          "current": 5,
+          "locked": false,
+          "status": "claimed",
+          "target": 5
+        },
+        {
+          "code": "skill_1",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "expert_5",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "template_5",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        },
+        {
+          "code": "automation_1",
+          "current": null,
+          "locked": false,
+          "status": "not_accepted",
+          "target": null
+        }
+      ],
+      "travel": {
+        "arrive_at": 1792472008,
+        "daily_limit_reached": true,
+        "depart_at": 1792457608,
+        "enabled": true,
+        "location_id": 1,
+        "offered_locations": [
+          {
+            "id": 1,
+            "name": "咖啡馆"
+          },
+          {
+            "id": 2,
+            "name": "商场店铺"
+          },
+          {
+            "id": 3,
+            "name": "健身房"
+          },
+          {
+            "id": 4,
+            "name": "古镇客栈"
+          }
+        ],
+        "record_present": true,
+        "state": "traveling"
+      },
+      "travel_operations": [
+        {
+          "kind": "travel_claim:19705863",
+          "state": "Verified",
+          "submitted_ms": 1792064749701,
+          "verified_ms": 1792064750366
+        },
+        {
+          "kind": "travel_depart:1",
+          "state": "Verified",
+          "submitted_ms": 1792390136476,
+          "verified_ms": 1792390136746
+        },
+        {
+          "kind": "travel_claim:23162569",
+          "state": "Verified",
+          "submitted_ms": 1792398048623,
+          "verified_ms": 1792398049344
+        },
+        {
+          "kind": "travel_depart:1",
+          "state": "Verified",
+          "submitted_ms": 1792457606421,
+          "verified_ms": 1792457606804
+        }
+      ]
+    }
+  ],
+  "config": {
+    "auto_claim": true,
+    "chat_enabled": false,
+    "daily_time": "09:30",
+    "enabled": true,
+    "selected_account_count": 3,
+    "travel_claim": true,
+    "travel_depart": false,
+    "travel_location_id": null
+  },
+  "new_model_calls": 0,
+  "observed_at_ms": 1792459836759,
+  "read_only_official_queries": true,
+  "schedule": {
+    "config_revision": "d5764b61ecba9473c513c844b4c210393e64ae0760a38a33060fe2f9ded2f022:false",
+    "date": "2026-10-20",
+    "error": null,
+    "finished_ms": 1792459815526,
+    "last_started_ms": 1792459813954,
+    "next_retry_ms": 1792460713954
+  },
+  "travel_submissions": 0
+}
