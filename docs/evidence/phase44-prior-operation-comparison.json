@@ -1,0 +1,32 @@
+{
+  "original_operation_ids_preserved": true,
+  "changed_prior_operations": [
+    {
+      "kind": "Library_read",
+      "missing": false,
+      "changed_fields": [
+        "verified_at_ms"
+      ],
+      "state_before": "Verified",
+      "state_after": "Verified"
+    },
+    {
+      "kind": "chat_5",
+      "missing": false,
+      "changed_fields": [
+        "verified_at_ms"
+      ],
+      "state_before": "Verified",
+      "state_after": "Verified"
+    },
+    {
+      "kind": "chat_5",
+      "missing": false,
+      "changed_fields": [
+        "verified_at_ms"
+      ],
+      "state_before": "Verified",
+      "state_after": "Verified"
+    }
+  ]
+}

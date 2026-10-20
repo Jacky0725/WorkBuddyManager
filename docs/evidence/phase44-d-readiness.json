@@ -1,0 +1,18 @@
+{
+  "account_label": "D",
+  "checked_at_ms": 1792460902666,
+  "eligible_for_new_task_acceptance": true,
+  "matching_registered_accounts": 1,
+  "new_batch_prompt_budget": 5,
+  "new_prompts_submitted": 0,
+  "query_error": null,
+  "query_stale": false,
+  "selection_basis": "unique newly registered CN account outside pinned A/B/C; original note retained",
+  "task": {
+    "current": null,
+    "locked": false,
+    "status": "not_accepted",
+    "target": null
+  },
+  "task_accept_submissions": 0
+}

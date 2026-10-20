@@ -1,0 +1,23 @@
+{
+  "observed_ms": 1792476766454,
+  "test_batch_started": true,
+  "batch": {
+    "date": "2026-10-20",
+    "last_started_ms": 1792476733957,
+    "finished_ms": 1792476739618,
+    "next_retry_ms": 1792477633957,
+    "error": "待核实 1 项；查询异常 1 项"
+  },
+  "D_new_operations": [
+    {
+      "kind": "chat_5/accept",
+      "state": "AwaitingVerification",
+      "submitted_ms": 1792476739174,
+      "verified_ms": null,
+      "acknowledged": true,
+      "error": "等待官方进度核实，禁止重发"
+    }
+  ],
+  "new_prompt_operations": 0,
+  "other_accounts_new_operations": 0
+}

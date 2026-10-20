@@ -1,0 +1,98 @@
+{
+  "comparisons": [
+    {
+      "business_code": 0,
+      "cache_control": null,
+      "data_keys": [
+        "tasks"
+      ],
+      "first_buddy": {
+        "locked": false,
+        "progress": null,
+        "status": "not_accepted"
+      },
+      "http": 200,
+      "platform": "default",
+      "task": {
+        "locked": false,
+        "progress": null,
+        "status": "not_accepted",
+        "task_type": "single"
+      },
+      "task_keys": [
+        "accept_status",
+        "badge_name",
+        "claimed_button_style",
+        "claimed_button_text",
+        "description",
+        "has_reward",
+        "icon_url",
+        "is_new",
+        "is_pinned",
+        "jump_url",
+        "locked",
+        "progress",
+        "reward_buddy",
+        "reward_credit",
+        "reward_energy",
+        "reward_popup_button_text",
+        "task_code",
+        "task_desc",
+        "task_type",
+        "template_id_fixed",
+        "title",
+        "valid_end",
+        "valid_start"
+      ]
+    },
+    {
+      "business_code": 0,
+      "cache_control": null,
+      "data_keys": [
+        "tasks"
+      ],
+      "first_buddy": {
+        "locked": false,
+        "progress": null,
+        "status": "not_accepted"
+      },
+      "http": 200,
+      "platform": "web",
+      "task": {
+        "locked": false,
+        "progress": null,
+        "status": "not_accepted",
+        "task_type": "single"
+      },
+      "task_keys": [
+        "accept_status",
+        "badge_name",
+        "claimed_button_style",
+        "claimed_button_text",
+        "description",
+        "has_reward",
+        "icon_url",
+        "is_new",
+        "is_pinned",
+        "jump_url",
+        "locked",
+        "progress",
+        "reward_buddy",
+        "reward_credit",
+        "reward_energy",
+        "reward_popup_button_text",
+        "task_code",
+        "task_desc",
+        "task_type",
+        "template_id_fixed",
+        "title",
+        "valid_end",
+        "valid_start"
+      ]
+    }
+  ],
+  "new_accept_requests": 0,
+  "new_model_calls": 0,
+  "observed_ms": 1792476851447,
+  "read_only": true
+}

@@ -1,0 +1,24 @@
+{
+  "page": "https://www.workbuddy.cn/profile/growth-center",
+  "assets": [
+    {
+      "url": "https://assets.workbuddy.cn/web/usercenter/ad5683203da67c1912ca00c315e90aa584433068/assets/GrowthSpace-BVCj_mMU.js",
+      "sha256": "0145d9a6b62bd077e905c56420e4d252e79a4bdafaf69e135d0046172e7cb0c6"
+    },
+    {
+      "url": "https://assets.workbuddy.cn/web/usercenter/ad5683203da67c1912ca00c315e90aa584433068/assets/growthSpace-BSYrJFQc.js",
+      "sha256": "e38831ff28522a5f992bd5a9479744e2ea6992ec69f69cdeeea9818eb30dd0ab"
+    },
+    {
+      "url": "https://assets.workbuddy.cn/web/usercenter/ad5683203da67c1912ca00c315e90aa584433068/assets/growthSpace-Bhoa8Yzh.js",
+      "sha256": "14ed20c03c0a4e02eacfb4d493de24eb94f43589d15488c03320cb13244b341a"
+    }
+  ],
+  "observations": [
+    "official task store exposes only first_buddy and RichMeow_Chat before any Buddy is owned",
+    "first Buddy claim presents agreement when agreed is false",
+    "ordinary task acceptance is distinct from first Buddy claim"
+  ],
+  "root_cause_of_accept_status_mismatch": "not conclusively established; do not infer POST success from code 0 alone",
+  "additional_accept_requests": 0
+}

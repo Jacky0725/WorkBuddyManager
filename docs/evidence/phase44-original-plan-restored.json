@@ -1,0 +1,12 @@
+{
+  "original_config_restored": true,
+  "original_chat_restored": true,
+  "daily_files_unchanged": {
+    "daily_scheduler_config.json": true,
+    "daily_scheduler_state.json": true
+  },
+  "automatic_chat_enabled": false,
+  "D_test_prompt_budget": 5,
+  "D_prompts_submitted": 0,
+  "pending_accept_record_preserved": true
+}

@@ -1,0 +1,12 @@
+{
+  "account": "D",
+  "auto_claim": true,
+  "before_task_status": "not_accepted",
+  "due_time_beijing": "14:12",
+  "initial_task_accept_submissions": 0,
+  "maximum_new_prompts": 5,
+  "only_D_selected": true,
+  "prepared_ms": 1792476616724,
+  "scheduled_by": "public save; actual Manager coordinator must trigger",
+  "travel_actions": false
+}

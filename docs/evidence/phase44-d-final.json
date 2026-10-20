@@ -1,0 +1,34 @@
+{
+  "account": "D",
+  "batch": {
+    "config_revision": "d5764b61ecba9473c513c844b4c210393e64ae0760a38a33060fe2f9ded2f022:false",
+    "date": "2026-10-20",
+    "error": "待核实 0 项；查询异常 1 项",
+    "finished_ms": 1792476854591,
+    "last_started_ms": 1792476853952,
+    "next_retry_ms": 1792477753952
+  },
+  "batch_complete": false,
+  "claimed_and_batch_complete": false,
+  "due_time_beijing": "14:12",
+  "new_D_operations": [
+    {
+      "error": "等待官方进度核实，禁止重发",
+      "kind": "chat_5/accept",
+      "state": "AwaitingVerification",
+      "submitted_ms": 1792476739174,
+      "verified_ms": null
+    }
+  ],
+  "new_prompt_operations": 0,
+  "observed_at_ms": 1792477009565,
+  "original_plan_restored": true,
+  "other_accounts_new_operations": 0,
+  "pending_D": 1,
+  "preexisting_operations_unchanged": false,
+  "task": {
+    "current": null,
+    "status": "not_accepted",
+    "target": null
+  }
+}

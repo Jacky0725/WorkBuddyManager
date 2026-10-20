@@ -1,0 +1,45 @@
+{
+  "account": "D",
+  "observed_ms": 1792476936282,
+  "read_only": true,
+  "responses": [
+    {
+      "agreed": null,
+      "buddy_count": null,
+      "buddy_present": false,
+      "code": 0,
+      "data_keys": [
+        "buddy",
+        "poll_interval_seconds"
+      ],
+      "http": 200,
+      "path": "/activity/growth/buddy/info"
+    },
+    {
+      "agreed": null,
+      "buddy_count": 0,
+      "buddy_present": false,
+      "code": 0,
+      "data_keys": [
+        "buddies",
+        "count"
+      ],
+      "http": 200,
+      "path": "/activity/growth/buddy/list"
+    },
+    {
+      "agreed": false,
+      "buddy_count": null,
+      "buddy_present": false,
+      "code": 0,
+      "data_keys": [
+        "agreed",
+        "dismissed_scenes"
+      ],
+      "http": 200,
+      "path": "/activity/growth/buddy/agreement"
+    }
+  ],
+  "source": "live official growth web assets",
+  "write_requests": 0
+}
