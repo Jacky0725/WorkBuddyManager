@@ -1,0 +1,12 @@
+{
+  "independent_daily_files_unchanged_since_preparation": {
+    "daily_scheduler_config.json": true,
+    "daily_scheduler_state.json": true
+  },
+  "restored_original_accounts_count": 3,
+  "original_chat_enabled": false,
+  "original_travel_depart_enabled": false,
+  "maximum_departures": 1,
+  "new_chat_operations": 0,
+  "automation_status": "PAUSED"
+}

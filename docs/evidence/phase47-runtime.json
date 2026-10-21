@@ -1,0 +1,8 @@
+{
+  "observed_at": "2026-10-21T09:30:20.9255891+08:00",
+  "runtime_path": "D:\\codex\\WorkBuddyManager\\release\\0.2.0-alpha.11\\local-candidate\\workbuddy-manager.exe",
+  "pid": 22900,
+  "product_version": "0.2.0-alpha.11",
+  "startup_command": "\"D:\\codex\\WorkBuddyManager\\release\\0.2.0-alpha.11\\local-candidate\\workbuddy-manager.exe\" --hidden",
+  "runtime_and_startup_match": true
+}

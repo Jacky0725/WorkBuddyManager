@@ -1,0 +1,19 @@
+{
+  "account": "B",
+  "activity_enabled": true,
+  "auto_claim": false,
+  "before_state": "idle",
+  "chat_enabled": false,
+  "daily_limit_reached": false,
+  "dispatch": "actual Manager coordinator only",
+  "due_ms": 1792546320000,
+  "due_time_beijing": "09:32",
+  "global_pending": 0,
+  "location_1_offered": true,
+  "location_id": 1,
+  "minimum_delay_seconds": 167,
+  "only_B_selected": true,
+  "prepared_ms": 1792546152501,
+  "travel_claim": false,
+  "travel_depart": true
+}

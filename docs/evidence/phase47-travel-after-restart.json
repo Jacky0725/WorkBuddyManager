@@ -1,0 +1,35 @@
+{
+  "account": "B",
+  "batch": {
+    "config_revision": "b327278de4134558256847522ccb7f40897559b23d9d3300603d75fbdfa7bd8b:false",
+    "date": "2026-10-21",
+    "error": null,
+    "finished_ms": 1792546327177,
+    "last_started_ms": 1792546326102,
+    "next_retry_ms": null
+  },
+  "batch_complete": true,
+  "global_pending": 0,
+  "new_operations": [
+    {
+      "account_is_B": true,
+      "error": null,
+      "kind": "travel_depart:1",
+      "state": "Verified",
+      "submitted_ms": 1792546326393,
+      "verified_ms": 1792546326812
+    }
+  ],
+  "observed_ms": 1792546431753,
+  "official": {
+    "daily_limit_reached": true,
+    "depart_ms": 1792546327000,
+    "location_id": 1,
+    "new_record": true,
+    "state": "traveling"
+  },
+  "old_operation_ids_retained": true,
+  "original_plan_restored": false,
+  "scheduled_departure_verified": true,
+  "unique_verified_departure": true
+}

@@ -1,0 +1,13 @@
+{
+  "seconds_after_restart": 69.3,
+  "kept_completed_test_config": true,
+  "file_hashes_unchanged": {
+    "daily_scheduler_config.json": true,
+    "growth_chat_config.json": true,
+    "growth_config.json": true,
+    "activity_operations.json": true,
+    "daily_scheduler_state.json": true
+  },
+  "no_duplicate_submit_observed": true,
+  "observation_minimum_seconds": 60
+}
