@@ -127,3 +127,10 @@ WorkBuddy 5.8.3 的主库 `schema_version=58`、映射库 `user_version=1`，按
 随后持成长锁通过 CAS 恢复原三账号计划及原聊天关闭状态，原自动出发关闭状态也恢复，未覆盖用户修订。保留所有历史与此次操作；独立签到配置/状态与准备前摘要一致。本轮新增聊天操作 0，仅一次出发。见 `phase47-original-plan-restored.json`、`phase47-travel-final.json`、`phase47-completion.json`。私有检查点和 helper 留在 .scratch-checkin，便于中断追溯，不进入发布包。完成后已将 workbuddy-2 自动化设为 PAUSED。
 
 本项实测结束，无需用户操作。未修改产品代码、未新增功能或重新打包；D 报名恢复的既有验收边界仍保留。
+
+
+## 阶段 48：许可来源与交付文档收尾（2026-10-22）
+
+已用官方 npm 完整性和逐文件字节对比核实 react-remove-scroll-bar 2.3.8 发布代码与保留 MIT 许可的对应，未改依赖或产品代码。精确 2.3.8 gitHead 仍不可取的事实保留，不宣称可复现源码构建通过。见 `phase48-license-correspondence.json` 与 [32 号收尾记录](32-delivery-closeout-2026-10-22.md)。统一当前 README、使用说明、已知限制和 alpha.11 发行说明，历史报告不覆写。
+
+D 单次恢复已完成，无需再操作；当前剩余实测边界为首次未接受到领奖的无人干预整段、Windows 实际注销/登录自启动，以及未覆盖系统。既有通过项、小版本保留规则及另案范围不变。本轮不提交活动、不消耗模型、不注销电脑；alpha.11 程序和安装包不变，许可材料作为独立补充交付。

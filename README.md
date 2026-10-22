@@ -1,6 +1,6 @@
 # WorkBuddy Manager
 
-最新扩展状态见 [执行与验收记录](docs/30-growth-extension-acceptance-2026-10-15.md)。alpha.5 的既有签到、本地会话与 Buddy/附件迁移保持已验收范围；本批增加成长任务查询、限定奖励领取及旅行处理。跨日旅行核实问题已在 alpha.7 修复并复核，真实任务自动完成仍未通过。
+当前交付为 alpha.11，逐项结果见 [最终验收表](docs/31-final-acceptance-checklist-2026-10-20.md)，收尾范围见 [交付收尾记录](docs/32-delivery-closeout-2026-10-22.md)。国内账号、签到/积分、本地会话与 Buddy/附件迁移、限定成长任务执行/领奖及旅行定时链路已有实际证据。D 的首次接受包含一次授权恢复，保留无人干预整段尚未一次性通过的边界；云迁移等另案功能未开放。
 
 按 [项目总任务 V1.0](docs/PROJECT_TASK_V1.md) 开发 Windows 多账号桌面管理器。
 

@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-22",
+  "release": "https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.11",
+  "supplement_assets": [
+    {
+      "name": "WorkBuddyManager-alpha.11-license-supplement-2026-10-22.zip",
+      "sha256": "c69fbe7ce25d9d47cb293cb0603ebfc197967a779dde72482f314c29e8a5cd65",
+      "server_digest_matches": true,
+      "url": "https://github.com/Jacky0725/WorkBuddyManager/releases/download/v0.2.0-alpha.11/WorkBuddyManager-alpha.11-license-supplement-2026-10-22.zip"
+    },
+    {
+      "name": "LICENSE-SUPPLEMENT-SHA256SUMS.txt",
+      "sha256": "a6b3c87e310caace7d2b06e93b8fbfa5c73f248f4dec0954d337b3dcfc8692a2",
+      "server_digest_matches": true,
+      "url": "https://github.com/Jacky0725/WorkBuddyManager/releases/download/v0.2.0-alpha.11/LICENSE-SUPPLEMENT-SHA256SUMS.txt"
+    }
+  ],
+  "original_asset_names": [
+    "LICENSE",
+    "SHA256SUMS.txt",
+    "THIRD_PARTY_NOTICES.md",
+    "workbuddy-manager.exe",
+    "WorkBuddy.Manager_0.2.0-alpha.11_x64-setup.exe"
+  ],
+  "executable_rebuilt": false,
+  "original_assets_overwritten": false,
+  "original_release_assets_match_local": {
+    "LICENSE": true,
+    "SHA256SUMS.txt": true,
+    "THIRD_PARTY_NOTICES.md": true,
+    "workbuddy-manager.exe": true,
+    "WorkBuddy.Manager_0.2.0-alpha.11_x64-setup.exe": true
+  }
+}

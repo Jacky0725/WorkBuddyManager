@@ -42,3 +42,10 @@ npm 锁文件共 613 个条目（跨两份 lock，存在重复）。许可表达
 react-remove-scroll-bar 2.3.8 的 npm 包未携带完整文本，registry 网络失败且 GitHub API 限流。已保留作者仓库固定 commit 8ca9ba5 的 MIT 文本，但该提交标为 2.3.7，发行版来源对应仍未确认，不将“文本已收集”写成“全部分发义务验证完成”。selectors 通用 MPL-2.0 全文从本机 cssparser 同许可证文件保留，原始源文件许可头一起保留。Tauri、WebView2、unic、defmt 等文本从固定 crate 上游 SHA 获取；victory-vendor 另保留固定 v36.9.2 根 MIT 及 vendored D3 ISC 文本。
 
 最终字节交叉验证发现首次 Git 入库时 14 份许可文本发生换行转换，一份 MPL Cargo.lock 被嵌套忽略。已在 app `5c493712b9e6d381b67677dd565c45b9f257d4e0` 仅修正这些材料的入库字节；保留失败证据。新增材料应先确保 `licenses/** -text` 生效，并对已核对的许可目录使用显式 `git add -f licenses`，避免对应源被嵌套忽略。后续由候选校验脚本逐文件对照安装资源、源码 ZIP 和依赖清单。
+
+
+## 2026-10-22 发行代码与许可对应补证
+
+已重新取得官方 npm 的 react-remove-scroll-bar 2.3.8、2.3.7 元数据与原始 tarball，验证两包各自 SHA512 integrity；2.3.8 与锁文件一致，本机安装的 27 个文件与包内字节全部一致。两版本的 26 个非 manifest 文件逐字节一致，package.json 仅版本号与 react-style-singleton 范围变化。2.3.7 registry gitHead 为 29e9fcd1eecf7d3b77a767941c4a57fe461fc1e4；该提交到已保留许可的 8ca9ba5ea52de03308fe8ced94f7b159a44d28ff，Git 差异仅增加 LICENSE，源码未变，许可字节亦与本地保留件相同。因此该已发布代码的 MIT 许可对应问题已补证。
+
+2.3.8 registry gitHead 仍不可获取（raw 404，git fetch not our ref），没有伪称验证该精确提交或可复现构建。证据见 evidence/phase48-license-correspondence.json 与 app/licenses/npm/react-remove-scroll-bar-2.3.8/PROVENANCE.json；本结论只关闭该依赖代码的许可对应项，不是服务方授权、所有素材权属或正式法律认证。旧包及其历史材料不覆盖改写，本次材料单独补充。
