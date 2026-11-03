@@ -24,3 +24,5 @@
 ## 构建验证
 
 前端生产构建成功；现有成长状态测试 3 项通过。alpha.12 Windows x64 NSIS 优化构建成功，程序文件版本与产品版本均为 0.2.0-alpha.12。构建仍有原有 Rust 告警及前端大体积 chunk 提示。本轮未进行实际 Windows 登录自启动或安装器实机交互验收；既有 Manager 继续运行，未改变现有计划或客户端安装。源码 app 提交 a605f93。
+
+[alpha.12 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.12) 已上传安装器、独立程序、许可和校验清单等五项；服务端摘要及校验清单逐项核对通过，见 `phase50-release-upload.json`。运行中的 alpha.11 未自动替换，用户安装新版本后页面改动才会显示。
