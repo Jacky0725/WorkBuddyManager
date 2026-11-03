@@ -13,3 +13,5 @@
 本轮不修改成长计划、账号开关或签到记录，不主动启用聊天和旅行出发。已运行 manager-scheduler 与 growth 相关测试，共 12 项通过；安装包构建与发布状态以后续记录为准。首次自动报名完整验收仍待自然适用样本。
 
 alpha.13 Windows x64 NSIS 优化构建成功，程序文件产品版本为 0.2.0-alpha.13。源码 app 提交 e2de50e。本轮未进行实际安装器交互验收；原运行程序与计划未自动替换。
+
+[alpha.13 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.13) 五项文件的服务端摘要和校验清单已逐项核对，见 `phase51-release-upload.json`。旧版本仍在运行，安装新版本后界面修复才会显示。
