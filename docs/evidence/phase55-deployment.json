@@ -1,0 +1,9 @@
+{
+  "startup_matches": true,
+  "isolation_install_exit": 0,
+  "version": "0.2.0-alpha.14",
+  "pid": 23528,
+  "isolated_startup_seconds": 6,
+  "runtime_path": "D:\\codex\\WorkBuddyManager\\release\\0.2.0-alpha.14\\local-candidate\\workbuddy-manager.exe",
+  "installed_and_delivery_hash_match": true
+}

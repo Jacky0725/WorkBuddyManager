@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-05",
+  "source_commit": "d3b99dc",
+  "account_scope": "original selected A/B/C",
+  "daily_time_beijing": "09:30",
+  "random_departure_enabled": true,
+  "arrival_claim_enabled": true,
+  "ordinary_claim_enabled": true,
+  "chat_enabled": false,
+  "independent_checkin_unchanged": {
+    "daily_scheduler_config.json": true,
+    "daily_scheduler_state.json": true
+  },
+  "real_acceptance_account": "B",
+  "new_departures_in_test": 1,
+  "selected_official_location_id": 2,
+  "restart_seconds": 75.1,
+  "pending": 0
+}
