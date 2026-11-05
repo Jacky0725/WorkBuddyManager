@@ -20,3 +20,5 @@
 保留已完成测试计划，在成长/签到/客户端锁保护下重启相同实际 Manager，观察75.1秒；成长/聊天配置、操作记录及独立签到配置/状态摘要一致，再次官方查询仍为同次旅行，未重复出发、全局待核实0。见 phase55-restart-observation.json、phase55-travel-after-restart.json。
 
 随后通过CAS恢复原账号A/B/C和09:30时间，并按用户批准方案开启随机出发及旅行到达领奖；普通领奖保持开启、聊天仍关闭，D未加入成长计划，全部旧记录保留。独立签到配置与状态与准备前摘要一致。此处“恢复”仅指原账号/时间/聊天，自动出发已按批准方案由关闭变为随机开启。见 phase55-original-plan-restored.json、phase55-final-enabled.json。临时helper与备份留在私有.scratch-checkin，不进入发布包。真实随机定时出发及重启防重已通过，未将mock结果替代真实证据。
+
+[alpha.14 预发布](https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.14) 五项文件的服务端摘要与本地逐项一致，校验清单验证通过，见phase55-release-upload.json。实际运行与登录自启动均为alpha.14。专项自动化workbuddy-2已删除，日常09:30成长计划由Manager自身执行。

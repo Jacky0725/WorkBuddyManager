@@ -1,0 +1,26 @@
+{
+  "url": "https://github.com/Jacky0725/WorkBuddyManager/releases/tag/v0.2.0-alpha.14",
+  "assets": [
+    {
+      "name": "LICENSE",
+      "sha256_matches": true
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "sha256_matches": true
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.md",
+      "sha256_matches": true
+    },
+    {
+      "name": "workbuddy-manager.exe",
+      "sha256_matches": true
+    },
+    {
+      "name": "WorkBuddy.Manager_0.2.0-alpha.14_x64-setup.exe",
+      "sha256_matches": true
+    }
+  ],
+  "checksum_list_verified": true
+}
