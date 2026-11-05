@@ -1,0 +1,11 @@
+{
+  "D_included": true,
+  "arrival_claim_enabled": true,
+  "chat_enabled": true,
+  "daily_time_beijing": "09:30",
+  "date": "2026-11-05",
+  "ordinary_claim_enabled": true,
+  "random_departure_enabled": true,
+  "saved_via_public_CAS": true,
+  "selected_accounts": 4
+}
